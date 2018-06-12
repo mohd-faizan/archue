@@ -1,0 +1,10 @@
+.partner-with-us{
+	background-image: url("../image/parner-bg.jpeg");
+	min-height: 700px;
+	padding: 2rem;
+	background-size: cover;
+}
+.partner-with-us p{
+	font-size: 1.3rem; 
+	justify-content: left;
+}

@@ -140,6 +140,9 @@ app.config(($routeProvider,$locationProvider)=>{
 		},
 		templateUrl:"pages/upload-pages/thesis-report-upload.php"
 	})
+	.when("/partner-with-us",{
+		templateUrl:"pages/partner-with-us.php"
+	})
 	$locationProvider.html5Mode(true);
 });
 // app.run(['$location', '$rootScope', function($location, $rootScope) {
