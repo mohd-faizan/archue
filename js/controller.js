@@ -1,4 +1,4 @@
-app.controller("rootController",(fetchservice,$document,$location,$scope,$interval,user,$rootScope,$timeout,myService)=>{
+app.controller("rootController",($sce,fetchservice,$document,$location,$scope,$interval,user,$rootScope,$timeout,myService)=>{
 	$scope.interval = $interval;
 	$scope.timeout = $timeout;
 	$scope.errorMessage;
@@ -20,6 +20,7 @@ app.controller("rootController",(fetchservice,$document,$location,$scope,$interv
 	$scope.setThesisReport = (theisReport)=>{
 		fetchservice.setThesisReport(theisReport);
 	}
+	
 });
 app.controller("signUpController",($scope)=>{
 	$scope.regex = "^[0-9]*$";

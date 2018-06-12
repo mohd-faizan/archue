@@ -33,7 +33,7 @@
 					<div class="dropdown-menu sub-menu-container" aria-labelledby="dropdownMenuButton">
 					    
 					    <div class="dropdown-item drop-dn-btn" href="#">
-					    	Finishes
+					    	FINISHES
 					    	<div  class="sub-dropdown">
 					    		<div class="space"></div>
 					    		<div class="container">
@@ -87,14 +87,14 @@
 					    </div>
 
 				    	<div class="dropdown-item drop-dn-btn" href="#">
-					    	Construction Materials
+					    	CONSTRUCTION MATERIALS
 					    	<div  class="sub-dropdown sub-item-2">
 				
 					    	</div>
 					    </div>
 				    	
 				    	<div class="dropdown-item drop-dn-btn" href="#">
-					    	Equipment
+					    	EQUIPEMENT
 					    	<div  class="sub-dropdown sub-item-3">
 					    			
 					    	</div>
@@ -272,7 +272,7 @@
         			</div>
         		</div>
         		<div class="form-group">
-	        		<input type="text" class="form-control" name="" placeholder="Specification if any">
+	        		<input type="text" class="form-control" name="" placeholder="Specification(if any)">
 	        	</div>
 	        	<div class="row">
 	        		<div class="col-md-4">

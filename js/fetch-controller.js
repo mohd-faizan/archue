@@ -142,8 +142,12 @@ app.controller("fetchPortfolioController",($scope,fetchservice)=>{
 
 
 /*full portfolio constroller*/
-app.controller("fullPortfolioController",($scope,fetchservice)=>{
+app.controller("fullPortfolioController",($sce,$scope,fetchservice)=>{
 	$scope.portfolio = fetchservice.getPortfolio();
+	// let file = $scope.portfolio.portfolio_file.split(" ");
+	$scope.url = $sce.trustAsResourceUrl("http://docs.google.com/gview?url=http://archue.professionalaccountingnow.com/upload-file/"
+		+$scope.portfolio.portfolio_file
+		+"&embedded=true");
 	var fd = new FormData();
 	fd.append('id',$scope.portfolio.portfolio_id);
 	fetchservice.fetchSimilarPortfolio(fd,(data)=>{
@@ -167,8 +171,11 @@ app.controller("fetchDessertController",($scope,fetchservice)=>{
 })
 
 /* full dessertation controller */
-app.controller("fetchFullDessert",($scope,fetchservice)=>{
+app.controller("fetchFullDessert",($sce,$scope,fetchservice)=>{
 	$scope.dessertation = fetchservice.getDessertation();
+	$scope.url = $sce.trustAsResourceUrl("https://docs.google.com/gview?url=http://archue.professionalaccountingnow.com/upload-file/"
+		+$scope.dessertation.dessertation_file+
+		"&embedded=true");
 	var fd = new FormData();
 	fd.append('id',$scope.dessertation.dessertation_id);
 	fetchservice.fetchSimilarDessertation(fd,(data)=>{
@@ -237,6 +244,7 @@ app.controller("studentWorkController",($scope,fetchservice)=>{
 /*full thesis report controller */
 app.controller("fullThesisReportCtrl",($sce,$scope,fetchservice)=>{	
 	$scope.thesis_report = fetchservice.getThesisReport();
+	$scope.url = $sce.trustAsResourceUrl("upload-file/"+$scope.thesis_report.thesis_report_file);
 	var fd = new FormData();
 	fd.append('id',$scope.thesis_report.thesis_report_id);
 	fetchservice.fetchSimilarThesisReport(fd,(data)=>{

@@ -16,16 +16,15 @@
 					<div class="sm-blog-container" ng-repeat="similarThesis in similarThesises">
 						<div class="link">
 							<a href="./full-thesis-report/{{similarThesis.thesis_report_name}}" ng-click="setThesisReport(similarThesis)">
-							{{similarThesis.thesis_report_name}}
+							{{similarThesis.thesis_report_file}}
 							</a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-9 col-md-9 col-sm-12">
-				<iframe ng-src="upload-file/file.pdf" width="100%" height="800px"></iframe>
+				<iframe ng-src="{{url}}" width="100%" height="800px"></iframe>
 			</div>
-
 		</div>
 	</div>
 </section>

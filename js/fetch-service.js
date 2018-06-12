@@ -57,7 +57,7 @@ app.service("fetchservice",function($http){
 			method:"GET",
 			url:"php/fetch-thesis-report.php"
 		})
-		.then((resp)=>cb(resp.data),(err)=>console.log(err));
+		.then((resp)=>{console.log(resp.data);cb(resp.data)},(err)=>console.log(err));
     }
     this.setThesisReport = (thesisReport)=>{
     	localStorage.setItem("thesisReport",JSON.stringify(thesisReport));

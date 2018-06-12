@@ -23,7 +23,7 @@
 				</div>
 			</div>
 			<div class="col-lg-9 col-md-9 col-sm-12">
-				<iframe ng-src="file.pdf" width="100%" height="800px"></iframe>
+				<iframe ng-src="{{url}}" width="100%" height="800px" ></iframe>
 				<!-- <iframe src="http://docs.google.com/gview?url=localhost/angularjs/archue/upload-file/{{portfolio.portfolio_file}}"></iframe> -->
 				
 			</div>

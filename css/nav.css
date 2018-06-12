@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 #header .header-container{
 	padding:1rem 2rem; 
 }
@@ -304,7 +305,7 @@
 	flex-basis: 50%;
 	background-color: transparent;
 	border: none;
-	padding: .5rem;
+	padding: 1rem;
 	cursor: pointer;
 	outline: none;
 }

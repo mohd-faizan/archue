@@ -4,7 +4,7 @@
 }*/
 .main-image{
 	width: 100%;
-	height: 340px;
+	height: 281px;
 	display: block;
 	position: relative;
 }
@@ -13,11 +13,11 @@
 }
 .image-container{
 	width: 100%;
-	height: 108px;
+	height: 88px;
 	display: block;
 }
 .material-image-container{
-	height: 165px;
+	height: 135px;
 	width: 100%;
 	display: block;
 	position: relative;
