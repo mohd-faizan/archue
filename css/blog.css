@@ -1,0 +1,42 @@
+.head{
+	border: 1px solid grey;
+}
+.head-text{
+	background-color: #2a4052;
+	color: #fff;
+	padding: 10px;
+}
+.blog-content p{
+	color: #363a46;
+}
+.connect-us-container .social-icon-div{
+	flex-wrap: wrap;
+}
+.recent-post-content{
+	border: 1px solid grey;
+}
+.recent-post-content a{
+	display: block;
+}
+/*post blog style*/
+.editor-tools{
+	min-height: 20px;
+	background: #eee;
+	position: absolute;
+	top: 0;
+	padding:10px; 
+}
+/*editor btns */
+.editor-btn-container{
+	background: #bdbdbd;
+	width: 100%;
+	padding: 10px;
+}
+.editor-btn-container .editor-btn{
+	background-color: transparent;
+	border:none;
+	cursor: pointer;
+}
+.editor-btn-container .editor-btn.btn-active{
+	background-color: #fff;
+}

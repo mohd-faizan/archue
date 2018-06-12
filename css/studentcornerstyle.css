@@ -1,0 +1,13 @@
+.yellow-separator{
+	width: 100%;
+	height: 10px;
+	margin-top: 5px;
+	background-color: #fa8a11;
+}
+.conntent-div{
+	border: 1px solid #ababab;
+	padding: 10px;
+}
+.content-box{
+	display: flex;
+}

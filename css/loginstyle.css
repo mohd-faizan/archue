@@ -1,0 +1,52 @@
+#login-sec{
+	background-image: url('../image/login-bg.jpg');
+	background-size: cover;
+}
+#login-sec .mid-box{
+	color: #fff;
+	padding: 40px 0px;
+	width: 30%;
+	margin: 0 auto;
+}
+@media(min-width: 768px) and (max-width: 900px){
+	#login-sec .mid-box{
+		width: 40%;
+	}
+}
+@media(max-width: 768px){
+	#login-sec .mid-box{
+		width: 80%;
+	}
+}
+#login-sec .mid-box .form-control{
+	background-color: transparent;
+	color: #fff;
+}
+#login-sec .mid-box option{
+	background-color: rgba(0,0,0,0.7);
+}
+#login-sec .mid-box .form-control::placeholder{
+	color: #b5adad;
+}
+.or-div{
+	background-color: #B71C1C;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	padding: 13px;
+	margin: 0 auto;
+}
+.login-with-social button{ 
+	width: 100%;
+	background-color: transparent;
+}
+.remove-border{
+	background-color: transparent;
+	border:0;
+}
+.remove-border input{
+    width: 20px;
+    height: 22px;
+    margin-top: -3px;
+    margin-left: -10px;
+}

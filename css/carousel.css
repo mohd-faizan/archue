@@ -1,0 +1,68 @@
+/*#carousel>div:first-child{
+	max-height: 400px;
+	overflow: hidden;
+}*/
+.main-image{
+	width: 100%;
+	height: 340px;
+	display: block;
+	position: relative;
+}
+.main-image img{
+	transition: all .5s linear;
+}
+.image-container{
+	width: 100%;
+	height: 108px;
+	display: block;
+}
+.material-image-container{
+	height: 165px;
+	width: 100%;
+	display: block;
+	position: relative;
+}
+.material-image .main-image-con-div{
+	opacity: 0;
+	transition: all .5s linear;
+	bottom:10px;
+}
+.material-image:hover .main-image-con-div{
+	opacity:1;
+}
+.material-image-container .carousel-material-cont-div,.main-image-con-div{
+	position: absolute;
+	bottom: 20px;
+	left: 0px;
+	padding: 3px;
+	background-color: #fff; 
+}
+.main-image-con-div p,.carousel-material-cont-div p{
+	margin: 0;
+}
+.whiteness img{
+	opacity: .6;
+}
+.remove-col-space{
+	padding-right:0px; 
+}
+@media(max-width: 992px){
+	#carousel>div:first-child{
+		max-height: inherit;
+	}
+	.image-container{
+		display: inline-block;
+		width: 100px;
+		border-radius: 50%;
+		overflow: hidden;	
+		height: 100px;
+	}
+	.img-ref{
+		width: 3rem;
+		height: 3rem;
+	}
+	.myclass{
+		text-align: center;
+	    margin-top: -20px!important;
+	}
+}

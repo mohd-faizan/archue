@@ -1,0 +1,25 @@
+#signup-sec{
+	background-image: url('../image/signup-bg.jpg');
+	background-size: cover;
+}
+#signup-sec .mid-box{
+	color: #fff;
+	padding: 40px 0px;
+	width: 50%;
+	margin: 0 auto;
+}
+@media(max-width: 768px){
+	#signup-sec .mid-box{
+		width: 80%;
+	}
+}
+#signup-sec .mid-box .form-control{
+	background-color: transparent;
+	color: #fff;
+}
+#signup-sec .mid-box option{
+	background-color: rgba(0,0,0,0.7);
+}
+#signup-sec .mid-box .form-control::placeholder{
+	color: #b5adad;
+}

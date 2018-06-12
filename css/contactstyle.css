@@ -1,0 +1,21 @@
+#contact-sec-2{
+	background-image: url('../image/contact-bg.jpg');
+	background-size: cover;
+	min-height: 400px;
+}
+.contact-form-div .form-control{
+	background-color: transparent;
+}
+.contact-form-div button{
+	background-color: transparent;
+	border: 1px solid #fff;
+	transition: all 0.3s linear;
+	color: #fff;
+}
+.contact-form-div ::placeholder{
+	color: #fff;
+}
+.contact-form-div button:hover{
+	background-color: #fa8a11;
+	color: #fff;
+}
