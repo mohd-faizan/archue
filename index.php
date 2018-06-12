@@ -2,7 +2,7 @@
 <html ng-app="myApp">
 <head>
 	<title ng-bind="title"></title>
-	<base href="/">
+	<base href="/angularjs/archue/">
 	<meta charset="utf-8">
 	<meta name="description" content="{{description}}">
 	<?php include("include/cdn.php");?>

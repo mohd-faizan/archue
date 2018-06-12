@@ -296,7 +296,6 @@
 /*get qoute button*/
 #qouteModal.modal .modal-header{
 	padding: 0;
-	padding-right: .3rem;
 }
 .get-qoute-btn:first-child{
 	border-right: 1px solid grey;

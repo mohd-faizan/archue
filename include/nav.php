@@ -248,7 +248,7 @@
       <div class="modal-header ">
         <button class="get-qoute-btn" ng-class="{'active':isGetActive==true}" ng-click="getChange()">Material</button>
         <button class="get-qoute-btn" ng-class="{'active':isGetActive==false}" ng-click="getChange()">Architecture</button>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
       </div>
 
       <!-- Modal body -->
@@ -300,14 +300,68 @@
         </form>
     	<form ng-if="!isGetActive">
     		<div class="container-fluid" >
-	    		this is another
+	    		<div class="row">
+	    			<div class="col-md-6">
+	    				<div class="form-group">
+			    			<select class="form-control">
+			    				<option>service name</option>
+			    				<option>servce 1</option>
+			    				<option>servce 2</option>
+			    				<option>servce 3</option>
+			    				<option>servce 4</option>
+			    			</select>
+			    		</div>
+	    			</div>
+	    			<div class="col-md-6">
+	    				<div class="form-group">
+			    			<input type="text" name="project_type" class="form-control" placeholder="Project type">
+			    		</div>
+	    			</div>
+	    		</div>
+	    		<div class="row">
+        			<div class="col-md-6">
+        				<div class="form-group">
+			        		<input type="text" name="" class="form-control" placeholder="Area">
+			        	</div>
+        			</div>
+        			<div class="col-md-6">
+        				<div class="form-group">
+			        		<input type="text" class="form-control" name="" placeholder=" Tentative Budget">
+			        	</div>
+        			</div>
+        		</div>
+        		<div class="form-group">
+	        		<input type="text" class="form-control" name="" placeholder="Specification(if any)">
+	        	</div>
+	        	<div class="row">
+	        		<div class="col-md-4">
+	        			<div class="form-group">
+			        		<input type="email" class="form-control" name="" placeholder="Email Id">
+			        	</div>
+	        		</div>
+	        		<div class="col-md-4">
+	        			<div class="form-group">
+			        		<input type="text" class="form-control" name="" placeholder="Phone Number">
+			        	</div>
+	        		</div>
+	        		<div class="col-md-4">
+	        			<div class="form-group">
+			        		<input type="text" class="form-control" name="" placeholder="Location">
+			        	</div>
+	        		</div>
+	        	</div>
+        		
+	        	<div class="form-group">
+	        		<textarea class="form-control" placeholder="Requirements Details.." rows="5" cols="20"></textarea>
+	        	</div>
+	        	<button class="btn btn-primary bg-color border-0">Get Qoute</button>
 	    	</div>
     	</form>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
 
     </div>

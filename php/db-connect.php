@@ -6,8 +6,10 @@
  	private static $database;
  	protected static function connect(){
  		self::$server = "localhost";
- 		self::$user = "user_archue";
- 		self::$password = "Proton@123";
+ 		// self::$user = "user_archue";
+ 		self::$user = "root";
+ 		// self::$password = "Proton@123";
+ 		self::$password = "";
  		self::$database = "archue";
  		$conn = new mysqli(self::$server,self::$user,self::$password,self::$database);
  		if($conn->connect_error){
