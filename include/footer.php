@@ -45,7 +45,7 @@
 						<p class="text-white pt-3">&copy;2018 Archue already reserved</p>
 					</div>
 					<div class="col-md-6">
-						<p class="text-white pt-3">Designed &amp; Developed By <a href="www.wampinfotech.com" class="bg-font">wampinfotech.com</a></p>
+						<p class="text-white pt-3">Designed &amp; Developed By <a href="https://www.wampinfotech.com" class="bg-font">wampinfotech.com</a></p>
 					</div>
 				</div>
 			</div>

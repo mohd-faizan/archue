@@ -35,7 +35,9 @@
 				      I am agree with <a href="#">terms and conditions</a>
 				    </label>
 				</div>
-				
+				<div class="space"></div>
+				<div><a href="./forgot-password">Forgot Password ?</a></div>
+				<div class="space"></div>
 				<div class="signup-btn text-center">
 					<button class="btn btn-lg btn-success" ng-disabled="!loginForm.$valid">Login</button>
 				</div>

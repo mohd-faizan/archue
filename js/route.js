@@ -143,6 +143,9 @@ app.config(($routeProvider,$locationProvider)=>{
 	.when("/partner-with-us",{
 		templateUrl:"pages/partner-with-us.php"
 	})
+	.when("/forgot-password",{
+		templateUrl:"pages/forgot-password.php"
+	})
 	$locationProvider.html5Mode(true);
 });
 // app.run(['$location', '$rootScope', function($location, $rootScope) {
