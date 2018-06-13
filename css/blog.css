@@ -6,8 +6,9 @@
 	color: #fff;
 	padding: 10px;
 }
-.blog-content p{
-	color: #363a46;
+.blog-content{
+	max-height: 200px;
+	overflow: hidden;
 }
 .connect-us-container .social-icon-div{
 	flex-wrap: wrap;

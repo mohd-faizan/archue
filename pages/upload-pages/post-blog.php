@@ -14,7 +14,7 @@
 							<div class="col-lg-6 col-md-6 col-sm-12">
 								<div class="form-group">
 									<div class="form-group">
-									<input type="text" name="blog_heading" id="blog_heading_id" placeholder="Heading...." class="form-control" ng-model="blog_heading" required>
+									<input type="text" name="blog_heading" id="blog_heading_id" placeholder="Name...." class="form-control" ng-model="blog_heading" required>
 									<small class="error" ng-show="blogForm.blog_heading.$error.required&&blogForm.blog_heading.$dirty">Required Field</small>
 								</div>
 								</div>

@@ -1,62 +1,31 @@
 <div class="space"></div>
-<section class="section-padding" id="blog-sec-1">
+<section class="section-padding" id="blog-sec-1" ng-controller="fetchBlogController">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-9 col-md-7 col-sm-12">
 				<div class="blog-container border-bottom border-dark p-3">
 					<div class="container-fluid">
-						<div class="row">
+						<div class="row" ng-repeat="blog in blogs|limitTo:10">
 							<div class="col-md-12 col-lg-6 col-sm-12">
 								<div class="blog-img">
-									<img src="image/login-bg.jpg" class="img-fluid">
+									<img ng-src="upload-file/{{blog.blog_file}}" class="img-fluid">
 								</div>
 							</div>
-							<div class="col-md-12 col-lg-6 col-sm-12">
-								<div class="blog-heading border-bottom border-info p-2">
-									<h3>Heading</h3>
+							<div class="col-md-12 col-lg-6 col-sm-12 " >
+								<div class="blog-heading border-bottom border-info ">
+									<h3>{{blog.heading}}</h3>
 									<div class="date-time">
-										<span class="fa fa-calendar"></span>&nbsp;Date
-										<span class="fa fa-clock-o"></span>&nbsp;time
+										<span class="fa fa-calendar"></span>&nbsp;{{blog.blog_date}}
+										<span class="fa fa-clock-o"></span>&nbsp;{{blog.blog_time}}
 									</div>
 								</div>
 								<div class="blog-content">
-									<p class="p-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-									consequat.</p>
-								</div>
-								<div class="continue-btn pull-right">
-									<a href="#">Continue Reading <span class="fa fa-long-arrow-right"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>	
-				</div>
-				<div class="space"></div>
-				<div class="blog-container border-bottom border-dark p-3">
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-md-12 col-lg-6 col-sm-12">
-								<div class="blog-img">
-									<img src="image/login-bg.jpg" class="img-fluid">
-								</div>
-							</div>
-							<div class="col-md-12 col-lg-6 col-sm-12">
-								<div class="blog-heading border-bottom border-info p-2">
-									<h3>Heading</h3>
-									<div class="date-time">
-										<span class="fa fa-calendar"></span>&nbsp;Date
-										<span class="fa fa-clock-o"></span>&nbsp;time
+									<div ng-bind-html="trust(blog.html_content)">
+										
 									</div>
 								</div>
-								<div class="blog-content">
-									<p class="p-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-									consequat.</p>
-								</div>
 								<div class="continue-btn pull-right">
-									<a href="#">Continue Reading <span class="fa fa-long-arrow-right"></span></a>
+									<a ng-href="./blogs/{{blog.blog_id}}/{{blog.heading}}" ng-click="setBlog(blog)">Continue Reading <span class="fa fa-long-arrow-right"></span></a>
 								</div>
 							</div>
 						</div>
@@ -86,9 +55,10 @@
 							<h4>Recent Post</h4>	
 						</div>
 						<div class="recent-post-content">
-							<a href="#">Blog2</a>
-							<a href="#">Blog3</a>
-							<a href="#">Blog4</a>
+							<a href="#" ng-repeat="blog in blogs|limitTo:13:10  as filtered" ng-show="filtered.length!=0">{{blog.heading}}</a>
+							<div ng-show="filtered.length==0">
+								No recent post
+							</div>
 						</div>
 					</div>
 				</div>

@@ -46,8 +46,7 @@
 		$filename_arr = array(); 
 		// Looping all files
 		for ( $i = 0;$i < $countfiles;$i++ ){
-		    $filename = $file['name'][$i];  
-		     
+		     $filename = str_replace(" ","_",$file['name'][$i]);
 		    // Upload file    
 		    move_uploaded_file($file['tmp_name'][$i],$location.$filename);      
 		    $file_arr[] = $filename;
@@ -157,6 +156,32 @@
 		else{
 			echo json_encode("not upload blog file");
 		}
+	}
+	public static function uploadThesis($post,$file){
+		$casestudy = self::uploadImages($file['casestudy']);
+		$conceptsheet = self::uploadImages($file['conceptsheet']);
+		$siteplan = self::uploadImages($file['siteplan']);
+		$plan = self::uploadImages($file['plan']);
+		$elevation = self::uploadImages($file['elevation']);
+		$thesis_name = self::$conn->real_escape_string($post['thesis_name']);
+		$thesis_title = self::$conn->real_escape_string($post['thesis_title']);
+		$thesis_location = self::$conn->real_escape_string($post['thesis_location']);
+		$thesis_area = self::$conn->real_escape_string($post['thesis_area']);
+		$thesis_year = self::$conn->real_escape_string($post['thesis_year']);
+		$thesis_ins = self::$conn->real_escape_string($post['thesis_ins']);
+		$thesis_guide = self::$conn->real_escape_string($post['thesis_guide']);
+		$thesis_proj_type = self::$conn->real_escape_string($post['thesis_proj_type']);
+		$id = self::$conn->real_escape_string($post['id']);
+		$sql = "INSERT INTO thesis(thesis_name,thesis_title,thesis_location,thesis_area,thesis_year,thesis_ins,thesis_guide,thesis_proj_type,thesis_date,casestudy,conceptsheet,siteplan,plan,elevation,user_id) VALUES('$thesis_name','$thesis_title','$thesis_location','$thesis_area','$thesis_year','$thesis_ins','$thesis_guide','$thesis_proj_type',NOW(),'$casestudy','$conceptsheet','$siteplan','$plan','$elevation',$id)";
+		if(self::$conn->query($sql)){
+			$resp['message'] = "succefully submitted your data";
+			$resp['status'] = "yes";
+		}
+		else{
+			$resp['message'] = "something going wrong";
+			$resp['status'] = "no";
+		}
+		echo json_encode($resp);
 	}
  }
  uploadApp::setConnect();

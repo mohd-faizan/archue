@@ -154,6 +154,22 @@ class FetchApp extends Conn{
 			echo json_encode("error in similar dessertation");
 		}
 	}
+	public static function fetchBlog(){
+		$sql = "SELECT * FROM blog ORDER BY blog_id DESC,blog_date DESC";
+		$arr = array();
+		if($res = self::$conn->query($sql)){
+			while($row = $res->fetch_assoc()){
+				array_push($arr, $row);
+			}
+			$resp['resp'] = $arr;
+			$resp['status'] = "yes";
+		}
+		else{
+			$resp['resp'] = "Query Error";
+			$resp['status'] = "no";	
+		}
+		echo json_encode($resp);
+	}
 }
 FetchApp::setConnect();
 ?>

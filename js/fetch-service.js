@@ -101,4 +101,23 @@ app.service("fetchservice",function($http){
         })
         .then((resp)=>cb(resp.data),(err)=>console.log(err));
     }
+
+    /*fecth blog*/
+    this.fetchBlog = (cb)=>{
+        $http({
+            method:"get",
+            url:"php/fetch-post.php",
+            headers:{
+                "Content-Type":undefined
+            }
+        })
+        .then((resp)=>cb(resp.data),(err)=>console.log(err));
+    }
+    /*full blog store*/
+    this.setFullBlog = (blog)=>{
+        localStorage.setItem("blog",JSON.stringify(blog));
+    }
+    this.getBlog = ()=>{
+        return JSON.parse(localStorage.getItem("blog"));
+    }
 })

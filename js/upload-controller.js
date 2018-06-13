@@ -238,3 +238,71 @@ app.controller("blogController",(validationService,$rootScope,$scope,uploadServi
 		})
 	}
 })
+
+/*Thesis upload controller */
+app.controller("thesisUploadController",(uploadService,$rootScope,$scope,validationService)=>{
+	$scope.thesis_proj_type = "Select Type";
+	$scope.projects = ["Adaptive Reuse","Building Services design","Cultural Architecture","Transports","Urban Design/Planning",
+	                       "Commercial Architecture","Educational and Research Center","Greens Building",
+	                       "Healthcare Architecture","Interiors Design","Industrial Design","indexustrial and Infrastructure",
+	                       "Landscape Design","Mixed-use Architecture","Recreational Architecture","Office Building","Housing Residential","Sports",
+	                       "Residential and Housing","Public Facilities and Infrastructure","Recreational Architecture","Religious","Interior/exterior Design",
+	                       "Landscape Architecture","sports Architecture","Urban Design","Hotels/Motel/Resort/Leisure","Institutional"];
+	var ext = ['jpeg','pdf'];
+	$scope.callService = (file)=>{
+		return validationService.fileValidation(file,ext);
+	}
+	$scope.images1 = [];
+	$scope.images2 = [];
+	$scope.images3 = [];
+	$scope.images4 = [];
+	$scope.images5 = [];
+	$scope.uploadfiles1 = [];
+	$scope.uploadfiles2 = [];
+	$scope.uploadfiles3 = [];
+	$scope.uploadfiles4 = [];
+	$scope.uploadfiles5 = [];
+	$scope.removeImage = (images,upload,index)=>{
+		images.splice(index,1);
+		upload.splice(index,1);
+	}
+	/*submit data*/
+	$scope.uploadThesis = (form)=>{
+		var thesisData = {};
+		thesisData.thesis_name = $scope.thesis_name;
+		thesisData.thesis_title = $scope.thesis_title;
+		thesisData.thesis_location = $scope.thesis_location;
+		thesisData.thesis_area = $scope.thesis_area;
+		thesisData.thesis_year = $scope.thesis_year;
+		thesisData.thesis_ins = $scope.thesis_ins;
+		thesisData.thesis_guide = $scope.thesis_guide;
+		thesisData.thesis_proj_type = $scope.thesis_proj_type;
+		thesisData.id = $rootScope.userData.id;
+		var fd = new FormData();
+		angular.forEach($scope.uploadfiles1,(file)=>{
+			fd.append('casestudy[]',file);
+		})
+		angular.forEach($scope.uploadfiles2,(file)=>{
+			fd.append('conceptsheet[]',file);
+		})
+		angular.forEach($scope.uploadfiles3,(file)=>{
+			fd.append('siteplan[]',file);
+		})
+		angular.forEach($scope.uploadfiles4,(file)=>{
+			fd.append('plan[]',file);
+		})
+		angular.forEach($scope.uploadfiles5,(file)=>{
+			fd.append('elevation[]',file);
+		})
+		for(let i in thesisData){
+			fd.append(i,thesisData[i]);
+		}
+		uploadService.uploadThesis(fd,(data)=>{
+			if(data.status=="yes"){
+				alert(data.message);
+			}else{
+				alert(data.message);
+			}
+		})
+	}
+})

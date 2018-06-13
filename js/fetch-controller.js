@@ -256,3 +256,30 @@ app.controller("fullThesisReportCtrl",($sce,$scope,fetchservice)=>{
 		return "uplaod-file/"+$sce.trustAsResourceUrl($scope.thesis_report.thesis_report_file);
 	}
 })
+
+/*blog fetched*/
+app.controller("fetchBlogController",($sce,fetchservice,$scope)=>{
+	fetchservice.fetchBlog((data)=>{
+		if(data.status=="yes"){
+			$scope.blogs = data.resp;
+		}
+		else{
+			console.log(data.resp);
+		}
+	});
+	$scope.trust = (html)=>{
+		return $sce.trustAsHtml(html);
+	}
+	$scope.setBlog = (blog)=>{
+		fetchservice.setFullBlog(blog);
+	}
+})
+
+app.controller("fullBlogController",($sce,$scope,fetchservice)=>{
+	$scope.blog = fetchservice.getBlog();
+	console.log($scope.blog);
+	$scope.trust = (html)=>{
+		return $sce.trustAsHtml(html);
+	}
+})
+

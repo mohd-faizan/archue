@@ -146,6 +146,9 @@ app.config(($routeProvider,$locationProvider)=>{
 	.when("/forgot-password",{
 		templateUrl:"pages/forgot-password.php"
 	})
+	.when("/blogs/:id/:name",{
+		templateUrl:'pages/full-blog.php'
+	})
 	$locationProvider.html5Mode(true);
 });
 // app.run(['$location', '$rootScope', function($location, $rootScope) {
