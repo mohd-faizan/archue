@@ -144,9 +144,9 @@
 					   
 					</div>
 				</li> -->
-				<li><a href="#">EVENTS</a></li>
-				<li><a href="#">JOBS</a></li>
-				<li><a class="dropdown-item" href="#">COMPETITION</a></li>
+				<li><a href="./events">EVENTS</a></li>
+				<li><a href="./jobs">JOBS</a></li>
+				<li><a  href="./competition">COMPETITION</a></li>
 				<li><a href="./partner-with-us">PARTNERS WITH US</a></li>
 				<li><a href="./login" ng-show="!isShow">LOGIN</a></li>
 				<!-- <li class="my-search-parent"><a href="#" ng-click="showHideSearch()" ng-show="!isShowSearch"><span class="fa fa-search"></span></a>
@@ -215,7 +215,7 @@
 					Back
 				</a>
 			</li>
-			<li class="sidenav-li"><a class="sidenav-link" href="#">EVENTS</a></li>
+			<li class="sidenav-li"><a class="sidenav-link" href="./events">EVENTS</a></li>
 			<li class="sidenav-li"><a class="sidenav-link" href="#">CAREER</a></li>
 			<li class="sidenav-li"><a class="sidenav-link" href="#">OTHERS</a></li>
 		</ul>

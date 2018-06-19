@@ -1,4 +1,4 @@
-<section class="section-padding" id="thesis-sec-1">
+<section class="section-padding" id="thesis-sec-1" ng-controller="fetchThesisController">
 	<div class="home-margin">
 		<div class="container-fluid">
 			<div class="row">

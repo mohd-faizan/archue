@@ -97,4 +97,15 @@ app.service('uploadService',function($http){
 		})
 		.then((resp)=>cb(resp.data),(err)=>console.log(err));
 	}
+	this.uploadEvent = (fd,cb)=>{
+		$http({
+			method:"POST",
+			data:fd,
+			url:"php/upload-event.php",
+			headers:{
+				"Content-Type":undefined
+			}
+		})
+		.then((resp)=>cb(resp.data),(err)=>console.log(err));
+	}
 })

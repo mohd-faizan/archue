@@ -149,6 +149,24 @@ app.config(($routeProvider,$locationProvider)=>{
 	.when("/blogs/:id/:name",{
 		templateUrl:'pages/full-blog.php'
 	})
+	.when("/events",{
+		templateUrl:"pages/events.php"
+	})
+	.when("/jobs",{
+		templateUrl:"pages/jobs.php"
+	})
+	.when("/competition",{
+		templateUrl:"pages/competition.php"
+	})
+	.when("/add-event",{
+		templateUrl:"pages/add-event.php"
+	})
+	.when("/add-jobs",{
+		templateUrl:"pages/add-jobs.php"
+	})
+	.when("/add-competition",{
+		templateUrl:"pages/add-competition.php"
+	})
 	$locationProvider.html5Mode(true);
 });
 // app.run(['$location', '$rootScope', function($location, $rootScope) {

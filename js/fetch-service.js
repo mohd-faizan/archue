@@ -120,4 +120,15 @@ app.service("fetchservice",function($http){
     this.getBlog = ()=>{
         return JSON.parse(localStorage.getItem("blog"));
     }
+
+
+    /*fetch thesis */
+    this.fetchThesis = (cb)=>{
+        $http({
+            method:"get",
+            url:"php/fetch-thesis.php"
+        })
+        .then((resp)=>cb(resp.data),(err)=>console.log(err));
+    };
 })
+

@@ -170,6 +170,19 @@ class FetchApp extends Conn{
 		}
 		echo json_encode($resp);
 	}
+	public static function fetchThesis(){
+		$sql = "SELECT * FROM thesis ORDER BY thesis_id DESC,thesis_date DESC";
+		$arr = array();
+		if($res=self::$conn->query($sql)){
+			while($row = $res->fetch_assoc()){
+				array_push($arr,$row);
+			}
+			echo json_encode($arr);
+		}
+		else{
+			echo json_encode("Not running thesis query");
+		}
+	}
 }
 FetchApp::setConnect();
 ?>

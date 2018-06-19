@@ -1,4 +1,3 @@
-
 <section id="full-blog-sec" ng-controller="fullBlogController">
 	<div class="main-conatiner mt-4 mb-4">
   		<div class="container">

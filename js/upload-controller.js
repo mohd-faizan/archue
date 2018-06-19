@@ -300,9 +300,36 @@ app.controller("thesisUploadController",(uploadService,$rootScope,$scope,validat
 		uploadService.uploadThesis(fd,(data)=>{
 			if(data.status=="yes"){
 				alert(data.message);
+				form.reset();
+				window.thesis_locationation.href = "./dashboard";
 			}else{
 				alert(data.message);
 			}
 		})
 	}
+})
+
+/*events controller */
+app.controller("eventsController",(validationService,uploadService,$scope)=>{
+	$scope.fontsize = [8,9,10,11,12,14,16,18,20,22,24,26,28,36,48,72]
+	$scope.event_category = "Select Category";
+	let eventData = {};
+	$scope.validatePortfolioFile = (file)=>{
+		ext = ['jpeg','jpg','png'];
+		return validationService.validPortfolio(file,ext);
+	};
+	$scope.submitBlog = ()=>{
+		eventData.event_content = $scope.myBlog;
+		eventData.event_name = $scope.event_name;
+		eventData.event_category = $scope.event_category;
+		eventData.eventor_name = $scope.eventor_name;
+		eventData.event_file = $scope.portfolioFile;
+		let fd = new FormData();
+		for(let i in eventData){
+			fd.append(i,eventData[i]);
+		}
+		uploadService.uploadEvent(fd,(data)=>{
+			console.log(data);
+		});
+	};
 })

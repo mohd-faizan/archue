@@ -216,7 +216,12 @@ app.directive("blogDir",()=>{
             scope.onBlogSubmit = ()=>{
                 var data = editor.contents().find('body').html(); 
                 scope.myBlog  = data;
-                scope.submitBlog();
+                if(scope.myBlog!=""){
+                    scope.submitBlog();
+                }
+                else{
+                    alert("please fill the content section")
+                }
             }
         }
     }

@@ -283,3 +283,27 @@ app.controller("fullBlogController",($sce,$scope,fetchservice)=>{
 	}
 })
 
+
+/*fetch thesis*/
+app.controller("fetchThesisController",($scope,fetchservice)=>{
+	let singleThesis = {
+		file:"",
+		file_name:""
+	}
+	let fullThesis = {
+		main
+	}
+	$scope.singleThesisArr = [];
+	fetchservice.fetchThesis((data)=>{
+		for(let thesis of data){
+			singleThesis.file = fetchservice.fetchOneImage(thesis.casestudy);
+			singleThesis.file_name = thesis.thesis_name;
+			$scope.singleThesisArr.push(singleThesis);
+			singleThesis = {
+				file:"",
+				file_name:""
+			}
+		}
+		console.log($scope.singleThesisArr);
+	});
+})
