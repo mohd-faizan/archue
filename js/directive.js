@@ -130,3 +130,8 @@ app.filter("myTime",()=>{
 		return time.split(" ").pop();
 	}
 })
+ app.filter("myDate",()=>{
+ 	return function(date){
+ 		return date.split(" ")[0];
+ 	}
+ })

@@ -1,3 +1,4 @@
 <?php
-echo json_encode($_FILES['event_file']);
+ require_once("upload-app.php");
+ uploadApp::uploadEvents($_POST,$_FILES['event_file']);
 ?>

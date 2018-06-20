@@ -130,11 +130,7 @@
 			echo json_encode("not uploaded thesis report");
 		}
 	}
-	public static function upload_file($file){
-		$location = "../upload-file/";
-		$filename = $file['name'];
-		return move_uploaded_file($file['tmp_name'],$location.$filename);
-	}
+	
 	public static function uploadBLog($file,$post){
 		$blog_heading = self::$conn->real_escape_string($post['blog_heading']);
 		$blog_category = self::$conn->real_escape_string($post['blog_category']);
@@ -182,6 +178,68 @@
 			$resp['status'] = "no";
 		}
 		echo json_encode($resp);
+	}
+	public static function uploadEvents($post,$file){
+		$event_name = self::$conn->real_escape_string($post['event_name']);
+		$event_category = self::$conn->real_escape_string($post['event_category']);
+		$eventor_name = self::$conn->real_escape_string($post['eventor_name']);
+		$event_content = self::$conn->real_escape_string($post['event_content']);
+		if(self::upload_file($file)){
+			$event_file = $file['name'];
+			$sql = "INSERT INTO events(event_name,event_category,eventor_name,event_file,event_content,event_date) VALUES('$event_name','$event_category','$eventor_name','$event_file','$event_content',NOW())";
+			if(self::$conn->query($sql)){
+				$resp['status'] = "ok";
+				$resp['message'] = "succefully Submit";
+			}
+			else{
+				$resp['status'] = "no";
+				$resp['message'] = "query error";
+			}
+			echo json_encode($resp);
+		}
+	}
+	public static function upload_file($file){
+		$location = "../upload-file/";
+		$filename = $file['name'];
+		return move_uploaded_file($file['tmp_name'],$location.$filename);
+	}
+	public static function uploadJob($post,$file){
+		$job_heading = self::$conn->real_escape_string($post['job_heading']);
+		$job_category = self::$conn->real_escape_string($post['job_category']);
+		$job_provider_name = self::$conn->real_escape_string($post['job_provider_name']);
+		$job_content = self::$conn->real_escape_string($post['job_content']);
+		if(self::upload_file($file)){
+			$job_file = $file['name'];
+			$sql = "INSERT INTO jobs(job_heading,job_category,job_provider_name,job_content,job_file,job_date) VALUES('$job_heading','$job_category','$job_provider_name','$job_content','$job_file',NOW())";
+			if(self::$conn->query($sql)){
+				$resp['status'] = "ok";
+				$resp['message'] = "Data has been submitted";
+			}
+			else{
+				$resp['status'] = "no";
+				$resp['message'] = "Error";
+			}
+			echo json_encode($resp);
+		}
+	}
+	public static function uploadCompetition($post,$file){
+		$competition_heading = self::$conn->real_escape_string($post['competition_heading']);
+		$competition_category = self::$conn->real_escape_string($post['competition_category']);
+		$competitor_name = self::$conn->real_escape_string($post['competitor_name']);
+		$competitor_content = self::$conn->real_escape_string($post['competitor_content']);
+		if(self::upload_file($file)){
+			$competitor_file = self::$conn->real_escape_string($file['name']);
+			$sql = "INSERT INTO competitor(competition_heading,competition_category,competitor_name,competitor_content,competitor_file,competitor_date) VALUES('$competition_heading','$competition_category','$competitor_name','$competitor_content','$competitor_file',NOW())";
+			if(self::$conn->query($sql)){
+				$resp['status'] = "ok";
+				$resp['message'] = "succesfully submit";
+			}
+			else{
+				$resp['status'] = "no";
+				$resp['message'] = "run failed";
+			}
+			echo json_encode($resp);
+		}
 	}
  }
  uploadApp::setConnect();

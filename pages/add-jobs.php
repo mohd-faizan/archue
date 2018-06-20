@@ -1,8 +1,8 @@
-<section class="section-padding" id="project-upload-sec-1" ng-controller="blogController">
+<section class="section-padding" id="project-upload-sec-1" ng-controller="jobController">
 	<div class="container">
 		<div class="upload-frame">
 			<div id="blog-form-div">
-				<form id="blog-form" name="blogForm">
+				<form id="blog-form" name="jobForm">
 					<div class="container-fluid">
 						<div class="label-div">
 							<h3>Add Jobs <span class="fa fa-upload"></span></h3>
@@ -14,30 +14,30 @@
 							<div class="col-lg-6 col-md-6 col-sm-12">
 								<div class="form-group">
 									<div class="form-group">
-									<input type="text" name="blog_heading" id="blog_heading_id" placeholder="Name...." class="form-control" ng-model="blog_heading" required>
-									<small class="error" ng-show="blogForm.blog_heading.$error.required&&blogForm.blog_heading.$dirty">Required Field</small>
+									<input type="text" name="job_heading" id="job_heading_id" placeholder="Name...." class="form-control" ng-model="job_heading" required>
+									<small class="error" ng-show="jobForm.job_heading.$error.required&&jobForm.job_heading.$dirty">Required Field</small>
 								</div>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-12" >
-								<select class="form-control" ng-model="blog_category" name="blog_category" select-validate>
-									<option>{{blog_category}}</option>
+								<select class="form-control" ng-model="job_category" name="job_category" select-validate>
+									<option>{{job_category}}</option>
 									<option>Catogory 1</option>
 									<option>Catogory 2</option>
 									<option>Catogory 3</option>
 								</select>
-								<small class="error" ng-show="blogForm.blog_category.$error.required">Required Field</small>
+								<small class="error" ng-show="jobForm.job_category.$error.required">Required Field</small>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6 col-lg-6">
 								<div class="form-group">
-									<input type="file" name="blog_file" class="form-control" ng-model="blog_file" valid-file portfolio-valid required>
+									<input type="file" name="job_file" class="form-control" ng-model="job_file" valid-file portfolio-valid required>
 								</div>
 							</div>
 							<div class="col-md-6 col-lg-6">
 								<div class="form-group">
-									<input type="text" name="competitor_name" class="form-control" ng-model="competitor_name" placeholder="Your name " required>
+									<input type="text" name="job_provider_name" class="form-control" ng-model="job_provider_name" placeholder="Your name " required>
 								</div>
 							</div>
 						</div>
@@ -75,7 +75,7 @@
 						</div>
 						<div class="space"></div>
 						<div class="portfolio_upload_btn text-center">
-							<button class="btn btn-lg btn-success" ng-click="onBlogSubmit()" ng-disabled="!blogForm.$valid">Post <span class="fa fa-upload"></span></button>
+							<button class="btn btn-lg btn-success" ng-click="onBlogSubmit()" ng-disabled="!jobForm.$valid">Post <span class="fa fa-upload"></span></button>
 						</div>
 					</div>
 				</form>

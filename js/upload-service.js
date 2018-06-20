@@ -108,4 +108,26 @@ app.service('uploadService',function($http){
 		})
 		.then((resp)=>cb(resp.data),(err)=>console.log(err));
 	}
+	this.uploadJob = (fd,cb)=>{
+		$http({
+			method:"POST",
+			data:fd,
+			url:"php/upload-job.php",
+			headers:{
+				"Content-Type":undefined
+			}
+		})
+		.then((resp)=>cb(resp.data),(err)=>console.log(err));
+	}
+	this.uploadCompetition = (fd,cb)=>{
+		$http({
+			method:"POST",
+			data:fd,
+			url:"php/upload-competition.php",
+			headers:{
+				"Content-Type":undefined
+			}
+		})
+		.then((resp)=>cb(resp.data),(err)=>console.log(err));
+	}
 })

@@ -183,6 +183,54 @@ class FetchApp extends Conn{
 			echo json_encode("Not running thesis query");
 		}
 	}
+	public static function fetchEvents(){
+		$sql = "SELECT * FROM events ORDER BY event_id DESC,event_date DESC";
+		$arr = array();
+		if($res = self::$conn->query($sql)){
+			while($row = $res->fetch_assoc()){
+				array_push($arr, $row);
+			}
+			$resp['status'] = "yes";
+			$resp['data'] = $arr;
+		}
+		else{
+			$resp['status'] = "no";
+			$resp['data'] = "query error";
+		}
+		echo json_encode($resp);
+	}
+	public static function fetchJob(){
+		$sql = "SELECT * FROM jobs ORDER BY job_id DESC,job_date DESC";
+			$arr = array();
+		if($res = self::$conn->query($sql)){
+			while($row = $res->fetch_assoc()){
+				array_push($arr, $row);
+			}
+			$resp['status'] = "yes";
+			$resp['data'] = $arr;
+		}
+		else{
+			$resp['status'] = "no";
+			$resp['data'] = "query error";
+		}
+		echo json_encode($resp);
+	}
+	public static function fetchCompetitor(){
+		$sql = "SELECT * FROM competitor ORDER BY competitor_id DESC,competitor_date DESC";
+			$arr = array();
+		if($res = self::$conn->query($sql)){
+			while($row = $res->fetch_assoc()){
+				array_push($arr, $row);
+			}
+			$resp['status'] = "yes";
+			$resp['data'] = $arr;
+		}
+		else{
+			$resp['status'] = "no";
+			$resp['data'] = "query error";
+		}
+		echo json_encode($resp);
+	}
 }
 FetchApp::setConnect();
 ?>

@@ -329,7 +329,71 @@ app.controller("eventsController",(validationService,uploadService,$scope)=>{
 			fd.append(i,eventData[i]);
 		}
 		uploadService.uploadEvent(fd,(data)=>{
-			console.log(data);
+			if(data.status=="ok"){
+				window.location.href="./events";
+			}
+			else{
+				alert("there is error");
+			}
 		});
 	};
+})
+/*job controller*/
+app.controller("jobController",(uploadService,validationService,$scope)=>{
+	$scope.fontsize = [8,9,10,11,12,14,16,18,20,22,24,26,28,36,48,72]
+	$scope.job_category = "Select Category";
+	let jobData = {};
+	$scope.validatePortfolioFile = (file)=>{
+		ext = ['jpeg','jpg','png'];
+		return validationService.validPortfolio(file,ext);
+	};
+	$scope.submitBlog = ()=>{
+		jobData.job_heading = $scope.job_heading;
+		jobData.job_category = $scope.job_category;
+		jobData.job_file = $scope.portfolioFile;
+		jobData.job_provider_name = $scope.job_provider_name;
+		jobData.job_content  = $scope.myBlog;
+		let fd = new FormData();
+		for(let i in jobData){
+			fd.append(i,jobData[i]);
+		}
+		uploadService.uploadJob(fd,(data)=>{
+			console.log(data);
+			if(data.status=="ok"){
+				window.location.href = "./jobs";
+			}
+			else{
+				alert("error");
+			}
+		});
+	}
+})
+/*competition controller*/
+app.controller("competitionController",(uploadService,validationService,$scope)=>{
+	$scope.fontsize = [8,9,10,11,12,14,16,18,20,22,24,26,28,36,48,72]
+	$scope.competition_category = "Select Category";
+	let competitorData = {};
+	$scope.validatePortfolioFile = (file)=>{
+		ext = ['jpeg','jpg','png'];
+		return validationService.validPortfolio(file,ext);
+	};
+	$scope.submitBlog = ()=>{
+		competitorData.competition_heading = $scope.competition_heading;
+		competitorData.competition_category = $scope.competition_category;
+		competitorData.competitor_name = $scope.competitor_name;
+		competitorData.competitor_file = $scope.portfolioFile;
+		competitorData.competitor_content = $scope.myBlog;
+		let fd = new FormData();
+		for(let i in competitorData){
+			fd.append(i,competitorData[i]);
+		}
+		uploadService.uploadCompetition(fd,(data)=>{
+			if(data.status=="ok"){
+				window.location.href = "./competition"
+			}
+			else{
+				alert("error");
+			}
+		})
+	}
 })

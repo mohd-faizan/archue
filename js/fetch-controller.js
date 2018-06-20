@@ -291,7 +291,7 @@ app.controller("fetchThesisController",($scope,fetchservice)=>{
 		file_name:""
 	}
 	let fullThesis = {
-		main
+		
 	}
 	$scope.singleThesisArr = [];
 	fetchservice.fetchThesis((data)=>{
@@ -306,4 +306,75 @@ app.controller("fetchThesisController",($scope,fetchservice)=>{
 		}
 		console.log($scope.singleThesisArr);
 	});
+})
+/*fetch events*/
+app.controller("fetchEventsController",($sce,fetchservice,$scope)=>{
+	fetchservice.fetchEvents((data)=>{
+		if(data.status=="yes"){
+			$scope.events = data.data;
+		}
+		else{
+			alert("please contact the website owner");
+		}
+	});
+	$scope.saintize = (html)=>{
+		return $sce.trustAsHtml(html);
+	}
+	$scope.setEvent = (event)=>{
+		fetchservice.setEvent(event);
+	}
+})
+/*full event*/
+app.controller("fullEventController",($sce,fetchservice,$scope)=>{
+	$scope.event = fetchservice.getEvent();
+	$scope.sanitize = (html)=>{
+		return $sce.trustAsHtml(html);
+	}
+})
+/*fetch jobs*/
+app.controller("fetchJobController",($sce,fetchservice,$scope)=>{
+	fetchservice.fetchJob((data)=>{
+		if(data.status=="yes"){
+			$scope.jobs = data.data;
+		}
+		else{
+			console.log("error in jobs");
+		}
+	})
+	$scope.sanitize = (html)=>{
+		return $sce.trustAsHtml(html);
+	}
+	$scope.setJob = (job)=>{
+		fetchservice.setJob(job);
+	}
+})
+app.controller("fullJobController",($sce,fetchservice,$scope)=>{
+	$scope.job = fetchservice.getJob();
+	$scope.sanitize = (html)=>{
+		return $sce.trustAsHtml(html);
+	}
+})
+/*fetch competitor*/
+app.controller("fetchCompetitionController",($sce,fetchservice,$scope)=>{
+	fetchservice.fetchCompetitor((data)=>{
+		if(data.status=="yes"){
+			$scope.competitions = data.data;
+		}
+		else{
+			console.log("error in competitor");
+		}
+	})
+	$scope.sanitize = (html)=>{
+		return $sce.trustAsHtml(html);
+	}
+	$scope.setCompetition = (comp)=>{
+		fetchservice.setCompetitor(comp);
+	}
+})
+
+app.controller("fullCompController",(fetchservice,$sce,$scope)=>{
+	$scope.competition = fetchservice.getCompetition();
+	$scope.sanitize = (html)=>{
+		return $sce.trustAsHtml(html);
+	}
 })

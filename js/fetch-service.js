@@ -130,5 +130,47 @@ app.service("fetchservice",function($http){
         })
         .then((resp)=>cb(resp.data),(err)=>console.log(err));
     };
+    /*fetch events*/
+    this.fetchEvents = (cb)=>{
+        $http({
+            method:"get",
+            url:"php/fetch-events.php"
+        })
+        .then((resp)=>cb(resp.data),(err)=>console.log(err));
+    };
+    /*set evnets*/
+    this.setEvent = (event)=>{
+        localStorage.setItem("event",JSON.stringify(event));
+    }
+    this.getEvent = ()=>{
+        return JSON.parse(localStorage.getItem("event"));
+    }
+    /*fetch job*/
+    this.fetchJob = (cb)=>{
+        $http({
+            method:"get",
+            url:"php/fetch-job.php"
+        })
+        .then((resp)=>cb(resp.data),(err)=>console.log(err));
+    }
+    this.setJob = (job)=>{
+        localStorage.setItem("job",JSON.stringify(job));
+    }
+    this.getJob = ()=>{
+        return JSON.parse(localStorage.getItem("job"));
+    }
+    this.fetchCompetitor = (cb)=>{
+        $http({
+            method:"get",
+            url:"php/fetch-competitor.php"
+        })
+        .then((resp)=>cb(resp.data),(err)=>console.log(err));
+    }
+    this.setCompetitor = (comp)=>{
+        localStorage.setItem("comp",JSON.stringify(comp));
+    }
+    this.getCompetition = ()=>{
+        return JSON.parse(localStorage.getItem("comp"));
+    }
 })
 
