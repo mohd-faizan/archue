@@ -1,5 +1,5 @@
 
-<section id="partner-with-us" class="partner-with-us">
+<section id="partner-with-us" class="partner-with-us" ng-controller="partnerController">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-8">
@@ -11,29 +11,35 @@
 				<p class="text-white">Join us with hands and be part of <b class="bg-font">Archue</b> family</p>
 			</div>
 			<div class="col-md-4">
-				<form>
+				<form name="partnerWithUsForm">
 					<div class="form-group">
-						<input type="text" name="name" id="name" class="form-control" placeholder="Name">
+						<input type="text" name="name" id="name" class="form-control" ng-model="name" required placeholder="Name">
+						<small class="error" ng-show="partnerWithUsForm.name.$error.required&&partnerWithUsForm.name.$dirty">Required Fields</small>
 					</div>
 					<div class="form-group">
-						<input type="text"   class="form-control" placeholder="Name of company/Organization">
+						<input type="text" name="company_name"  class="form-control" ng-model="company_name" required placeholder="Name of company/Organization">
+						<small class="error" ng-show="partnerWithUsForm.company_name.$error.required&&partnerWithUsForm.company_name.$dirty">Required Fields</small>
 					</div>
 					<div class="form-group">
-						<input type="text"  class="form-control" placeholder="Website">
+						<input type="text" name="website" ng-model="website"  class="form-control" required placeholder="Website">
+						<small class="error" ng-show="partnerWithUsForm.website.$error.required&&partnerWithUsForm.website.$dirty">Required Fields</small>
 					</div>
 					<div class="form-group">
-						<input type="text"  class="form-control" placeholder="Type">
+						<input type="text" name="type" ng-model="type" class="form-control" required placeholder="Type">
+						<small class="error" ng-show="partnerWithUsForm.type.$error.required&&partnerWithUsForm.type.$dirty">Required Fields</small>
 					</div>
 					<div class="form-group">
-						<input type="email"  class="form-control" placeholder="Email">
+						<input type="email" name="email" ng-model="email" class="form-control" required placeholder="Email">
+						<small class="error" ng-show="partnerWithUsForm.email.$error.required&&partnerWithUsForm.email.$dirty">Required Fields</small>
 					</div>
 					<div class="form-group">
-						<input type="password"  class="form-control" placeholder="password">
+						<input type="password" name="password" ng-model="password"  class="form-control" required placeholder="password">
+						<small class="error" ng-show="partnerWithUsForm.password.$error.required&&partnerWithUsForm.password.$dirty">Required Fields</small>
 					</div>
 					<div class="form-group">
-						<input type="password"  class="form-control" placeholder="confirm Password">
+						<input type="password" name="cpassword"  class="form-control" ng-model="cpassword" required placeholder="confirm Password">
 					</div>
-					<button class="btn bg-color text-white">Next</button>
+					<button class="btn bg-color text-white" ng-disabled="!partnerWithUsForm.$valid">Next</button>
 				</form>
 			</div>
 		</div>

@@ -397,3 +397,7 @@ app.controller("competitionController",(uploadService,validationService,$scope)=
 		})
 	}
 })
+/*partner with us*/
+app.controller("partnerController",($scope)=>{
+	
+})
