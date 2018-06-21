@@ -141,13 +141,13 @@ app.config(($routeProvider,$locationProvider)=>{
 		templateUrl:"pages/upload-pages/thesis-report-upload.php"
 	})
 	.when("/partner-with-us",{
-		resolve:{
+		/*resolve:{
 			check:($location,user)=>{
 				if(user.isLoggedIn()){
 					$location.path("/");
 				}
 			}
-		},
+		},*/
 		templateUrl:"pages/partner-with-us.php"
 	})
 	.when("/forgot-password",{
@@ -182,6 +182,26 @@ app.config(($routeProvider,$locationProvider)=>{
 	})
 	.when("/competitions/:id",{
 		templateUrl:"pages/competitions.php"
+	})
+	.when("/plan-info",{
+		resolve:{
+			check:($location,user)=>{
+				if(!user.isLoggedIn()){
+					$location.path("./");
+				}
+			}
+		},
+		templateUrl:"pages/plan-info.php"
+	})
+	.when("/edit-profile",{
+		resolve:{
+			check:($location,user)=>{
+				if(!user.isLoggedIn()){
+					$location.path("./");
+				}
+			},
+		},
+		templateUrl:"pages/edit-profile.php"
 	})
 	$locationProvider.html5Mode(true);
 });

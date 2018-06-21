@@ -147,7 +147,7 @@
 				<li><a href="./events">EVENTS</a></li>
 				<li><a href="./jobs">JOBS</a></li>
 				<li><a  href="./competition">COMPETITION</a></li>
-				<li><a href="./partner-with-us">PARTNERS WITH US</a></li>
+				<li><a  href="./partner-with-us" ng-show="!isShow">PARTNERS WITH US</a></li>
 				<li><a href="./login" ng-show="!isShow">LOGIN</a></li>
 				<!-- <li class="my-search-parent"><a href="#" ng-click="showHideSearch()" ng-show="!isShowSearch"><span class="fa fa-search"></span></a>
 					 <form ng-show="isShowSearch" class="my-search-child">

@@ -2,9 +2,15 @@ app.service("user",function(){
 	this.saveDataSession = (data)=>{
 		username = data.name;
 		id = data.user_id;
+		profession = data.profession;
+		company_name = data.company_name;
+		profile = data.profile;
 		sessionStorage.setItem('slogin',JSON.stringify({
 			username:username,
 			id:id,
+			profession:profession,
+			company_name:company_name,
+			profile:profile,
 			loggedIn:true
 		}));
 		console.log(this.isLoggedIn());
@@ -12,9 +18,15 @@ app.service("user",function(){
 	this.saveDataLocal = (data)=>{
 		username = data.name;
 		id = data.user_id;
+		profession = data.profession;
+		company_name = data.company_name;
+		profile = data.profile;
 		localStorage.setItem('clogin',JSON.stringify({
 			username:username,
 			id:id,
+			profession:profession,
+			company_name:company_name,
+			profile:profile,
 			loggedIn:true
 		}));
 		console.log(this.isLoggedIn());
@@ -78,6 +90,21 @@ app.service("myService",function($http){
 			method:"POST",
 			data:fd,
 			url:"php/login.php",
+			headers:{
+				"Content-Type":undefined
+			}
+		})
+		.then((resp)=>{
+			cb(resp.data)
+		},(error)=>console.log(error));
+	}
+	this.fetchUserData = (myid,cb)=>{
+		var fd = new FormData();
+		fd.append('id',myid);
+		$http({
+			method:"POST",
+			data:fd,
+			url:"php/user-data.php",
 			headers:{
 				"Content-Type":undefined
 			}

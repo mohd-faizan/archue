@@ -31,7 +31,7 @@
 			$email = $post['email'];
 			$password = $post['password'];
 			$remember = $post['remember'];
-			$sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+			$sql = "SELECT user_id,name,profession,company_name,profile FROM users WHERE email='$email' AND password='$password'";
 			if($result = self::$conn->query($sql)){
 				if($result->num_rows>0){
 					// echo gettype($remember);
@@ -61,12 +61,37 @@
 				}
 			}
 			else{
-				$resp['data'] = "Query Error";
+				$resp['data'] = self::$conn->error;
 				$resp['status'] = "no";
 				echo json_encode($resp);
 			}
 		}
-		
+		public static function fetchUserData($post){
+			$id = $post['id'];
+			$sql1 = "SELECT * FROM blog WHERE user_id= $id ORDER BY blog_id DESC";
+			$resp['blogs'] = self::run($sql1);
+			$sql2 = "SELECT * FROM dessertation WHERE user_id = $id ORDER BY dessertation_id DESC";
+			$resp['dessertation'] = self::run($sql2);
+			$sql3 = "SELECT * FROM portfolio WHERE user_id=$id ORDER BY portfolio_id DESC";
+			$resp['portfoli'] = self::run($sql3);
+			$sql4 = "SELECT * FROM projects WHERE user_id=$id ORDER BY project_id DESC";
+			$resp['projects'] = self::run($sql4);
+			$sql5 = "SELECT * FROM thesis WHERE user_id=$id ORDER BY thesis_id DESC";
+			$resp['thesis'] = self::run($sql5);
+			$sql6 = "SELECT * FROM thesis_report WHERE user_id=$id ORDER BY thesis_report_id DESC";
+			$resp['thesis_report'] = self::run($sql6);
+			echo json_encode($resp);
+			
+		}
+		public static function run($sql){
+			$arr = array();
+			if($res=self::$conn->query($sql)){
+				while($row=$res->fetch_assoc()){
+					array_push($arr, $row);
+				}
+				return $arr;
+			}
+		}
 	}
 	App::setConnect();
 ?>

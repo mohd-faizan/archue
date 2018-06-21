@@ -241,6 +241,33 @@
 			echo json_encode($resp);
 		}
 	}
+	public static function uploadPartner($post){
+		$name = $post['name'];
+		$company_name = $post['company_name'];
+		$website = $post['website'];
+		$type = $post['type'];
+		$email = $post['email'];
+		$password = $post['password'];
+		$sql = "INSERT INTO users(name,company_name,website,profession,email,password) VALUES('$name','$company_name','$website','$type','$email','$password')";
+		if(self::$conn->query($sql)){
+			$sql1 = "SELECT user_id,name FROM users WHERE email='$email'";
+			if($res=self::$conn->query($sql1)){
+				if($res->num_rows>0){
+					while($row=$res->fetch_assoc()){
+						$resp['data'] = $row;
+						$resp['status'] = "ok";
+						$resp['message'] = "succesfully run";
+					}
+				}
+			}
+		}
+		else{
+			$resp['status'] = "no";
+			$resp['message'] = self::$conn->error;
+			$resp['data'] = "not found";
+		}
+		echo json_encode($resp);
+	}
  }
  uploadApp::setConnect();
 ?>

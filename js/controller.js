@@ -104,9 +104,19 @@ app.controller("loginController",($scope)=>{
 		});
 	}
 });
-app.controller("dashboardController",($scope,$rootScope)=>{
+app.controller("dashboardController",(myService,$scope,$rootScope)=>{
 	$scope.userData = $rootScope.userData;
-	console.log($scope.userData);
+	//console.log($scope.userData);
+	myService.fetchUserData($scope.userData.id,(data)=>{
+		$scope.blogs = data.blogs;
+		$scope.dessertations = data.dessertation;
+		$scope.portfolios = data.portfolio;
+		$scope.projects = data.projects;
+		$scope.thesises = data.thesis;
+		$scope.thesis_reports = data.thesis_report;
+		console.log($scope.projects);
+	})
+
 })
 
 app.controller("getQouteController",($scope)=>{
@@ -114,4 +124,10 @@ app.controller("getQouteController",($scope)=>{
 	$scope.getChange = ()=>{
 		$scope.isGetActive = !$scope.isGetActive;
 	}
+})
+app.controller("editController",($scope,$rootScope)=>{
+	console.log($rootScope.userData);
+	$scope.name = $rootScope.userData.username;
+	$scope.profession = $rootScope.userData.profession;
+	
 })

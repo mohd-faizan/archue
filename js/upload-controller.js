@@ -398,6 +398,26 @@ app.controller("competitionController",(uploadService,validationService,$scope)=
 	}
 })
 /*partner with us*/
-app.controller("partnerController",($scope)=>{
-	
+app.controller("partnerController",(user,uploadService,$scope)=>{
+	let vendorData = {};
+	$scope.onSubmit = (form)=>{
+		vendorData.name = $scope.name;
+		vendorData.company_name = $scope.company_name;
+		vendorData.website = $scope.website;
+		vendorData.type = $scope.type;
+		vendorData.email = $scope.email;
+		vendorData.password = $scope.password;
+		let fd = new FormData();
+		for(let i in vendorData){
+			fd.append(i,vendorData[i]);
+		}
+		uploadService.uploadVendor(fd,(data)=>{
+			//console.log(data);
+			if(data.status=="ok"){
+				user.saveDataSession(data.data);
+				$scope.$parent.setUser();
+				window.location.href = './plan-info';
+			}
+		});
+	}
 })

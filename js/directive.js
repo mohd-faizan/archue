@@ -135,3 +135,8 @@ app.filter("myTime",()=>{
  		return date.split(" ")[0];
  	}
  })
+ app.filter("getSingleImage",()=>{
+ 	return function(obj){
+ 		return obj.split(",").pop();
+ 	}
+ })

@@ -130,4 +130,15 @@ app.service('uploadService',function($http){
 		})
 		.then((resp)=>cb(resp.data),(err)=>console.log(err));
 	}
+	this.uploadVendor = (fd,cb)=>{
+		$http({
+			method:"POST",
+			data:fd,
+			url:"php/upload-partner.php",
+			headers:{
+				"Content-Type":undefined
+			}
+		})
+		.then((resp)=>cb(resp.data),(err)=>console.log(err));
+	}
 })
