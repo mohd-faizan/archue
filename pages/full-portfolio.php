@@ -15,7 +15,7 @@
 					</div>
 					<div class="sm-blog-container" ng-repeat="similarPort in similarPorts">
 						<div class="link">
-							<a href="./full-portfolio/{{similarPort.portfolio_name}}" ng-click="setportfolio(similarPort)">
+							<a href="./full-portfolio/{{similarPort.url}}" ng-click="setportfolio(similarPort)">
 							{{similarPort.portfolio_name}}
 							</a>
 						</div>

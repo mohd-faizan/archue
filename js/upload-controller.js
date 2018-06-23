@@ -412,8 +412,10 @@ app.controller("partnerController",(user,uploadService,$scope)=>{
 			fd.append(i,vendorData[i]);
 		}
 		uploadService.uploadVendor(fd,(data)=>{
-			//console.log(data);
+			console.log(data);
 			if(data.status=="ok"){
+				user.clearData();
+				console.log(data.data);
 				user.saveDataSession(data.data);
 				$scope.$parent.setUser();
 				window.location.href = './plan-info';

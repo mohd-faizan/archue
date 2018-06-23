@@ -8,3 +8,61 @@
 	font-size: 1.3rem; 
 	justify-content: left;
 }
+
+/*plan css*/
+.plan-container{
+	display: flex;
+	width: 90%;
+	margin: 0 auto;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.plan{
+	flex-basis: 30%;
+	margin-right: 1rem;
+	min-height: 20rem;
+	box-shadow: 0px 0px 5px #bdbdbd;
+	overflow: hidden;
+	border-top-right-radius: 7px;
+	border-top-left-radius: 7px;
+	margin-bottom: 1rem;
+	cursor: pointer;
+}
+.plan:hover{
+	box-shadow: 0px 0px 10px #bdbdbd;
+}
+.plan-top{
+	padding:2rem;
+	background-color: #555; 
+	color: #fff;
+	text-align: center;
+}
+.plan-top p{
+	font-family: sans-serif;
+	font-size: 1.5rem;
+}
+@media(max-width:693px){
+	.plan-container{
+		width: 100%;
+	}
+	.plan{
+		flex-basis: 60%;
+	}
+}
+.plan-info{
+	padding: 1rem 0.9rem 1rem;
+}
+.plan-info ol{
+	list-style: circle;
+	padding:1rem;
+	padding-bottom: 0rem;
+	margin: 0;
+}
+.plan-info ol li{
+	font-family: verdana;
+	color: #555;
+	font-size: 1.2rem;
+}
+.plan-info strong{
+	font-size: .8rem;
+}

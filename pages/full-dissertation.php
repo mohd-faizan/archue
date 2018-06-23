@@ -15,7 +15,7 @@
 					</div>
 					<div class="sm-blog-container" ng-if="similarDessertations.length>0" ng-repeat="similarDessertation in similarDessertations">
 						<div class="link">
-							<a href="./full-dissertation/{{similarDessertation.dessertation_name}}" ng-click="setDessertation(similarDessertation)">
+							<a href="./full-dissertation/{{similarDessertation.url}}" ng-click="setDessertation(similarDessertation)">
 							{{similarDessertation.dessertation_name}}
 							</a>
 						</div>

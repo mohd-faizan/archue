@@ -108,6 +108,9 @@
 .drop-dn-btn:hover .sub-dropdown{
 	display: block;
 }
+.sub-menu-container{
+	/*left: 30rem;*/
+}
 .sub-menu-container .dropdown-item{
 	cursor: pointer;
 	color: #fff;
@@ -311,4 +314,65 @@
 .get-qoute-btn.active{
 	background-color: #fa8a11!important;
 	color:#fff!important;
+}
+/*material dropdown menu*/
+.material-dropdown-menu{
+	position: absolute;
+    background-color: #fff;
+    z-index: 999;
+    top: 19.5%;
+    display: none;
+    left: 5rem;
+    width: 90%;
+    height:50rem; 
+}
+.material-dropdown-menu>ul{
+	list-style: none;
+	background-color: #eee;
+	padding:0;
+	height: 100%;
+	max-width: 15rem;  
+}
+.material-dropdown-menu ul li a{
+	color: #555;
+	padding:.5rem ;
+}
+.material-dropdown-item{
+	position: relative;
+}
+.material-sub-dropdown{
+	width: 42rem;
+	position: absolute;
+    left: 100%;
+    display: none;
+}
+.material-dropdown-item:nth-child(2) .material-sub-dropdown{
+    top: -2.5rem;
+}
+.material-dropdown-item:nth-child(3) .material-sub-dropdown{
+	top:-5rem;
+}
+ .material-dropdown-item:nth-child(4) .material-sub-dropdown{
+	top: -7.5rem;
+}
+.material-dropdown-item:nth-child(5) .material-sub-dropdown{
+	top: -10rem;
+}
+.material-dropdown-item:nth-child(6) .material-sub-dropdown{
+	top: -12.5rem;
+}
+.material-dropdown-item:nth-child(7) .material-sub-dropdown{
+	top: -15rem;
+}
+.material-dropdown-item:nth-child(8) .material-sub-dropdown{
+	top: -17.5rem;
+}
+.material-dropdown-item:hover .material-sub-dropdown{
+	display: block;
+}
+.onscroll-material-drop-menu{
+	top: 100%;
+}
+.material-dropdown:hover  .material-dropdown-menu{
+	display: block;
 }

@@ -35,7 +35,7 @@
 				<div class="project-container">
 					<ul class="projects" >
 						<li ng-if="res.length>0" ng-repeat="singlepro in res = (myProjectsArr|filter:category) track by $index">
-							<a href="./full-project/{{singlepro.mainData.project_id}}/{{singlepro.mainData.project_name}}" ng-click="setFullProject(singlepro)" class="text-dark">
+							<a href="./full-project/{{singlepro.mainData.project_id}}/{{singlepro.url}}" ng-click="setFullProject(singlepro)" class="text-dark">
 								<img ng-src="uploads/{{singlepro.mainImage}}" width="100%" height="100%">
 								<p>{{singlepro.mainData.project_name}}</p>
 							</a>

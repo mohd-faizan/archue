@@ -79,3 +79,46 @@ form input.ng-valid{
 .user{
 	margin-left: auto;
 }
+/*image viewer*/
+.my-image-container{
+	position: fixed;
+	background-color: rgba(0,0,0,.8);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 99999;
+}
+.my-image-container .images{
+	position: absolute;
+	top: 50%;
+	width: 80%;
+	height: 90%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: #fff;
+	padding:  0.5rem 2rem .5rem;
+}
+.my-image-container .images button{
+	position: absolute;
+	right: 1rem;
+	bottom: 1rem;
+	cursor: pointer;
+	outline: none;
+}
+.my-image-container .images button:hover{
+	font-weight:300;
+}
+.images img{
+	display: block;
+}
+.small-images-view img{
+	margin-top: 10px;
+	width: 6rem;
+	cursor: pointer;
+	display: inline-block;
+	border:2px solid #555;
+	border-radius: 5px;
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+}

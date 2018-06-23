@@ -6,6 +6,7 @@ app.controller("myHomeController",($scope,fetchservice)=>{
 		// project object 
 		$scope.myProjects = {
 			mainImage:"",
+			url:"",
 			images:[],
 			mainData:{}
 		};
@@ -28,11 +29,14 @@ app.controller("myHomeController",($scope,fetchservice)=>{
 				$scope.myProjects.images = $scope.myProjects.images .concat(fetchservice.convertToArrImages(project.section_image));
 				$scope.myProjects.images = $scope.myProjects.images .concat(fetchservice.convertToArrImages(project.view3d_img));
 				$scope.myProjects.mainData = project;
+				$scope.myProjects.url = project.project_name.replace(/\//g,"or");
+				$scope.myProjects.url = $scope.myProjects.url.replace(/ /g,"-");
 				$scope.myProjectsArr.push($scope.myProjects);
 				// for emptying $scope.myProjects
 				$scope.myProjects = {
 					mainImage:"",
 					images:[],
+					url:"",
 					mainData:{}
 				};
 				$scope.singleProject = {
@@ -51,6 +55,10 @@ app.controller("myHomeController",($scope,fetchservice)=>{
 		fetchservice.setFullProject(project);
 		// console.log($rootScope.fullProject);
 	}
+	$scope.setImages = (images)=>{
+		fetchservice.setImages(images);
+		$scope.$parent.isShowViewImages();
+	}
 })
 
 
@@ -64,6 +72,10 @@ app.controller("fullProjectController",($scope,$routeParams,fetchservice)=>{
 	$scope.sectionImages = fetchservice.convertToArrImages($scope.fullProject.mainData.section_image)
 	$scope.view3dImages = fetchservice.convertToArrImages($scope.fullProject.mainData.view3d_img)
 	console.log($scope.siteImages);
+	$scope.setImages = (images)=>{
+		fetchservice.setImages(images);
+		$scope.$parent.isShowViewImages();
+	}
 })
 
 
@@ -77,6 +89,7 @@ app.controller("projectsController",($scope,fetchservice)=>{
 		$scope.myProjects = {
 			category:"",
 			mainImage:"",
+			url:"",
 			images:[],
 			mainData:{}
 		};
@@ -97,12 +110,15 @@ app.controller("projectsController",($scope,fetchservice)=>{
 			$scope.myProjects.images = $scope.myProjects.images .concat(fetchservice.convertToArrImages(project.elevation_image));
 			$scope.myProjects.images = $scope.myProjects.images .concat(fetchservice.convertToArrImages(project.section_image));
 			$scope.myProjects.images = $scope.myProjects.images .concat(fetchservice.convertToArrImages(project.view3d_img));
+			$scope.myProjects.url = project.project_name.replace(/\//g,"or");
+			$scope.myProjects.url = $scope.myProjects.url.replace(/ /g,"-");
 			$scope.myProjects.mainData = project;
 			$scope.myProjectsArr.push($scope.myProjects);
 			// for emptying $scope.myProjects
 			$scope.myProjects = {
 				category:"",
 				mainImage:"",
+				url:"",
 				images:[],
 				mainData:{}
 			};
@@ -133,6 +149,9 @@ app.controller("fetchPortfolioController",($scope,fetchservice)=>{
 	fetchservice.fetchPortfolio((data)=>{
 		if(data.status=="yes"){
 			$scope.portfolios = data.data;
+			for(let portfolio of $scope.portfolios){
+				portfolio.url = portfolio.portfolio_name.replace(/\//g,"-");
+			}
 		}
 	});
 	$scope.setportfolio = (portfolio)=>{
@@ -145,6 +164,7 @@ app.controller("fetchPortfolioController",($scope,fetchservice)=>{
 app.controller("fullPortfolioController",($sce,$scope,fetchservice)=>{
 	$scope.portfolio = fetchservice.getPortfolio();
 	// let file = $scope.portfolio.portfolio_file.split(" ");
+
 	$scope.url = $sce.trustAsResourceUrl("http://docs.google.com/gview?url=http://archue.professionalaccountingnow.com/upload-file/"
 		+$scope.portfolio.portfolio_file
 		+"&embedded=true");
@@ -152,6 +172,9 @@ app.controller("fullPortfolioController",($sce,$scope,fetchservice)=>{
 	fd.append('id',$scope.portfolio.portfolio_id);
 	fetchservice.fetchSimilarPortfolio(fd,(data)=>{
 		$scope.similarPorts = data.data;
+		for(let similarPort of $scope.similarPorts){
+			similarPort.url = similarPort.portfolio_name.replace(/\//g,"OR");
+		}
 	})
 	$scope.setportfolio = (portfolio)=>{
 		fetchservice.setPortfolio(portfolio);
@@ -163,6 +186,10 @@ app.controller("fetchDessertController",($scope,fetchservice)=>{
 	fetchservice.fetchDessertation((data)=>{
 		if(data.status=="yes"){
 			$scope.dessertations = data.data;
+			for(let dessertation of $scope.dessertations){
+				dessertation.url = dessertation.dessertation_name.replace(/\//g,"-");
+			}
+			
 		}
 	});
 	$scope.setDessertation = (dessertation)=>{
@@ -180,6 +207,9 @@ app.controller("fetchFullDessert",($sce,$scope,fetchservice)=>{
 	fd.append('id',$scope.dessertation.dessertation_id);
 	fetchservice.fetchSimilarDessertation(fd,(data)=>{
 		$scope.similarDessertations = data.data;
+		for(let similarDessertation of $scope.similarDessertations){
+			similarDessertation.url = similarDessertation.dessertation_name.replace(/\//g,"OR");
+		}
 	})
 	$scope.setDessertation = (dessertation)=>{
 		fetchservice.setDessertation(dessertation);
@@ -288,7 +318,8 @@ app.controller("fullBlogController",($sce,$scope,fetchservice)=>{
 app.controller("fetchThesisController",($scope,fetchservice)=>{
 	let singleThesis = {
 		file:"",
-		file_name:""
+		file_name:"",
+		project_type:""
 	}
 	let fullThesis = {
 		
@@ -298,14 +329,26 @@ app.controller("fetchThesisController",($scope,fetchservice)=>{
 		for(let thesis of data){
 			singleThesis.file = fetchservice.fetchOneImage(thesis.casestudy);
 			singleThesis.file_name = thesis.thesis_name;
+			singleThesis.project_type = thesis.thesis_proj_type;
 			$scope.singleThesisArr.push(singleThesis);
 			singleThesis = {
 				file:"",
-				file_name:""
+				file_name:"",
+				project_type:""
 			}
 		}
 		console.log($scope.singleThesisArr);
 	});
+	$scope.categories =  ["Adaptive Reuse","Building Services design","Cultural Architecture","Transports","Urban Design/Planning",
+	                       "Commercial Architecture","Educational and Research Center","Greens Building",
+	                       "Healthcare Architecture","Interiors Design","Industrial Design","indexustrial and Infrastructure",
+	                       "Landscape Design","Mixed-use Architecture","Recreational Architecture","Office Building","Housing Residential","Sports",
+	                       "Residential and Housing","Public Facilities and Infrastructure","Recreational Architecture","Religious","Interior/exterior Design",
+	                       "Landscape Architecture","sports Architecture","Urban Design","Hotels/Motel/Resort/Leisure","Institutional"];
+	$scope.category = "";                       
+	$scope.setCategory = (cat)=>{
+		$scope.category = cat;
+	}
 })
 /*fetch events*/
 app.controller("fetchEventsController",($sce,fetchservice,$scope)=>{
@@ -378,3 +421,5 @@ app.controller("fullCompController",(fetchservice,$sce,$scope)=>{
 		return $sce.trustAsHtml(html);
 	}
 })
+
+

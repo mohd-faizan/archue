@@ -172,5 +172,11 @@ app.service("fetchservice",function($http){
     this.getCompetition = ()=>{
         return JSON.parse(localStorage.getItem("comp"));
     }
+    this.setImages = (images)=>{
+        localStorage.setItem("images",JSON.stringify(images));
+    }
+    this.getImages = ()=>{
+        return JSON.parse(localStorage.getItem("images"));
+    }
 })
 

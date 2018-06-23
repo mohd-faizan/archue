@@ -35,11 +35,14 @@
 			<h3>PROJECTS</h3>
 			<div class="space"></div>
 			<div class="user-upload-container">
-				<div ng-repeat="project in projects|limitTo:6" class="user-upload">
+				<div ng-if="projects.length>0" ng-repeat="project in projects|limitTo:6" class="user-upload">
 					<a href="#">
 						<img ng-src="uploads/{{project.site_image|getSingleImage}}" class="img-fluid">
 					</a>
 					<a href="#"><p class="mt-2">{{project.project_name}}</p></a>
+				</div>
+				<div ng-if="projects.length==0" class="alert alert-danger">
+					No projects
 				</div>
 			</div>
 		</section>

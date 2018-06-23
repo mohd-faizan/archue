@@ -46,7 +46,7 @@
 	content: "";
 	border:0;
 }
-#project-sec .category button{
+ .category button{
 	background-color: transparent;
 	border:none;
 	margin-bottom: .5rem;
@@ -68,7 +68,7 @@
 .projects li{
 	flex-basis: 30%;
 	height: 70px;
-	margin-bottom: 3.2rem;
+	margin-bottom: 4.2rem;
 	margin-right: 1.2rem;
 }
 .projects li a p{

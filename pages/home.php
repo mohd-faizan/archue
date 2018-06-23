@@ -8,20 +8,20 @@
 				<div class="col-md-9">
 						<div ng-if="myProjectsArr.length>0" ng-repeat="myproject in myProjectsArr|limitTo:10" class="mb-4">
 							<div class="project-heading">
-								<h2 class="project-heading"><a href="./full-project/{{myproject.mainData.project_id}}/{{myproject.mainData.project_name}}" ng-click=setFullProject(myproject) class="text-dark">{{myproject.mainData.project_name}}</a></h2>
+								<h2 class="project-heading"><a href="./full-project/{{myproject.mainData.project_id}}/{{myproject.url}}" ng-click=setFullProject(myproject) class="text-dark">{{myproject.mainData.project_name}}</a></h2>
 								<small>{{myproject.mainData.project_time|myTime}},{{myproject.mainData.project_date|date:"fullDate"}}</small>
 							</div>
 							<div class="full-project-image">
-								<a href="./full-project/{{myproject.mainData.project_id}}/{{myproject.mainData.project_name}}" ng-click=setFullProject(myproject)><img ng-src="uploads/{{myproject.mainImage}}" width="100%"></a>
+								<a href="./full-project/{{myproject.mainData.project_id}}/{{myproject.url}}" ng-click=setFullProject(myproject)><img ng-src="uploads/{{myproject.mainImage}}" width="100%"></a>
 							</div>
 							<div class="mycontainer">
-								<div class="samll-img" ng-repeat="myimage in myproject.images|limitTo:4 track by $index">
+								<div class="samll-img" ng-repeat="myimage in myproject.images|limitTo:4 track by $index" >
 									<img src="uploads/{{myimage}}" width="100%" height="100%">
 								</div>
 								
 								<div class="samll-img">
 									<img src="image/project-img-1.jpg" width="100%" height="100%">
-									<div class="img-no">+{{myproject.images.length}}</div>
+									<div class="img-no" ng-click="setImages(myproject.images)">+{{myproject.images.length}}</div>
 								</div>
 							</div>
 							<div class="table-data">
@@ -108,33 +108,13 @@
 					<div class="blog-header blog-bg">
 						<h3 class="home-page-heading">Blog</h2>
 					</div>
-					<div class="sm-blog-container">
+					<div class="sm-blog-container" ng-repeat="blog in blogs">
 						<div class="image">
-							<img src="image/project-img-1.jpg" alt="project-img-1" width="100%">
+							<img ng-src="uploads/{{blog.blog_file}}" alt="project-img-1" width="100%">
 						</div>
 						<div class="link">
-							<a href="#">
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							</a>
-						</div>
-					</div>
-					<div class="sm-blog-container">
-						<div class="image">
-							<img src="image/project-img-1.jpg" alt="project-img-1" width="100%">
-						</div>
-						<div class="link">
-							<a href="#">
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							</a>
-						</div>
-					</div>
-					<div class="sm-blog-container">
-						<div class="image">
-							<img src="image/project-img-1.jpg" alt="project-img-1" width="100%">
-						</div>
-						<div class="link">
-							<a href="#">
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							<a href="./blogs/{{blog.blog_id}}/{{blog.heading}}" ng-click="setBlog(blog)">
+								{{blog.heading}}
 							</a>
 						</div>
 					</div>

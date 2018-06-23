@@ -10,7 +10,7 @@
 							<small>{{fullProject.mainData.project_time|myTime}},{{fullProject.mainData.project_date|date:"fullDate"}}</small>
 						</div>
 						<div class="full-project-image">
-							<img ng-src="uploads/{{fullProject.mainImage}}" width="100%">
+							<img ng-src="uploads/{{fullProject.mainImage}}" width="100%" ng-click="setImages(fullProject.images)">
 							<p class="mt-4">{{fullProject.mainData.project_desc}}</p>
 						</div>
 					
@@ -69,7 +69,7 @@
 							
 							<div class="samll-img">
 								<img src="image/project-img-1.jpg" width="100%" height="100%">
-								<div class="img-no">+{{fullProject.images.length}}</div>
+								<div class="img-no" ng-click="setImages(fullProject.images)">+{{fullProject.images.length}}</div>
 							</div>
 						</div>
 			    </div>

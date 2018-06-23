@@ -18,10 +18,10 @@
 									<img src="image/pdf-icon.png">
 								</div>
 								<div class="content-data">
-									<h5><a href="./full-portfolio/{{portfolio.portfolio_name}}" ng-click="setportfolio(portfolio)" class="text-dark">{{portfolio.portfolio_name}}</a></h5>
+									<h5><a href="./full-portfolio/{{portfolio.url}}" ng-click="setportfolio(portfolio)" class="text-dark">{{portfolio.portfolio_name}}</a></h5>
 									<p class="p-text">{{portfolio.portfolio_place}}</p>
 									<div class="file-link pull-right">
-										<a href="./full-portfolio/{{portfolio.portfolio_name}}" ng-click="setportfolio(portfolio)">Show Portfolio <span class="fa fa-long-arrow-right"></span></a>
+										<a href="./full-portfolio/{{portfolio.url}}" ng-click="setportfolio(portfolio)">Show Portfolio <span class="fa fa-long-arrow-right"></span></a>
 									</div>
 								</div>
 							</div>
@@ -38,9 +38,6 @@
 									<a href=""><span class="fa fa-tumblr"></span></a>
 									<a href=""><span class="fa fa-linkedin"></span></a>
 									<a href=""><span class="fa fa-rss"></span></a>
-								</div>
-								<div>
-									<a href="./full-project/{{myproject.mainData.project_id}}/{{myproject.mainData.project_name}}" ng-click=setFullProject(myproject)>Read More</a>
 								</div>
 							</div>
 						</div>

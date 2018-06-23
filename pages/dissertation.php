@@ -19,12 +19,12 @@
 								</div>
 								<div class="content-data">
 									<h5>
-										<a href="./full-dissertation/{{dessertation.dessertation_name}}" ng-click="setDessertation(dessertation)" class="text-dark">{{dessertation.dessertation_name}}</a></h5>
+										<a href="./full-dissertation/{{dessertation.url}}" ng-click="setDessertation(dessertation)" class="text-dark">{{dessertation.dessertation_name}}</a></h5>
 									<p class="p-text">
 										{{dessertation.dessertation_place}}
 									</p>
 									<div class="file-link pull-right">
-										<a href="./full-dissertation/{{dessertation.dessertation_name}}" ng-click="setDessertation(dessertation)">Show Dissertation <span class="fa fa-long-arrow-right"></span></a>
+										<a href="./full-dissertation/{{dessertation.url}}" ng-click="setDessertation(dessertation)">Show Dissertation <span class="fa fa-long-arrow-right"></span></a>
 									</div>
 								</div>
 							</div>

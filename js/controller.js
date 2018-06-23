@@ -1,4 +1,5 @@
 app.controller("rootController",($sce,fetchservice,$document,$location,$scope,$interval,user,$rootScope,$timeout,myService)=>{
+	$scope.isShowViewImage = false;
 	$scope.interval = $interval;
 	$scope.timeout = $timeout;
 	$scope.errorMessage;
@@ -8,6 +9,12 @@ app.controller("rootController",($sce,fetchservice,$document,$location,$scope,$i
 	$scope.user = user;
 	$rootScope.isShow = user.isLoggedIn();
 	$rootScope.userData = user.getSaveData();
+	$scope.isShowViewImages = ()=>{
+		$scope.isShowViewImage = true;
+	}
+	$scope.upSetImageView = ()=>{
+		$scope.isShowViewImage = false;
+	}
 	$scope.setUser = ()=>{
 		$rootScope.userData = user.getSaveData();
 		$rootScope.isShow = user.isLoggedIn(); 
@@ -20,7 +27,15 @@ app.controller("rootController",($sce,fetchservice,$document,$location,$scope,$i
 	$scope.setThesisReport = (theisReport)=>{
 		fetchservice.setThesisReport(theisReport);
 	}
-	
+	fetchservice.fetchBlog((data)=>{
+		if(data.status=="yes"){
+			$scope.blogs = data.resp;
+			console.log($scope.blogs);
+		}
+	});
+	$scope.setBlog = (blog)=>{
+		fetchservice.setFullBlog(blog);
+	}
 });
 app.controller("signUpController",($scope)=>{
 	$scope.regex = "^[0-9]*$";
@@ -105,8 +120,12 @@ app.controller("loginController",($scope)=>{
 	}
 });
 app.controller("dashboardController",(myService,$scope,$rootScope)=>{
+	$scope.$parent.setUser();
 	$scope.userData = $rootScope.userData;
-	//console.log($scope.userData);
+	console.log($rootScope.userData);
+	if($scope.userData.company_name==undefined){
+		
+	}
 	myService.fetchUserData($scope.userData.id,(data)=>{
 		$scope.blogs = data.blogs;
 		$scope.dessertations = data.dessertation;
@@ -125,9 +144,36 @@ app.controller("getQouteController",($scope)=>{
 		$scope.isGetActive = !$scope.isGetActive;
 	}
 })
-app.controller("editController",($scope,$rootScope)=>{
+app.controller("editController",(user,myService,validationService,$scope,$rootScope)=>{
 	console.log($rootScope.userData);
 	$scope.name = $rootScope.userData.username;
 	$scope.profession = $rootScope.userData.profession;
-	
+	$scope.validatePortfolioFile = (img)=>{
+		var ext = ['png','jpeg','jpg'];
+		return validationService.validPortfolio(img,ext);
+	}
+	$scope.onSubmit = (form)=>{
+		let editData = {};
+		editData.profile = $scope.portfolioFile;
+		editData.profession = $scope.profession;
+		editData.name = $scope.name;
+		editData.id = $rootScope.userData.id;
+		myService.updateUser(editData,(data)=>{
+			if(data.status=="ok"){
+				alert("you have succesfully updated. Login to See Changes");
+				user.clearData();
+				window.location.href="./";
+			}
+			else{
+				alert("Error");
+			}
+		})
+	}
+})
+app.controller("fetchImageController",(fetchservice,$scope)=>{
+	if($scope.$parent.isShowViewImage){
+		$scope.images = fetchservice.getImages();
+		console.log($scope.images);
+	}
+	console.log($scope.$parent.isShowViewImage);
 })

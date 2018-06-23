@@ -47,8 +47,8 @@
 					}
 					else{
 						// echo json_encode("user do not want to remember");
-						$resp['data'] = $row;
 						$resp['status'] = "yes";
+						$resp['data'] = $row;
 						$_SESSION['username'] = $row['name'];
 						$_SESSION['id'] = $row['user_id'];
 						echo json_encode($resp);
@@ -83,6 +83,24 @@
 			echo json_encode($resp);
 			
 		}
+		public static function updateUser($file,$post){
+			$name = $post['name'];
+			$profession = $post['profession'];
+			$id = $post['id'];
+			$location = "../uploads/";
+			$filename = str_replace(" ", "_", $file['name']);
+			if(move_uploaded_file($file['tmp_name'], $location."".$filename)){
+				$sql = "UPDATE users SET name='$name',profession='$profession',profile='$filename' WHERE user_id=$id";
+				if(self::$conn->query($sql)){
+					$resp['status'] = "ok";
+					$resp['message'] = "updtaed";
+				}else{
+					$resp['status'] = "no";
+					$resp['message'] = self::$conn->error;
+				}
+				echo json_encode($resp);
+			}
+		}
 		public static function run($sql){
 			$arr = array();
 			if($res=self::$conn->query($sql)){
@@ -95,3 +113,4 @@
 	}
 	App::setConnect();
 ?>
+

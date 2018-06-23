@@ -72,7 +72,8 @@
 			 $pplace = self::$conn->real_escape_string($post['portfolio_place']);
 			 $pcollege = self::$conn->real_escape_string($post['portfolio_college']);
 			 $pyear = self::$conn->real_escape_string($post['portfolio_year']);
-			 $pfile = self::$conn->real_escape_string($file['portfolioFile']['name']);
+			 $myfile = str_replace(" ","_", $file['portfolioFile']['name']);
+			 $pfile = self::$conn->real_escape_string($myfile);
 			 $id = $post['userid'];
 			 $sql = "INSERT INTO portfolio(portfolio_name,portfolio_place,portfolio_college,portfolio_year,portfolio_file,portfolio_date,portfolio_time,user_id) VALUES('$pname','$pplace','$pcollege','$pyear','$pfile',NOW(),NOW(),$id)";
 			 if(self::$conn->query($sql)){
@@ -94,7 +95,8 @@
 			 $dplace = self::$conn->real_escape_string($post['dissertation_place']);
 			 $dcollege = self::$conn->real_escape_string($post['dissertation_college']);
 			 $dyear = self::$conn->real_escape_string($post['dissertation_year']);
-			 $dfile = self::$conn->real_escape_string($file['dissertation_file']['name']);
+			 $myfile = str_replace(" ", "_", $file['dissertation_file']['name']);
+			 $dfile = self::$conn->real_escape_string($myfile);
 			 $id = $post['userid'];
 			 $sql = "INSERT INTO dessertation(dessertation_name,dessertation_place,dessertation_college,dessertation_year,dessertation_file,dessertation_date,dessertation_time,user_id) VALUES('$dname','$dplace','$dcollege','$dyear','$dfile',NOW(),NOW(),$id)";
 			 if(self::$conn->query($sql)){
@@ -115,7 +117,8 @@
 			 $trplace = self::$conn->real_escape_string($post['thesis_report_place']);
 			 $trcollege = self::$conn->real_escape_string($post['thesis_report_college']);
 			 $tryear = self::$conn->real_escape_string($post['thesis_report_year']);
-			 $trfile = self::$conn->real_escape_string($file['thesis_report_file']['name']);
+			 $myfile = str_replace(" ", "_", $file['thesis_report_file']['name']);
+			 $trfile = self::$conn->real_escape_string($myfile);
 			 $id = $post['userid'];
 			 $sql = "INSERT INTO thesis_report(thesis_report_name,thesis_report_place,thesis_report_college,thesis_report_year,thesis_report_file,thesis_report_date,thesis_report_time,user_id) VALUES('$trname','$trplace','$trcollege','$tryear','$trfile',NOW(),NOW(),$id)";
 			 if(self::$conn->query($sql)){
@@ -200,7 +203,7 @@
 	}
 	public static function upload_file($file){
 		$location = "../upload-file/";
-		$filename = $file['name'];
+		$filename = str_replace(" ", "_", $file['name']);
 		return move_uploaded_file($file['tmp_name'],$location.$filename);
 	}
 	public static function uploadJob($post,$file){
@@ -250,7 +253,7 @@
 		$password = $post['password'];
 		$sql = "INSERT INTO users(name,company_name,website,profession,email,password) VALUES('$name','$company_name','$website','$type','$email','$password')";
 		if(self::$conn->query($sql)){
-			$sql1 = "SELECT user_id,name FROM users WHERE email='$email'";
+			$sql1 = "SELECT user_id,profession,profile,company_name,name FROM users WHERE email='$email'";
 			if($res=self::$conn->query($sql1)){
 				if($res->num_rows>0){
 					while($row=$res->fetch_assoc()){

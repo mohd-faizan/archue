@@ -27,10 +27,9 @@
 
 				<li><a href="./project">PROJECTS</a></li>
 				
-				<li class="dropdown">
+				<li class="material-dropdown">
 					<a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MATERIALS</a>
-
-					<div class="dropdown-menu sub-menu-container" aria-labelledby="dropdownMenuButton">
+					<!-- <div class="dropdown-menu sub-menu-container" aria-labelledby="dropdownMenuButton">
 					    
 					    <div class="dropdown-item drop-dn-btn" href="#">
 					    	FINISHES
@@ -106,8 +105,379 @@
 					    			
 					    	</div>
 					    </div>
-				    </div>
+				    </div> -->
+				    <div class="material-dropdown-menu">
+				    	<ul class="list">
+				    		<li><a href="#">Manufacturers</a></li>
+				    		<li class="material-dropdown-item"><a href="#">Finishes</a>
+				    			<div  class="material-sub-dropdown">
+						    		<div class="space"></div>
+						    		<div class="container-fluid">
+						    			<div class="row">
+						    				<div class="col-lg-6 col-md-6">
+						    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Metallics</a></li>
+						    						<li><a href="#">Porcelain Stoneware</a></li>
+						    						<li><a href="#">Ceramics</a></li>
+						    						<li><a href="#">Wood / Bamboo</a></li>
+						    						<li><a href="#">Stones</a></li>
+						    						<li><a href="#">Glass</a></li>
+						    						<li><a href="#">Fiber Cements / Cements</a></li>
+						    						<li><a href="#">Plastics</a></li>
+						    						<li><a href="#">Composites</a></li>
+						    						<li><a href="#">Organics / Rubber / Cork</a></li>
+						    					</ul>
+						    					<h6><a href="#">Doors / Partitions</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Doors</a></li>
+						    					</ul>
+						    					<h6><a href="#">CEILINGS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Dropped Ceilings</a></li>
+						    						<li><a href="#">Suspension Systems</a></li>
+						    					</ul>
+						    					<h6><a href="#">WINDOWS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Skylights</a></li>
+						    						<li><a href="#">Windows</a></li>
+						    					</ul>
+						    				</div>
+						    				<div class="col-lg-6 col-md-6">
+						    					<h6><a href="#">FLOORS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Concrete Floors</a></li>
+						    						<li><a href="#">Wodern Flooring</a></li>
+						    						<li><a href="#">Linoleum/Vina Flooring</a></li>
+						    						<li><a href="#">Wodern Flooring</a></li>
+						    					</ul>
+						    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
+						    						<li><a href="#">Louvers / Shutters</a></li>
+						    					</ul>
+						    				</div>
+						    			</div>
+						    		</div>
+						    	</div>
+				    		</li>
+				    		<li class="material-dropdown-item"><a href="#">Construcction Materials</a>
+				    			<div  class="material-sub-dropdown">
+						    		<div class="space"></div>
+						    		<div class="container-fluid">
+						    			<div class="row">
+						    				<div class="col-lg-6 col-md-6">
+						    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Metallics</a></li>
+						    						<li><a href="#">Porcelain Stoneware</a></li>
+						    						<li><a href="#">Ceramics</a></li>
+						    						<li><a href="#">Wood / Bamboo</a></li>
+						    						<li><a href="#">Stones</a></li>
+						    						<li><a href="#">Glass</a></li>
+						    						<li><a href="#">Fiber Cements / Cements</a></li>
+						    						<li><a href="#">Plastics</a></li>
+						    						<li><a href="#">Composites</a></li>
+						    						<li><a href="#">Organics / Rubber / Cork</a></li>
+						    					</ul>
+						    					<h6><a href="#">Doors / Partitions</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Doors</a></li>
+						    					</ul>
+						    					<h6><a href="#">CEILINGS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Dropped Ceilings</a></li>
+						    						<li><a href="#">Suspension Systems</a></li>
+						    					</ul>
+						    					<h6><a href="#">WINDOWS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Skylights</a></li>
+						    						<li><a href="#">Windows</a></li>
+						    					</ul>
+						    				</div>
+						    				<div class="col-lg-6 col-md-6">
+						    					<h6><a href="#">FLOORS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Concrete Floors</a></li>
+						    						<li><a href="#">Wodern Flooring</a></li>
+						    						<li><a href="#">Linoleum/Vina Flooring</a></li>
+						    						<li><a href="#">Wodern Flooring</a></li>
+						    					</ul>
+						    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
+						    						<li><a href="#">Louvers / Shutters</a></li>
+						    					</ul>
+						    				</div>
+						    			</div>
+						    		</div>
+						    	</div>
+				    		</li>
+				    		<li class="material-dropdown-item"><a href="#">Equipment</a>
+				    			<div  class="material-sub-dropdown">
+						    		<div class="space"></div>
+						    		<div class="container-fluid">
+						    			<div class="row">
+						    				<div class="col-lg-6 col-md-6">
+						    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Metallics</a></li>
+						    						<li><a href="#">Porcelain Stoneware</a></li>
+						    						<li><a href="#">Ceramics</a></li>
+						    						<li><a href="#">Wood / Bamboo</a></li>
+						    						<li><a href="#">Stones</a></li>
+						    						<li><a href="#">Glass</a></li>
+						    						<li><a href="#">Fiber Cements / Cements</a></li>
+						    						<li><a href="#">Plastics</a></li>
+						    						<li><a href="#">Composites</a></li>
+						    						<li><a href="#">Organics / Rubber / Cork</a></li>
+						    					</ul>
+						    					<h6><a href="#">Doors / Partitions</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Doors</a></li>
+						    					</ul>
+						    					<h6><a href="#">CEILINGS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Dropped Ceilings</a></li>
+						    						<li><a href="#">Suspension Systems</a></li>
+						    					</ul>
+						    					<h6><a href="#">WINDOWS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Skylights</a></li>
+						    						<li><a href="#">Windows</a></li>
+						    					</ul>
+						    				</div>
+						    				<div class="col-lg-6 col-md-6">
+						    					<h6><a href="#">FLOORS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Concrete Floors</a></li>
+						    						<li><a href="#">Wodern Flooring</a></li>
+						    						<li><a href="#">Linoleum/Vina Flooring</a></li>
+						    						<li><a href="#">Wodern Flooring</a></li>
+						    					</ul>
+						    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
+						    						<li><a href="#">Louvers / Shutters</a></li>
+						    					</ul>
+						    				</div>
+						    			</div>
+						    		</div>
+						    	</div>
+				    		</li>
+				    		<li class="material-dropdown-item"><a href="#">MEP  &amp; HVAC</a>
+				    			<div  class="material-sub-dropdown">
+						    		<div class="space"></div>
+						    		<div class="container-fluid">
+						    			<div class="row">
+						    				<div class="col-lg-6 col-md-6">
+						    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Metallics</a></li>
+						    						<li><a href="#">Porcelain Stoneware</a></li>
+						    						<li><a href="#">Ceramics</a></li>
+						    						<li><a href="#">Wood / Bamboo</a></li>
+						    						<li><a href="#">Stones</a></li>
+						    						<li><a href="#">Glass</a></li>
+						    						<li><a href="#">Fiber Cements / Cements</a></li>
+						    						<li><a href="#">Plastics</a></li>
+						    						<li><a href="#">Composites</a></li>
+						    						<li><a href="#">Organics / Rubber / Cork</a></li>
+						    					</ul>
+						    					<h6><a href="#">Doors / Partitions</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Doors</a></li>
+						    					</ul>
+						    					<h6><a href="#">CEILINGS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Dropped Ceilings</a></li>
+						    						<li><a href="#">Suspension Systems</a></li>
+						    					</ul>
+						    					<h6><a href="#">WINDOWS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Skylights</a></li>
+						    						<li><a href="#">Windows</a></li>
+						    					</ul>
+						    				</div>
+						    				<div class="col-lg-6 col-md-6">
+						    					<h6><a href="#">FLOORS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Concrete Floors</a></li>
+						    						<li><a href="#">Wodern Flooring</a></li>
+						    						<li><a href="#">Linoleum/Vina Flooring</a></li>
+						    						<li><a href="#">Wodern Flooring</a></li>
+						    					</ul>
+						    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
+						    						<li><a href="#">Louvers / Shutters</a></li>
+						    					</ul>
+						    				</div>
+						    			</div>
+						    		</div>
+						    	</div>
+				    		</li>
+				    		<li class="material-dropdown-item"><a href="#">Applications</a>
+				    			<div  class="material-sub-dropdown">
+						    		<div class="space"></div>
+						    		<div class="container-fluid">
+						    			<div class="row">
+						    				<div class="col-lg-6 col-md-6">
+						    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Metallics</a></li>
+						    						<li><a href="#">Porcelain Stoneware</a></li>
+						    						<li><a href="#">Ceramics</a></li>
+						    						<li><a href="#">Wood / Bamboo</a></li>
+						    						<li><a href="#">Stones</a></li>
+						    						<li><a href="#">Glass</a></li>
+						    						<li><a href="#">Fiber Cements / Cements</a></li>
+						    						<li><a href="#">Plastics</a></li>
+						    						<li><a href="#">Composites</a></li>
+						    						<li><a href="#">Organics / Rubber / Cork</a></li>
+						    					</ul>
+						    					<h6><a href="#">Doors / Partitions</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Doors</a></li>
+						    					</ul>
+						    					<h6><a href="#">CEILINGS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Dropped Ceilings</a></li>
+						    						<li><a href="#">Suspension Systems</a></li>
+						    					</ul>
+						    					<h6><a href="#">WINDOWS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Skylights</a></li>
+						    						<li><a href="#">Windows</a></li>
+						    					</ul>
+						    				</div>
+						    				<div class="col-lg-6 col-md-6">
+						    					<h6><a href="#">FLOORS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Concrete Floors</a></li>
+						    						<li><a href="#">Wodern Flooring</a></li>
+						    						<li><a href="#">Linoleum/Vina Flooring</a></li>
+						    						<li><a href="#">Wodern Flooring</a></li>
+						    					</ul>
+						    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
+						    						<li><a href="#">Louvers / Shutters</a></li>
+						    					</ul>
+						    				</div>
+						    			</div>
+						    		</div>
+						    	</div>
+				    		</li>
+				    		<li class="material-dropdown-item"><a href="#">Outdoor Spaces</a>
+				    			<div  class="material-sub-dropdown">
+						    		<div class="space"></div>
+						    		<div class="container-fluid">
+						    			<div class="row">
+						    				<div class="col-lg-6 col-md-6">
+						    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Metallics</a></li>
+						    						<li><a href="#">Porcelain Stoneware</a></li>
+						    						<li><a href="#">Ceramics</a></li>
+						    						<li><a href="#">Wood / Bamboo</a></li>
+						    						<li><a href="#">Stones</a></li>
+						    						<li><a href="#">Glass</a></li>
+						    						<li><a href="#">Fiber Cements / Cements</a></li>
+						    						<li><a href="#">Plastics</a></li>
+						    						<li><a href="#">Composites</a></li>
+						    						<li><a href="#">Organics / Rubber / Cork</a></li>
+						    					</ul>
+						    					<h6><a href="#">Doors / Partitions</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Doors</a></li>
+						    					</ul>
+						    					<h6><a href="#">CEILINGS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Dropped Ceilings</a></li>
+						    						<li><a href="#">Suspension Systems</a></li>
+						    					</ul>
+						    					<h6><a href="#">WINDOWS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Skylights</a></li>
+						    						<li><a href="#">Windows</a></li>
+						    					</ul>
+						    				</div>
+						    				<div class="col-lg-6 col-md-6">
+						    					<h6><a href="#">FLOORS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Concrete Floors</a></li>
+						    						<li><a href="#">Wodern Flooring</a></li>
+						    						<li><a href="#">Linoleum/Vina Flooring</a></li>
+						    						<li><a href="#">Wodern Flooring</a></li>
+						    					</ul>
+						    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
+						    						<li><a href="#">Louvers / Shutters</a></li>
+						    					</ul>
+						    				</div>
+						    			</div>
+						    		</div>
+						    	</div>
+				    		</li>
+				    		<li class="material-dropdown-item"><a href="#">Technology</a>
+				    			<div  class="material-sub-dropdown">
+						    		<div class="space"></div>
+						    		<div class="container-fluid">
+						    			<div class="row">
+						    				<div class="col-lg-6 col-md-6">
+						    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Metallics</a></li>
+						    						<li><a href="#">Porcelain Stoneware</a></li>
+						    						<li><a href="#">Ceramics</a></li>
+						    						<li><a href="#">Wood / Bamboo</a></li>
+						    						<li><a href="#">Stones</a></li>
+						    						<li><a href="#">Glass</a></li>
+						    						<li><a href="#">Fiber Cements / Cements</a></li>
+						    						<li><a href="#">Plastics</a></li>
+						    						<li><a href="#">Composites</a></li>
+						    						<li><a href="#">Organics / Rubber / Cork</a></li>
+						    					</ul>
+						    					<h6><a href="#">Doors / Partitions</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Doors</a></li>
+						    					</ul>
+						    					<h6><a href="#">CEILINGS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Dropped Ceilings</a></li>
+						    						<li><a href="#">Suspension Systems</a></li>
+						    					</ul>
+						    					<h6><a href="#">WINDOWS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Skylights</a></li>
+						    						<li><a href="#">Windows</a></li>
+						    					</ul>
+						    				</div>
+						    				<div class="col-lg-6 col-md-6">
+						    					<h6><a href="#">FLOORS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Concrete Floors</a></li>
+						    						<li><a href="#">Wodern Flooring</a></li>
+						    						<li><a href="#">Linoleum/Vina Flooring</a></li>
+						    						<li><a href="#">Wodern Flooring</a></li>
+						    					</ul>
+						    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
+						    					<ul class="sub-menu-list">
+						    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
+						    						<li><a href="#">Louvers / Shutters</a></li>
+						    					</ul>
+						    				</div>
+						    			</div>
+						    		</div>
+						    	</div>
+				    		</li>
+				    		<li><a href="#">Innovative Products</a></li>
+				    	</ul>
+			    </div>
 				</li>
+			    
 				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">STUDENT CORNER</a>
 					 <div class="dropdown-menu">
 					    <a class="dropdown-item" href="./thesis">THESIS</a>
@@ -123,7 +493,7 @@
 				<li><a href="#" ng-click="ifUpload()">UPLOAD</a></li>
 				<li><a href="#" class="bg-font" data-toggle="modal" data-target="#qouteModal">GET QUOTE</a></li>
 				<li ng-show="isShow" class="dropdown"><a href="/dashboard" class="dropdown-toggle" data-toggle="dropdown"> 
-				    <img src="uploads/default-user.png" height="25" width="25">
+				    <img ng-src="uploads/{{userData.profile}}" height="25" width="25">
 				    {{userData.username}}
 				</a>
 				    <div class="dropdown-menu">
@@ -254,48 +624,48 @@
       <!-- Modal body -->
       <div class="modal-body">
       	<h5 class="bg-font text-center mb-4">We will help you get the best suppliers.<br/>Lets get started!</h5>
-        <form ng-if="isGetActive">	
+        <form ng-if="isGetActive" name="materialForm">	
         	<div class="container-fluid" >
         		<div class="form-group">
-	        		<input type="text" name="" class="form-control" placeholder="Enter Product Name/Service Name">
+	        		<input type="text" name="product_name" class="form-control" placeholder="Enter Product Name/Service Name" data-ng-model="product_name" required>
 	        	</div>
         		<div class="row">
         			<div class="col-md-6">
         				<div class="form-group">
-			        		<input type="text" name="" class="form-control" placeholder="Area">
+			        		<input type="text" name="area" class="form-control" placeholder="Area" data-ng-model="area" required>
 			        	</div>
         			</div>
         			<div class="col-md-6">
         				<div class="form-group">
-			        		<input type="text" class="form-control" name="" placeholder=" Tentative Budget">
+			        		<input type="text" class="form-control" name="budget" placeholder=" Tentative Budget" data-ng-model="budget" required>
 			        	</div>
         			</div>
         		</div>
         		<div class="form-group">
-	        		<input type="text" class="form-control" name="" placeholder="Specification(if any)">
+	        		<input type="text" class="form-control" name="specification" placeholder="Specification(if any)" ng-model="specification" >
 	        	</div>
 	        	<div class="row">
 	        		<div class="col-md-4">
 	        			<div class="form-group">
-			        		<input type="email" class="form-control" name="" placeholder="Email Id">
+			        		<input type="email" class="form-control" name="email" placeholder="Email Id" ng-model="email" required>
 			        	</div>
 	        		</div>
 	        		<div class="col-md-4">
 	        			<div class="form-group">
-			        		<input type="text" class="form-control" name="" placeholder="Phone Number">
+			        		<input type="text" class="form-control" name="phone" placeholder="Phone Number" ng-model="phone" required>
 			        	</div>
 	        		</div>
 	        		<div class="col-md-4">
 	        			<div class="form-group">
-			        		<input type="text" class="form-control" name="" placeholder="Location">
+			        		<input type="text" class="form-control" name="locat" placeholder="Location" ng-model="locat" required>
 			        	</div>
 	        		</div>
 	        	</div>
         		
 	        	<div class="form-group">
-	        		<textarea class="form-control" placeholder="Requirements Details.." rows="5" cols="20"></textarea>
+	        		<textarea class="form-control" placeholder="Requirements Details.." rows="5" cols="20" name="requirement" ng-model="requirement" required></textarea>
 	        	</div>
-	        	<button class="btn btn-primary bg-color border-0">Get Qoute</button>
+	        	<button class="btn btn-primary bg-color border-0" ng-disabled="!materialForm.$valid">Get Qoute</button>
         	</div>
         </form>
     	<form ng-if="!isGetActive">
