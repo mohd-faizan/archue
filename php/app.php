@@ -110,6 +110,47 @@
 				return $arr;
 			}
 		}
+		public static function uploadMaterial($post){
+			$product_name = $post['product_name'];
+			$area = $post['area'];
+			$budget = $post['budget'];
+			$specification = $post['specification'];
+			$email = $post['email'];
+			$phone = $post['phone'];
+			$locat = $post['locat'];
+			$requirement = $post['requirement'];
+			$mydate = $post['mat_date'];
+			//echo json_encode($post);
+			$sql = "INSERT INTO material(product_name,area,budget,specification,email,phone,locat,requirement,mat_date) VALUES('$product_name','$area','$budget','$specification','$email','$phone','$locat','$requirement','$mydate') ";
+			if(self::$conn->query($sql)){
+				$resp['status'] = "ok";
+			}
+			else{
+				$resp['status'] = "no";
+			}
+			echo json_encode($resp);
+		}
+		public static function uploadArchitect($post){
+			$service = $post['service'];
+			$project_type = $post['project_type'];
+			$area = $post['area'];
+			$budget = $post['budget'];
+			$specification = $post['specification'];
+			$email = $post['email'];
+			$phone = $post['phone'];
+			$locat = $post['locat'];
+			$requirement = $post['requirement'];
+			$mydate = $post['arc_date'];
+			//echo json_encode($post);
+			$sql = "INSERT INTO architect(service,project_type,area,budget,specification,email,phone,locat,requirement,arc_date) VALUES('$service','$project_type','$area','$budget','$specification','$email','$phone','$locat','$requirement','$mydate') ";
+			if(self::$conn->query($sql)){
+				$resp['status'] = "ok";
+			}
+			else{
+				$resp['status'] = "no";
+			}
+			echo json_encode($resp);
+		}
 	}
 	App::setConnect();
 ?>

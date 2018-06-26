@@ -20,9 +20,9 @@
 								<div class="content-data">
 									<h5><a href="./full-portfolio/{{portfolio.url}}" ng-click="setportfolio(portfolio)" class="text-dark">{{portfolio.portfolio_name}}</a></h5>
 									<p class="p-text">{{portfolio.portfolio_place}}</p>
-									<div class="file-link pull-right">
+									<!-- <div class="file-link pull-right">
 										<a href="./full-portfolio/{{portfolio.url}}" ng-click="setportfolio(portfolio)">Show Portfolio <span class="fa fa-long-arrow-right"></span></a>
-									</div>
+									</div> -->
 								</div>
 							</div>
 							<div class="project-share-option">
@@ -38,6 +38,9 @@
 									<a href=""><span class="fa fa-tumblr"></span></a>
 									<a href=""><span class="fa fa-linkedin"></span></a>
 									<a href=""><span class="fa fa-rss"></span></a>
+								</div>
+								<div class="ml-auto">
+									<a href="./full-portfolio/{{portfolio.url}}" ng-click="setportfolio(portfolio)">Read More</a>
 								</div>
 							</div>
 						</div>

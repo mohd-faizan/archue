@@ -176,4 +176,59 @@ app.controller("fetchImageController",(fetchservice,$scope)=>{
 		console.log($scope.images);
 	}
 	console.log($scope.$parent.isShowViewImage);
-})
+});
+ 
+
+ app.controller("materialController",(myService,$scope)=>{
+ 	let materialObj = {};
+ 	$scope.onsubmit = (form)=>{
+ 		materialObj.product_name = $scope.product_name;
+ 		materialObj.area = $scope.area;
+ 		materialObj.budget = $scope.budget;
+ 		materialObj.specification = $scope.specification;
+ 		materialObj.email = $scope.email;
+ 		materialObj.phone = $scope.phone;
+ 		materialObj.locat = $scope.locat;
+ 		materialObj.requirement = $scope.requirement;
+ 		materialObj.mat_date = new Date();
+ 		myService.uploadMaterial(materialObj,(data)=>{
+ 			console.log(data);
+ 			if(data.status=="ok"){
+ 				alert("thank you");
+ 			}
+ 			else{
+ 				alert("Error");
+ 			}
+ 			form.reset();
+ 			window.location = "./";
+ 		});
+ 	}
+ })
+
+ /*architect controller*/
+ app.controller("architectController",(myService,$scope)=>{
+ 	$scope.service = "select service";
+ 	architectData = {};
+ 	$scope.onsubmit = (form)=>{
+ 		architectData.service = $scope.service;
+ 		architectData.project_type = $scope.project_type;
+ 		architectData.area = $scope.area;
+ 		architectData.budget = $scope.budget;
+ 		architectData.specification = $scope.specification;
+ 		architectData.email = $scope.email;
+ 		architectData.phone = $scope.phone;
+ 		architectData.locat = $scope.locat;
+ 		architectData.requirement = $scope.requirement;
+ 		architectData.arc_date = new Date();
+ 		myService.uploadArchitect(architectData,(data)=>{
+ 			if(data.status=="ok"){
+ 				alert("Thank you");
+ 			}
+ 			else{
+ 				alert("Error");
+ 			}
+ 	        form.reset();
+ 	        window.location = "./";
+ 		})
+ 	}
+ })

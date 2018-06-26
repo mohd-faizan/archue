@@ -10,7 +10,7 @@
 				<h3>{{userData.username}}</h3>
 				<p class="mb-0"><strong>{{userData.profession}}</strong></p>
 				<p>{{userData.company_name}}</p>
-				<a ng-href="./upload" class="btn btn-primary bg-color border-0"><span class="fa fa-file">&nbsp;&nbsp;</span>BLOG</a>
+				<a ng-href="./upload" class="btn btn-primary bg-color border-0"><span class="fa fa-file">&nbsp;&nbsp;</span>Upload</a>
 				<a href="./edit-profile" class="btn btn-primary bg-color border-0"><span class="fa fa-pencil ">&nbsp;&nbsp;</span>Edit</a>
 			</div>
 		</div>

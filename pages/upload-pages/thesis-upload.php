@@ -1,7 +1,7 @@
 <section class="section-padding" id="project-upload-sec-1" ng-controller="thesisUploadController">
 	<div class="container">
 		<div class="alert alert-info">
-		  <strong>Note!</strong> You can Upload images( jpeg,png,jpg) and pdf file
+		  <strong>Note!</strong> You can Upload images( jpeg,png,jpg) 
 		</div>
 		<div class="upload-frame">
 			<div id="thesis-form-div">
@@ -74,7 +74,7 @@
 						<div class="row">
 							<div class="col-lg-12 col-md-12 col-sm-12">
 								<div class="border border-primary p-2">
-									<label for="case_study_id">Case study sheet(jpeg/pdf)</label>
+									<label for="case_study_id">Case study sheet</label>
 									<div class="form-group">
 										<input type="file" hidden name="case_study" id="case_study_id" class="form-control" ng-model="case_study" required valid-file ng-file>
 									</div>
@@ -91,7 +91,7 @@
 						<div class="row">
 							<div class="col-lg-12 col-md-12 col-sm-12">
 								<div class="border border-primary p-2">
-									<label for="concept_sheet_id">Concept sheet(jpeg/pdf)</label>
+									<label for="concept_sheet_id">Concept sheet</label>
 									<div class="form-group">
 										<input type="file" hidden name="concept_sheet" id="concept_sheet_id" class="form-control" ng-model="concept_sheet" valid-file ng-file2 required>
 									</div>
@@ -108,7 +108,7 @@
 						<div class="row">
 							<div class="col-lg-12 col-md-12 col-sm-12">
 								<div class="border border-primary p-2">
-									<label for="site_plan_id">Site plan(jpeg/pdf)</label>
+									<label for="site_plan_id">Site plan</label>
 									<div class="form-group">
 										<input type="file" hidden name="site_plan" id="site_plan_id" class="form-control" ng-model="site_plan" valid-file ng-file3 required>
 									</div>
@@ -125,7 +125,7 @@
 						<div class="row">
 							<div class="col-lg-12 col-md-12 col-sm-12">
 								<div class="border border-primary p-2">
-									<label for="plan_id">Plan(jpeg/pdf)</label>
+									<label for="plan_id">Plan</label>
 									<div class="form-group">
 										<input type="file" hidden name="plan" id="plan_id" class="form-control" ng-model="plan" valid-file ng-file4 required>
 									</div>
@@ -141,7 +141,7 @@
 						<div class="row">
 							<div class="col-lg-12 col-md-12 col-sm-12">
 								<div class="border border-primary p-2">
-									<label for="elevation_id">Elevation/Section(jpeg/pdf)</label>
+									<label for="elevation_id">Elevation/Section</label>
 									<div class="form-group">
 										<input type="file" hidden name="elevation" id="elevation_id" class="form-control" ng-model="elevation" valid-file ng-file5  required>
 									</div>

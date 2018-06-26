@@ -29,86 +29,13 @@
 				
 				<li class="material-dropdown">
 					<a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MATERIALS</a>
-					<!-- <div class="dropdown-menu sub-menu-container" aria-labelledby="dropdownMenuButton">
-					    
-					    <div class="dropdown-item drop-dn-btn" href="#">
-					    	FINISHES
-					    	<div  class="sub-dropdown">
-					    		<div class="space"></div>
-					    		<div class="container">
-					    			<div class="row">
-					    				<div class="col-lg-6 col-md-6">
-					    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
-					    					<ul class="sub-menu-list">
-					    						<li><a href="#">Metallics</a></li>
-					    						<li><a href="#">Porcelain Stoneware</a></li>
-					    						<li><a href="#">Ceramics</a></li>
-					    						<li><a href="#">Wood / Bamboo</a></li>
-					    						<li><a href="#">Stones</a></li>
-					    						<li><a href="#">Glass</a></li>
-					    						<li><a href="#">Fiber Cements / Cements</a></li>
-					    						<li><a href="#">Plastics</a></li>
-					    						<li><a href="#">Composites</a></li>
-					    						<li><a href="#">Organics / Rubber / Cork</a></li>
-					    					</ul>
-					    					<h6><a href="#">Doors / Partitions</a></h6>
-					    					<ul class="sub-menu-list">
-					    						<li><a href="#">Doors</a></li>
-					    					</ul>
-					    					<h6><a href="#">CEILINGS</a></h6>
-					    					<ul class="sub-menu-list">
-					    						<li><a href="#">Dropped Ceilings</a></li>
-					    						<li><a href="#">Suspension Systems</a></li>
-					    					</ul>
-					    					<h6><a href="#">WINDOWS</a></h6>
-					    					<ul class="sub-menu-list">
-					    						<li><a href="#">Skylights</a></li>
-					    						<li><a href="#">Windows</a></li>
-					    					</ul>
-					    				</div>
-					    				<div class="col-lg-6 col-md-6">
-					    					<h6><a href="#">FLOORS</a></h6>
-					    					<ul class="sub-menu-list">
-					    						<li><a href="#">Concrete Floors</a></li>
-					    						<li><a href="#">Wodern Flooring</a></li>
-					    						<li><a href="#">Linoleum/Vina Flooring</a></li>
-					    						<li><a href="#">Wodern Flooring</a></li>
-					    					</ul>
-					    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
-					    					<ul class="sub-menu-list">
-					    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
-					    						<li><a href="#">Louvers / Shutters</a></li>
-					    					</ul>
-					    				</div>
-					    			</div>
-					    		</div>
-					    	</div>
-					    </div>
-
-				    	<div class="dropdown-item drop-dn-btn" href="#">
-					    	CONSTRUCTION MATERIALS
-					    	<div  class="sub-dropdown sub-item-2">
-				
-					    	</div>
-					    </div>
-				    	
-				    	<div class="dropdown-item drop-dn-btn" href="#">
-					    	EQUIPEMENT
-					    	<div  class="sub-dropdown sub-item-3">
-					    			
-					    	</div>
-					    </div>
-				    	
-				    	<div class="dropdown-item drop-dn-btn" href="#">
-					    	MEP &amp; HVAC
-					    	<div  class="sub-dropdown sub-item-4">
-					    			
-					    	</div>
-					    </div>
-				    </div> -->
 				    <div class="material-dropdown-menu">
 				    	<ul class="list">
-				    		<li><a href="#">Manufacturers</a></li>
+				    		<li class="material-dropdown-item"><a href="#">Manufacturers</a>
+				    			<div class="material-sub-dropdown">
+				    				<p>Here manufacturer will come</p>
+				    			</div>
+				    		</li>
 				    		<li class="material-dropdown-item"><a href="#">Finishes</a>
 				    			<div  class="material-sub-dropdown">
 						    		<div class="space"></div>
@@ -484,7 +411,7 @@
 					    <a class="dropdown-item" href="./portfolio">PORTFOLIO</a>
 					    <a class="dropdown-item" href="./dissertation">DISSERTATION</a>
 					    <a class="dropdown-item" href="./thesis-report">THESIS REPORT</a>
-					    <a class="dropdown-item" href="./studentwork">STUDIO WORK</a>
+					    <a class="dropdown-item" href="./studentwork">STUDENT WORK</a>
 					  </div>
 				</li>
 				
@@ -623,110 +550,115 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-      	<h5 class="bg-font text-center mb-4">We will help you get the best suppliers.<br/>Lets get started!</h5>
-        <form ng-if="isGetActive" name="materialForm">	
-        	<div class="container-fluid" >
-        		<div class="form-group">
-	        		<input type="text" name="product_name" class="form-control" placeholder="Enter Product Name/Service Name" data-ng-model="product_name" required>
-	        	</div>
-        		<div class="row">
-        			<div class="col-md-6">
-        				<div class="form-group">
-			        		<input type="text" name="area" class="form-control" placeholder="Area" data-ng-model="area" required>
-			        	</div>
-        			</div>
-        			<div class="col-md-6">
-        				<div class="form-group">
-			        		<input type="text" class="form-control" name="budget" placeholder=" Tentative Budget" data-ng-model="budget" required>
-			        	</div>
-        			</div>
-        		</div>
-        		<div class="form-group">
-	        		<input type="text" class="form-control" name="specification" placeholder="Specification(if any)" ng-model="specification" >
-	        	</div>
-	        	<div class="row">
-	        		<div class="col-md-4">
-	        			<div class="form-group">
-			        		<input type="email" class="form-control" name="email" placeholder="Email Id" ng-model="email" required>
-			        	</div>
+        <div ng-if="isGetActive" ng-controller="materialController">
+	      	<h5 class="bg-font text-center mb-4">We will help you get the best suppliers.<br/>Lets get started!</h5>
+        	<form  name="materialForm" ng-submit="onsubmit($event.target)">	
+	        	<div class="container-fluid" >
+	        		<div class="form-group">
+		        		<input type="text" name="product_name" class="form-control" placeholder="Enter Product Name/Service Name" data-ng-model="product_name" required>
+		        	</div>
+	        		<div class="row">
+	        			<div class="col-md-6">
+	        				<div class="form-group">
+				        		<input type="text" name="area" class="form-control" placeholder="Area" data-ng-model="area" required>
+				        	</div>
+	        			</div>
+	        			<div class="col-md-6">
+	        				<div class="form-group">
+				        		<input type="text" class="form-control" name="budget" placeholder=" Tentative Budget" data-ng-model="budget" required>
+				        	</div>
+	        			</div>
 	        		</div>
-	        		<div class="col-md-4">
-	        			<div class="form-group">
-			        		<input type="text" class="form-control" name="phone" placeholder="Phone Number" ng-model="phone" required>
-			        	</div>
-	        		</div>
-	        		<div class="col-md-4">
-	        			<div class="form-group">
-			        		<input type="text" class="form-control" name="locat" placeholder="Location" ng-model="locat" required>
-			        	</div>
-	        		</div>
+	        		<div class="form-group">
+		        		<input type="text" class="form-control" name="specification" placeholder="Specification(if any)" data-ng-model="specification" >
+		        	</div>
+		        	<div class="row">
+		        		<div class="col-md-4">
+		        			<div class="form-group">
+				        		<input type="email" class="form-control" name="email" placeholder="Email Id" data-ng-model="email" required>
+				        	</div>
+		        		</div>
+		        		<div class="col-md-4">
+		        			<div class="form-group">
+				        		<input type="text" class="form-control" name="phone" placeholder="Phone Number" data-ng-model="phone" required>
+				        	</div>
+		        		</div>
+		        		<div class="col-md-4">
+		        			<div class="form-group">
+				        		<input type="text" class="form-control" name="locat" placeholder="Location" ng-model="locat" required>
+				        	</div>
+		        		</div>
+		        	</div>
+	        		
+		        	<div class="form-group">
+		        		<textarea class="form-control" placeholder="Requirements Details.." rows="5" cols="20" name="requirement" data-ng-model="requirement" required></textarea>
+		        	</div>
+		        	<button class="btn btn-primary bg-color border-0 w-100" ng-disabled="!materialForm.$valid" >Get Qoute</button>
 	        	</div>
-        		
-	        	<div class="form-group">
-	        		<textarea class="form-control" placeholder="Requirements Details.." rows="5" cols="20" name="requirement" ng-model="requirement" required></textarea>
-	        	</div>
-	        	<button class="btn btn-primary bg-color border-0" ng-disabled="!materialForm.$valid">Get Qoute</button>
-        	</div>
-        </form>
-    	<form ng-if="!isGetActive">
-    		<div class="container-fluid" >
-	    		<div class="row">
-	    			<div class="col-md-6">
-	    				<div class="form-group">
-			    			<select class="form-control">
-			    				<option>service name</option>
-			    				<option>servce 1</option>
-			    				<option>servce 2</option>
-			    				<option>servce 3</option>
-			    				<option>servce 4</option>
-			    			</select>
-			    		</div>
-	    			</div>
-	    			<div class="col-md-6">
-	    				<div class="form-group">
-			    			<input type="text" name="project_type" class="form-control" placeholder="Project type">
-			    		</div>
-	    			</div>
-	    		</div>
-	    		<div class="row">
-        			<div class="col-md-6">
-        				<div class="form-group">
-			        		<input type="text" name="" class="form-control" placeholder="Area">
-			        	</div>
-        			</div>
-        			<div class="col-md-6">
-        				<div class="form-group">
-			        		<input type="text" class="form-control" name="" placeholder=" Tentative Budget">
-			        	</div>
-        			</div>
-        		</div>
-        		<div class="form-group">
-	        		<input type="text" class="form-control" name="" placeholder="Specification(if any)">
-	        	</div>
-	        	<div class="row">
-	        		<div class="col-md-4">
-	        			<div class="form-group">
-			        		<input type="email" class="form-control" name="" placeholder="Email Id">
-			        	</div>
+	        </form>
+        </div>
+    	<div ng-if="!isGetActive" ng-controller="architectController">
+    		<h5 class="bg-font text-center mb-4">We will help you connect with best Architects &amp; Interior designers</h5>
+    		<form name="architectForm" ng-submit="onsubmit($event.target)">
+	    		<div class="container-fluid" >
+		    		<div class="row">
+		    			<div class="col-md-6">
+		    				<div class="form-group">
+				    			<select class="form-control" name="service" data-ng-model="service" required>
+				    				<option>{{service}}</option>
+				    				<option>Design Only</option>
+				    				<option>Design &amp; execution</option>
+				    				<option>Interior Design only</option>
+				    				<option>Interior Design &amp; execution</option>
+				    			</select>
+				    		</div>
+		    			</div>
+		    			<div class="col-md-6">
+		    				<div class="form-group">
+				    			<input type="text" name="project_type" class="form-control" placeholder="Project type" data-ng-model="project_type" required>
+				    		</div>
+		    			</div>
+		    		</div>
+		    		<div class="row">
+	        			<div class="col-md-6">
+	        				<div class="form-group">
+				        		<input type="text" name="area" class="form-control" placeholder="Area" data-ng-model="area" required>
+				        	</div>
+	        			</div>
+	        			<div class="col-md-6">
+	        				<div class="form-group">
+				        		<input type="text" class="form-control" name="budget" placeholder=" Tentative Budget" data-ng-model="budget" required>
+				        	</div>
+	        			</div>
 	        		</div>
-	        		<div class="col-md-4">
-	        			<div class="form-group">
-			        		<input type="text" class="form-control" name="" placeholder="Phone Number">
-			        	</div>
-	        		</div>
-	        		<div class="col-md-4">
-	        			<div class="form-group">
-			        		<input type="text" class="form-control" name="" placeholder="Location">
-			        	</div>
-	        		</div>
-	        	</div>
-        		
-	        	<div class="form-group">
-	        		<textarea class="form-control" placeholder="Requirements Details.." rows="5" cols="20"></textarea>
-	        	</div>
-	        	<button class="btn btn-primary bg-color border-0">Get Qoute</button>
-	    	</div>
-    	</form>
+	        		<div class="form-group">
+		        		<input type="text" class="form-control" name="specification" placeholder="Specification(if any)" data-ng-model="specification">
+		        	</div>
+		        	<div class="row">
+		        		<div class="col-md-4">
+		        			<div class="form-group">
+				        		<input type="email" class="form-control" name="email" placeholder="Email Id" data-ng-model="email" required>
+				        	</div>
+		        		</div>
+		        		<div class="col-md-4">
+		        			<div class="form-group">
+				        		<input type="text" class="form-control" name="phone" placeholder="Phone Number" data-ng-model="phone" required>
+				        	</div>
+		        		</div>
+		        		<div class="col-md-4">
+		        			<div class="form-group">
+				        		<input type="text" class="form-control" name="locat" placeholder="Location" data-ng-model="locat" required>
+				        	</div>
+		        		</div>
+		        	</div>
+	        		
+		        	<div class="form-group">
+		        		<textarea class="form-control" placeholder="Requirements Details.." rows="5" cols="20" name="requirement" data-ng-model="requirement" required></textarea>
+		        	</div>
+		        	<button class="btn btn-primary bg-color border-0 w-100" ng-disabled="!architectForm.$valid">Get Qoute</button>
+		    	</div>
+	    	</form>
+    	</div>
       </div>
 
       <!-- Modal footer -->
@@ -737,3 +669,80 @@
     </div>
   </div>
 </div>
+<!-- <div class="dropdown-menu sub-menu-container" aria-labelledby="dropdownMenuButton">
+					    
+					    <div class="dropdown-item drop-dn-btn" href="#">
+					    	FINISHES
+					    	<div  class="sub-dropdown">
+					    		<div class="space"></div>
+					    		<div class="container">
+					    			<div class="row">
+					    				<div class="col-lg-6 col-md-6">
+					    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
+					    					<ul class="sub-menu-list">
+					    						<li><a href="#">Metallics</a></li>
+					    						<li><a href="#">Porcelain Stoneware</a></li>
+					    						<li><a href="#">Ceramics</a></li>
+					    						<li><a href="#">Wood / Bamboo</a></li>
+					    						<li><a href="#">Stones</a></li>
+					    						<li><a href="#">Glass</a></li>
+					    						<li><a href="#">Fiber Cements / Cements</a></li>
+					    						<li><a href="#">Plastics</a></li>
+					    						<li><a href="#">Composites</a></li>
+					    						<li><a href="#">Organics / Rubber / Cork</a></li>
+					    					</ul>
+					    					<h6><a href="#">Doors / Partitions</a></h6>
+					    					<ul class="sub-menu-list">
+					    						<li><a href="#">Doors</a></li>
+					    					</ul>
+					    					<h6><a href="#">CEILINGS</a></h6>
+					    					<ul class="sub-menu-list">
+					    						<li><a href="#">Dropped Ceilings</a></li>
+					    						<li><a href="#">Suspension Systems</a></li>
+					    					</ul>
+					    					<h6><a href="#">WINDOWS</a></h6>
+					    					<ul class="sub-menu-list">
+					    						<li><a href="#">Skylights</a></li>
+					    						<li><a href="#">Windows</a></li>
+					    					</ul>
+					    				</div>
+					    				<div class="col-lg-6 col-md-6">
+					    					<h6><a href="#">FLOORS</a></h6>
+					    					<ul class="sub-menu-list">
+					    						<li><a href="#">Concrete Floors</a></li>
+					    						<li><a href="#">Wodern Flooring</a></li>
+					    						<li><a href="#">Linoleum/Vina Flooring</a></li>
+					    						<li><a href="#">Wodern Flooring</a></li>
+					    					</ul>
+					    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
+					    					<ul class="sub-menu-list">
+					    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
+					    						<li><a href="#">Louvers / Shutters</a></li>
+					    					</ul>
+					    				</div>
+					    			</div>
+					    		</div>
+					    	</div>
+					    </div>
+
+				    	<div class="dropdown-item drop-dn-btn" href="#">
+					    	CONSTRUCTION MATERIALS
+					    	<div  class="sub-dropdown sub-item-2">
+				
+					    	</div>
+					    </div>
+				    	
+				    	<div class="dropdown-item drop-dn-btn" href="#">
+					    	EQUIPEMENT
+					    	<div  class="sub-dropdown sub-item-3">
+					    			
+					    	</div>
+					    </div>
+				    	
+				    	<div class="dropdown-item drop-dn-btn" href="#">
+					    	MEP &amp; HVAC
+					    	<div  class="sub-dropdown sub-item-4">
+					    			
+					    	</div>
+					    </div>
+				    </div> -->

@@ -51,20 +51,24 @@
 .navbar-container .inline-list{
 	margin-left: auto;
 }
-.navbar-container ul li>a{
+.navbar-container ul li>a,.category .dropdown a{
 	display: block;
 	padding: 1rem 1.3rem;
 	color: #fff; 
 	text-decoration: none;
 	transition: all .5s linear;
 }
+.category .dropdown a{
+	padding: 5px 10px;
+}
 .navbar-container ul li a:hover,
-.nav-bottom-container ul li a:hover{
+.nav-bottom-container ul li a:hover,
+.category .dropdown a:hover{
 	color: #fa8a11;
 	background-color: #fff;
 }	
 .dropdown-menu{
-	background-color: #555;
+	background-color: #000;
 }
 .navbar-container .dropdown-menu,
 .nav-bottom-container .dropdown-menu{
@@ -345,6 +349,7 @@
 	position: absolute;
     left: 100%;
     display: none;
+    top: 0rem;
 }
 .material-dropdown-item:nth-child(2) .material-sub-dropdown{
     top: -2.5rem;

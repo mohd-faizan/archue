@@ -8,7 +8,7 @@
 				<form id="portfolio-form" name="portfolioForm" ng-submit="submitPortfolio($event.target)"> 
 					<div class="container-fluid">
 						<div class="label-div">
-							<h3>Portfolio Upload <span class="fa fa-upload"></span></h3>
+							<h3>Portfolio &amp; Posrtfolio Case Study Upload <span class="fa fa-upload"></span></h3>
 							<div class="label-arr-btn"></div>
 						</div>
 						<div class="space"></div>

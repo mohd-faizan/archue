@@ -248,7 +248,7 @@ app.controller("thesisUploadController",(uploadService,$rootScope,$scope,validat
 	                       "Landscape Design","Mixed-use Architecture","Recreational Architecture","Office Building","Housing Residential","Sports",
 	                       "Residential and Housing","Public Facilities and Infrastructure","Recreational Architecture","Religious","Interior/exterior Design",
 	                       "Landscape Architecture","sports Architecture","Urban Design","Hotels/Motel/Resort/Leisure","Institutional"];
-	var ext = ['jpeg','pdf'];
+	var ext = ['jpeg','png','jpg'];
 	$scope.callService = (file)=>{
 		return validationService.fileValidation(file,ext);
 	}

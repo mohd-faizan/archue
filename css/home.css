@@ -32,6 +32,11 @@ h3.home-page-heading{
 	margin-bottom: .5rem;
 }
 
+@media(max-width:508px){
+	.samll-img{
+		flex-basis:39%;
+	}
+}
 .samll-img:last-child{
 	margin-right: 0;
 	position: relative;
@@ -110,14 +115,15 @@ h3.home-page-heading{
 /*share options */
 .project-share-option{
 	min-height: 50px;
+	width: 100%;
 	background-color: #eee;
 	display: flex;
 	align-items: center;
 	padding-left: 15px;
-	padding-right: 15px;
+	justify-content: center;
 }
 .project-share-option a{
-	margin-right:1rem;
+	margin-right:1.3rem;
 	color: #555;
 	font-size: 1.3rem;
 }

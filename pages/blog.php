@@ -24,8 +24,26 @@
 										
 									</div>
 								</div>
-								<div class="continue-btn pull-right">
+								<!-- <div class="continue-btn pull-right">
 									<a ng-href="./blogs/{{blog.blog_id}}/{{blog.heading}}" ng-click="setBlog(blog)">Continue Reading <span class="fa fa-long-arrow-right"></span></a>
+								</div> -->
+							</div>
+							<div class="project-share-option">
+								<div>
+									<a href=""><span class="fa fa-heart-o"></span></a>
+									<a href=""><span class="fa fa-comment"></span></a>
+									<a href=""><span class="fa fa-eye"></span></a>
+									<a href=""><span class="fa fa-facebook"></span></a>
+									<a href=""><span class="fa fa-twitter"></span></a>
+									<a href=""><span class="fa fa-google-plus"></span></a>
+									<a href=""><span class="fa fa-pinterest"></span></a>
+									<a href=""><span class="fa fa-instagram"></span></a>
+									<a href=""><span class="fa fa-tumblr"></span></a>
+									<a href=""><span class="fa fa-linkedin"></span></a>
+									<a href=""><span class="fa fa-rss"></span></a>
+								</div>
+								<div class="ml-auto">
+									<a ng-href="./blogs/{{blog.blog_id}}/{{blog.heading}}" ng-click="setBlog(blog)">Read More</a>
 								</div>
 							</div>
 						</div>

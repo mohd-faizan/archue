@@ -203,6 +203,9 @@ app.config(($routeProvider,$locationProvider)=>{
 		},
 		templateUrl:"pages/edit-profile.php"
 	})
+	.when("/full-thesis/:name",{
+		templateUrl:"pages/full-thesis.php"
+	})
 	$locationProvider.html5Mode(true);
 });
 // app.run(['$location', '$rootScope', function($location, $rootScope) {

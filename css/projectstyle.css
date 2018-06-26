@@ -79,10 +79,13 @@
 	padding-top: 0;
 	padding-bottom: 0;
 }
-.category .dropdown{
+/*.category .dropdown{
 	position: relative!important;
+}*/
+.category .dropdown-menu{
+	max-height: 500px;
+	overflow-y:scroll;
 }
-
 @media(max-width: 1000px){
 	.projects li{
 		flex-basis: 50%!important;

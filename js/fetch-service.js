@@ -178,5 +178,11 @@ app.service("fetchservice",function($http){
     this.getImages = ()=>{
         return JSON.parse(localStorage.getItem("images"));
     }
+    this.setThesis = (thesis)=>{
+        localStorage.setItem("thesis",JSON.stringify(thesis));
+    }
+    this.getThesis = ()=>{
+        return JSON.parse(localStorage.getItem("thesis"));
+    }
 })
 

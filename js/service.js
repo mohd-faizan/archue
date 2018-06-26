@@ -127,4 +127,32 @@ app.service("myService",function($http){
 			cb(resp.data)
 		},(error)=>console.log(error));
 	}
+	this.uploadMaterial = (fdata,cb)=>{
+		var fd = this.convertToForm(fdata);
+		$http({
+			method:"POST",
+			data:fd,
+			url:"php/update-material.php",
+			headers:{
+				"Content-Type":undefined
+			}
+		})
+		.then((resp)=>{
+			cb(resp.data)
+		},(error)=>console.log(error));
+	}
+	this.uploadArchitect = (fdata,cb)=>{
+		var fd = this.convertToForm(fdata);
+		$http({
+			method:"POST",
+			data:fd,
+			url:"php/update-architect.php",
+			headers:{
+				"Content-Type":undefined
+			}
+		})
+		.then((resp)=>{
+			cb(resp.data)
+		},(error)=>console.log(error));
+	}
 });

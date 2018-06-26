@@ -8,6 +8,11 @@
 	display: block;
 	position: relative;
 }
+@media(max-width:508px){
+	.main-image{
+		height:200px;
+	}
+}
 .main-image img{
 	transition: all .5s linear;
 }

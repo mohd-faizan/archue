@@ -79,7 +79,7 @@ app.controller("fullProjectController",($scope,$routeParams,fetchservice)=>{
 })
 
 
-app.controller("projectsController",($scope,fetchservice)=>{
+app.controller("projectsController",($route,$scope,fetchservice)=>{
 	fetchservice.fetchPro((data)=>{
 		// console.log(data);
 		$scope.projects = data.data;
@@ -139,10 +139,12 @@ app.controller("projectsController",($scope,fetchservice)=>{
 	                       "Landscape Design","Mixed-use Architecture","Recreational Architecture","Office Building","Housing Residential","Sports",
 	                       "Residential and Housing","Public Facilities and Infrastructure","Recreational Architecture","Religious","Interior/exterior Design",
 	                       "Landscape Architecture","sports Architecture","Urban Design","Hotels/Motel/Resort/Leisure","Institutional"];
-	$scope.category = "";                       
+	$scope.category = " ";                       
 	$scope.setCategory = (cat)=>{
 		$scope.category = cat;
+		console.log(cat);
 	}
+	
 })
 /*portfolio */
 app.controller("fetchPortfolioController",($scope,fetchservice)=>{
@@ -260,7 +262,11 @@ app.controller("studentWorkController",($scope,fetchservice)=>{
 				};
 			}
 		}
-	})
+	});
+	$scope.category = "";
+	$scope.setCategory = (cat)=>{
+		$scope.category = cat;
+	}
 })
 /*fetch thesis report controller*/
 // app.controller("fetchThesisReportController",($rootScope,$scope,fetchservice)=>{
@@ -322,22 +328,36 @@ app.controller("fetchThesisController",($scope,fetchservice)=>{
 		project_type:""
 	}
 	let fullThesis = {
-		
-	}
-	$scope.singleThesisArr = [];
+		singleThesis:{},
+		images:[],
+		thesis:{}	
+	};
+	$scope.fullThesisArr = [];
 	fetchservice.fetchThesis((data)=>{
 		for(let thesis of data){
 			singleThesis.file = fetchservice.fetchOneImage(thesis.casestudy);
 			singleThesis.file_name = thesis.thesis_name;
 			singleThesis.project_type = thesis.thesis_proj_type;
-			$scope.singleThesisArr.push(singleThesis);
+			fullThesis.singleThesis = singleThesis;
+			fullThesis.images = fullThesis.images .concat(fetchservice.convertToArrImages(thesis.casestudy));
+			fullThesis.images = fullThesis.images .concat(fetchservice.convertToArrImages(thesis.conceptsheet));
+			fullThesis.images = fullThesis.images .concat(fetchservice.convertToArrImages(thesis.siteplan));
+			fullThesis.images = fullThesis.images .concat(fetchservice.convertToArrImages(thesis.plan));
+			fullThesis.images = fullThesis.images .concat(fetchservice.convertToArrImages(thesis.elevation));
+			fullThesis.thesis = thesis;
+			$scope.fullThesisArr.push(fullThesis);
 			singleThesis = {
 				file:"",
 				file_name:"",
 				project_type:""
-			}
+			};
+			fullThesis = {
+				singleThesis:{},
+				images:[],
+				thesis:{}	
+			};
+
 		}
-		console.log($scope.singleThesisArr);
 	});
 	$scope.categories =  ["Adaptive Reuse","Building Services design","Cultural Architecture","Transports","Urban Design/Planning",
 	                       "Commercial Architecture","Educational and Research Center","Greens Building",
@@ -348,6 +368,17 @@ app.controller("fetchThesisController",($scope,fetchservice)=>{
 	$scope.category = "";                       
 	$scope.setCategory = (cat)=>{
 		$scope.category = cat;
+	}
+	$scope.setThesis = (x)=>{
+		fetchservice.setThesis(x);
+	}
+})
+/*fetch full project*/
+app.controller("fullThesisController",($scope,fetchservice)=>{
+	$scope.thesis = fetchservice.getThesis();
+	$scope.setImages = (images)=>{
+		fetchservice.setImages(images);
+		$scope.$parent.isShowViewImages();
 	}
 })
 /*fetch events*/

@@ -20,9 +20,27 @@
 								<div class="content-data">
 									<h5><a href="./full-thesis-report/{{thesis_report.thesis_report_name}}" ng-click="setThesisReport(thesis_report)" class="text-dark">{{thesis_report.thesis_report_name}}</a></h5>
 									<p class="p-text">{{thesis_report.thesis_report_place}}</p>
-									<div class="file-link pull-right">
+									<!-- <div class="file-link pull-right">
 										<a href="./full-thesis-report/{{thesis_report.thesis_report_name}}" ng-click="setThesisReport(thesis_report)">Show thesis-report <span class="fa fa-long-arrow-right"></span></a>
-									</div>
+									</div> -->
+								</div>
+							</div>
+							<div class="project-share-option">
+								<div>
+									<a href=""><span class="fa fa-heart-o"></span></a>
+									<a href=""><span class="fa fa-comment"></span></a>
+									<a href=""><span class="fa fa-eye"></span></a>
+									<a href=""><span class="fa fa-facebook"></span></a>
+									<a href=""><span class="fa fa-twitter"></span></a>
+									<a href=""><span class="fa fa-google-plus"></span></a>
+									<a href=""><span class="fa fa-pinterest"></span></a>
+									<a href=""><span class="fa fa-instagram"></span></a>
+									<a href=""><span class="fa fa-tumblr"></span></a>
+									<a href=""><span class="fa fa-linkedin"></span></a>
+									<a href=""><span class="fa fa-rss"></span></a>
+								</div>
+								<div class="ml-auto">
+									<a href="./full-thesis-report/{{thesis_report.thesis_report_name}}" ng-click="setThesisReport(thesis_report)">Read More</a>
 								</div>
 							</div>
 						</div>

@@ -1,4 +1,6 @@
 <div class="home-margin" ng-controller="myHomeController">
+	<div class="space"></div>
+	<div class="space"></div>
 	<div ng-include="'include/carousel.php'"></div>
 	<div class="space"></div>
 	<div class="space"></div>
@@ -51,24 +53,75 @@
 							<div class="space"></div>
 							<div class="project-share-option">
 								<div>
-									<a href=""><span class="fa fa-heart-o"></span></a>
+									<!-- <a href=""><span class="fa fa-heart-o"></span></a>
 									<a href=""><span class="fa fa-comment"></span></a>
-									<a href=""><span class="fa fa-eye"></span></a>
-									<a href=""><span class="fa fa-facebook"></span></a>
-									<a href=""><span class="fa fa-twitter"></span></a>
-									<a href=""><span class="fa fa-google-plus"></span></a>
-									<a href=""><span class="fa fa-pinterest"></span></a>
+									<a href=""><span class="fa fa-eye"></span></a> -->
+									<a href=""><span class="fa fa-facebook"
+										socialshare
+					                    socialshare-provider="facebook"
+					                    socialshare-type="sharer"
+					                    socialshare-via="167503137442216"
+					                    socialshare-url="http://www.archue.com/full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+					                    socialshare-redirect-uri="http://google.com"
+					                    socialshare-popup-height="300"
+					                    socialshare-popup-width="400"
+					                    socialshare-trigger="click"></span></a>
+									<a href=""><span class="fa fa-twitter"
+										socialshare
+				                        socialshare-provider="twitter"
+				                        socialshare-hashtags="Architect, development, internet"
+				                        socialshare-via="twitter"
+				                        socialshare-text=""
+				                        socialshare-url="http://www.archue.com//full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+				                        socialshare-popup-height="300"
+				                        socialshare-popup-width="400"
+				                        socialshare-trigger="click"></span></a>
+									<a href=""
+									socialshare
+			                        socialshare-provider="google"
+			                        socialshare-url="http://www.archue.com//full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+			                        socialshare-popup-height="300"
+			                        socialshare-popup-width="400"
+			                        socialshare-trigger="click"><span class="fa fa-google-plus"></span></a>
+									<a href=""
+									 socialshare
+			                        socialshare-media="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTWGNvatNjOUyli3tBacDdAHmienfptFVStj_olGCWmaUXoIGYI"
+			                        socialshare-provider="pinterest"
+			                        socialshare-text="Architect"
+			                        socialshare-url="http://www.archue.com//full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+			                        socialshare-popup-height="300"
+			                        socialshare-popup-width="400"
+			                        socialshare-trigger="click"><span class="fa fa-pinterest"></span></a>
 									<a href=""><span class="fa fa-instagram"></span></a>
-									<a href=""><span class="fa fa-tumblr"></span></a>
-									<a href=""><span class="fa fa-linkedin"></span></a>
+									<a href=""
+									socialshare
+			                        socialshare-provider="tumblr"
+			                        socialshare-type="link"
+			                        socialshare-text="Architect"
+			                        socialshare-url="http://www.archue.com//full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+			                        socialshare-popup-height="300"
+			                        socialshare-popup-width="540"
+			                        socialshare-trigger="click"><span class="fa fa-tumblr"></span></a>
+									<a href=""
+									socialshare
+			                        socialshare-provider="linkedin"
+			                        socialshare-text="Architect"
+			                        socialshare-url="http://www.archue.com//full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+			                        socialshare-description="Architect"
+			                        socialshare-source="Archue"
+			                        socialshare-popup-height="300"
+			                        socialshare-popup-width="400"
+			                        socialshare-trigger="click"><span class="fa fa-linkedin"></span></a>
 									<a href=""><span class="fa fa-rss"></span></a>
 								</div>
-								<div>
-									<a href="./full-project/{{myproject.mainData.project_id}}/{{myproject.mainData.project_name}}" ng-click=setFullProject(myproject)>Read More</a>
+								<div class="ml-auto">
+									<a href="./full-project/{{myproject.mainData.project_id}}/{{myproject.url}}" ng-click=setFullProject(myproject)>Read More</a>
 								</div>
 							</div>
 							<!-- <div class="d-flex justify-content-end mt-2"><a href="./full-project/{{myproject.mainData.project_id}}/{{myproject.mainData.project_name}}" ng-click=setFullProject(myproject)>Read More&nbsp;<span class="fa fa-arrow-circle-o-right"></span></a></div> -->
 						</div>
+						<a href="#" class="btn btn-primary">Show More</a>
+						<div class="space"></div>
 						<div ng-if="myProjectsArr.length==0" class="alert alert-danger">
 							<p>No Projects Right Now</p>
 						</div>

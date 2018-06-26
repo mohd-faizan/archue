@@ -30,11 +30,9 @@
 		</div>
 		<div class="space"></div>
 		<div class="footer-link pb-4">
-			<div><a href="#">Suggestions</a></div>
+			
 			<div><a href="./contact" target="_self">Contact Us</a></div>
-			<div><a href="#">Terms Of Use</a></div>
-			<div><a href="#">Privacy Policy</a></div>
-			<div><a href="#">RSS</a></div>
+			<div><a href="#">Term &amp; Conditions</a></div>
 		</div>
 	</div>
 	<section id="copy-right">
@@ -42,7 +40,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<p class="text-white pt-3">&copy;2018 Archue already reserved</p>
+						<p class="text-white pt-3">&copy;2018 Archue allright reserved</p>
 					</div>
 					<div class="col-md-6">
 						<p class="text-white pt-3">Designed &amp; Developed By <a href="https://www.wampinfotech.com" class="bg-font">wampinfotech.com</a></p>
@@ -63,6 +61,7 @@
 		</div>
 	</div>
 </section>
+
 <script type="text/javascript" src="js/fetch-service.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
 <script type="text/javascript" src="js/controller.js"></script>

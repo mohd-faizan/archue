@@ -9,11 +9,13 @@
 					<a href="./">Archue</a>
 					<span class="fa fa-angle-right"></span>
 					<span>Student Work</span>
+					<span class="fa fa-angle-right"></span>
+					<span>{{category}}</span>
 				</div>
 				<div class="space"></div>
 				<div class="d-flex">
 					<div class="project-top-header">
-						<h5>Architecture Project</h5>
+						<h5>{{category}}</h5>
 					</div>
 					<div class="category">
 						<div class="dropdown">
@@ -21,6 +23,7 @@
 						    CATEGORY+
 						  </button>
 						  <div class="dropdown-menu">
+						  	<a href="#" class="dropdown-item"  ng-click="setCategory($)">All</a>
 						    <a class="dropdown-item" href="#" ng-repeat="cat in categories|orderBy:cat track by $index" ng-click="setCategory(cat)">{{cat}}</a>
 						  </div>
 						</div>
