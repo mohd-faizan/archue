@@ -155,4 +155,18 @@ app.service("myService",function($http){
 			cb(resp.data)
 		},(error)=>console.log(error));
 	}
+	this.forgotPassword = (fData,cb)=>{
+		var fd = this.convertToForm(fData);
+		$http({
+			method:"POST",
+			data:fd,
+			url:"php/forgot-password.php",
+			headers:{
+				"Content-Type":undefined
+			}
+		})
+		.then((resp)=>{
+			cb(resp.data)
+		},(error)=>console.log(error));
+	}
 });

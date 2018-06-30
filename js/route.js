@@ -16,7 +16,7 @@ app.config(($routeProvider,$locationProvider)=>{
 		resolve:{
 			check:($location,user)=>{
 				if(!user.isLoggedIn()){
-					$location.path("/");
+					$location.path("./login");
 				}
 			}
 		},

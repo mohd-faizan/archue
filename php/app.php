@@ -151,6 +151,30 @@
 			}
 			echo json_encode($resp);
 		}
+		public static function forgotPassword($post){
+			$email = $_POST['email'];
+			$sql = "SELECT password FROM users WHERE email='$email'";
+			if($res=self::$conn->query($sql)){
+				if($res->num_rows>0){
+					$row = $res->fetch_assoc();
+					$resp = self::mailTo($email,$row['password']);
+				} 
+				else{
+					$resp['data'] = "No Data";
+				}
+				echo json_encode($resp);
+				
+			}
+		}
+		public static function mailTo($email,$pass){
+			$to = $email;
+			$subject = "Password Reset Request ";
+			$message = "Your Password is <b>$pass</b>";
+			$headers = "MIME-Version:1.0".PHP_EOL;
+			$headers .= "Content-Type:text/html;charset=UTF-8".PHP_EOL;
+			$headers .= "From:archue@gmail.com";
+			return mail($to,$subject,$message,$headers);
+		}
 	}
 	App::setConnect();
 ?>

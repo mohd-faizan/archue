@@ -40,8 +40,8 @@ app.directive("myNav",()=>{
 					elem.find(".navbar-container .material-dropdown-menu").removeClass("onscroll-material-drop-menu");
 				}
 			})
-			elem.find(".navbar-container ul li>a").on('click',(x)=>{
-				elem.find(".navbar-container ul li a").removeClass('active');
+			elem.find(".navbar-container ul li>a,nav-bottom-container  ul li").on('click',(x)=>{
+				elem.find(".navbar-container ul li a,nav-bottom-container  ul li").removeClass('active');
 				angular.element(x.target).addClass('active');
 			})
 
@@ -144,6 +144,33 @@ app.directive("imageViewer",()=>{
 	}
 })
 
+app.directive("limitDir",()=>{
+	var myObj = {};
+	myObj.link = (scope,elem,attr)=>{
+		let win = angular.element(window);
+		win.on("scroll",()=>{
+			if(win.scrollTop()>elem.offset().top-700){
+				scope.myLimit += 10;
+				scope.$apply();
+			}
+		});
+	}
+	return myObj;
+})
+
+app.directive("imageViewer",()=>{
+	return{
+		link:(scope,elem,attr)=>{
+			/*elem.find(".small-images-view img").click(()=>{
+				console.log(this);
+			});*/
+			$(".small-images-view").click(($event)=>{
+				var atr = angular.element($event.target).attr('src');
+				$(".images>img").attr("src",atr);
+			})
+		}
+	}
+})
 //custom filter
 app.filter("myTime",()=>{
 	return (time)=>{

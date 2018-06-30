@@ -62,14 +62,20 @@
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	/*justify-content: space-around;*/
+	
 	flex-wrap: wrap;
 }
 .projects li{
 	flex-basis: 30%;
-	height: 70px;
 	margin-bottom: 4.2rem;
 	margin-right: 1.2rem;
+}
+.projects li a:first-child{
+	min-height: 13rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px #eee;
 }
 .projects li a p{
 	margin: 10px 0px;
@@ -87,6 +93,9 @@
 	overflow-y:scroll;
 }
 @media(max-width: 1000px){
+	.projects{
+		justify-content: center;
+	}
 	.projects li{
 		flex-basis: 50%!important;
 	}

@@ -324,7 +324,7 @@
 	position: absolute;
     background-color: #fff;
     z-index: 999;
-    top: 19.5%;
+    /*top: 19.5%;*/
     display: none;
     left: 5rem;
     width: 90%;

@@ -29,12 +29,79 @@
 										
 									</div>
 								</div>
-								<div class="continue-btn pull-right">
+								<!-- <div class="continue-btn pull-right">
 									<a ng-href="./job/{{job.job_heading}}" ng-click="setJob(job)">Continue Reading <span class="fa fa-long-arrow-right"></span></a>
-								</div>
+								</div> -->
 							</div>
 						</div>
-					</div>	
+					</div>
+					<div class="project-share-option">
+								<div>
+									<!-- <a href=""><span class="fa fa-heart-o"></span></a>
+									<a href=""><span class="fa fa-comment"></span></a>
+									<a href=""><span class="fa fa-eye"></span></a> -->
+									<a href=""><span class="fa fa-facebook"
+										socialshare
+					                    socialshare-provider="facebook"
+					                    socialshare-type="sharer"
+					                    socialshare-via="167503137442216"
+					                    socialshare-url="http://www.archue.com/full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+					                    socialshare-redirect-uri="http://google.com"
+					                    socialshare-popup-height="300"
+					                    socialshare-popup-width="400"
+					                    socialshare-trigger="click"></span></a>
+									<a href=""><span class="fa fa-twitter"
+										socialshare
+				                        socialshare-provider="twitter"
+				                        socialshare-hashtags="Architect, development, internet"
+				                        socialshare-via="twitter"
+				                        socialshare-text=""
+				                        socialshare-url="http://www.archue.com//full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+				                        socialshare-popup-height="300"
+				                        socialshare-popup-width="400"
+				                        socialshare-trigger="click"></span></a>
+									<a href=""
+									socialshare
+			                        socialshare-provider="google"
+			                        socialshare-url="http://www.archue.com//full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+			                        socialshare-popup-height="300"
+			                        socialshare-popup-width="400"
+			                        socialshare-trigger="click"><span class="fa fa-google-plus"></span></a>
+									<a href=""
+									 socialshare
+			                        socialshare-media="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTWGNvatNjOUyli3tBacDdAHmienfptFVStj_olGCWmaUXoIGYI"
+			                        socialshare-provider="pinterest"
+			                        socialshare-text="Architect"
+			                        socialshare-url="http://www.archue.com//full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+			                        socialshare-popup-height="300"
+			                        socialshare-popup-width="400"
+			                        socialshare-trigger="click"><span class="fa fa-pinterest"></span></a>
+									
+									<a href=""
+									socialshare
+			                        socialshare-provider="tumblr"
+			                        socialshare-type="link"
+			                        socialshare-text="Architect"
+			                        socialshare-url="http://www.archue.com//full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+			                        socialshare-popup-height="300"
+			                        socialshare-popup-width="540"
+			                        socialshare-trigger="click"><span class="fa fa-tumblr"></span></a>
+									<a href=""
+									socialshare
+			                        socialshare-provider="linkedin"
+			                        socialshare-text="Architect"
+			                        socialshare-url="http://www.archue.com//full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+			                        socialshare-description="Architect"
+			                        socialshare-source="Archue"
+			                        socialshare-popup-height="300"
+			                        socialshare-popup-width="400"
+			                        socialshare-trigger="click"><span class="fa fa-linkedin"></span></a>
+									
+								</div>
+								<div class="ml-auto">
+									<a ng-href="./job/{{job.job_heading}}" ng-click="setJob(job)">Read More</a>
+								</div>
+							</div>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-5 col-sm-12">

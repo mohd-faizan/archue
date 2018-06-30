@@ -37,9 +37,11 @@
 				<div class="yellow-line bg-color"></div>
 				<div class="project-container">
 					<ul class="projects" >
-						<li ng-if="res.length>0" ng-repeat="singlepro in res = (myProjectsArr|filter:category) track by $index">
+						<li ng-if="res.length>0" ng-repeat="singlepro in res = (myProjectsArr|limitTo:myLimit|filter:category) track by $index">
 							<a href="./full-project/{{singlepro.mainData.project_id}}/{{singlepro.url}}" ng-click="setFullProject(singlepro)" class="text-dark">
 								<img ng-src="uploads/{{singlepro.mainImage}}" width="100%" height="100%">
+							</a>
+							<a href="./full-project/{{singlepro.mainData.project_id}}/{{singlepro.url}}" ng-click="setFullProject(singlepro)" class="text-dark">
 								<p>{{singlepro.mainData.project_name}}</p>
 							</a>
 						</li>
@@ -47,6 +49,7 @@
 					<div ng-if="res.length==0" class="alert alert-danger">
 						No Project Found For Such Category
 					</div>
+					<a href="#"   limit-dir></a>
 				</div>	
 			</div>
 			<div class="col-md-3 pr-0">

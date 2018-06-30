@@ -8,7 +8,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-9">
-						<div ng-if="myProjectsArr.length>0" ng-repeat="myproject in myProjectsArr|limitTo:10" class="mb-4">
+						<div ng-if="myProjectsArr.length>0" ng-repeat="myproject in myProjectsArr|limitTo:myLimit" class="mb-4">
 							<div class="project-heading">
 								<h2 class="project-heading"><a href="./full-project/{{myproject.mainData.project_id}}/{{myproject.url}}" ng-click=setFullProject(myproject) class="text-dark">{{myproject.mainData.project_name}}</a></h2>
 								<small>{{myproject.mainData.project_time|myTime}},{{myproject.mainData.project_date|date:"fullDate"}}</small>
@@ -92,7 +92,7 @@
 			                        socialshare-popup-height="300"
 			                        socialshare-popup-width="400"
 			                        socialshare-trigger="click"><span class="fa fa-pinterest"></span></a>
-									<a href=""><span class="fa fa-instagram"></span></a>
+									
 									<a href=""
 									socialshare
 			                        socialshare-provider="tumblr"
@@ -112,7 +112,7 @@
 			                        socialshare-popup-height="300"
 			                        socialshare-popup-width="400"
 			                        socialshare-trigger="click"><span class="fa fa-linkedin"></span></a>
-									<a href=""><span class="fa fa-rss"></span></a>
+									
 								</div>
 								<div class="ml-auto">
 									<a href="./full-project/{{myproject.mainData.project_id}}/{{myproject.url}}" ng-click=setFullProject(myproject)>Read More</a>
@@ -120,7 +120,7 @@
 							</div>
 							<!-- <div class="d-flex justify-content-end mt-2"><a href="./full-project/{{myproject.mainData.project_id}}/{{myproject.mainData.project_name}}" ng-click=setFullProject(myproject)>Read More&nbsp;<span class="fa fa-arrow-circle-o-right"></span></a></div> -->
 						</div>
-						<a href="#" class="btn btn-primary">Show More</a>
+						<a href="#"   limit-dir></a>
 						<div class="space"></div>
 						<div ng-if="myProjectsArr.length==0" class="alert alert-danger">
 							<p>No Projects Right Now</p>

@@ -473,37 +473,45 @@
 	<!-- Smalll Device Navbar  -->
 	<nav id="sidenav">
 		<ul class="sidenav-list">
+			<li ng-show="isShow" class="dropdown"><a href="/dashboard" class="dropdown-toggle" data-toggle="dropdown"> 
+			    <img ng-src="uploads/{{userData.profile}}" height="25" width="25">
+			    {{userData.username}}
+			</a>
+			    <div class="dropdown-menu">
+				    <a class="dropdown-item sidenav-li" href="./dashboard">Dashboard</a>
+				    <a class="dropdown-item sidenav-li" href="./logout">logout</a>
+				</div>
+			</li>
 			<li class="sidenav-li"><a class="sidenav-link" href="./">HOME</a></li>
 			<li class="sidenav-li"><a class="sidenav-link" href="./project">PROJECTS</a></li>
-			<li class="sidenav-li"><a class="sidenav-link" href="#">STUDENT CORNER</a></li>
-			<li class="sidenav-li"><a class="sidenav-link" href="./blog">BLOG</a></li>
-
-			<!-- Material Dropdown Button -->
+			<!-- student  Dropdown Button -->
 			<li class="sidenav-li material-drp-btn">
 				<a class="sidenav-link" href="#" id="material-link">
-					MATERIALS
+					STUDENT CORNER
 					<span class="fa fa-angle-right" id="angle-down-symbol"></span>
 				</a>
 			</li>
-
+			<li class="sidenav-li"><a class="sidenav-link" href="./blog">BLOG</a></li>
 			<li class="sidenav-li"><a class="sidenav-link" href="./upload">UPLOAD</a></li>
-			<li class="sidenav-li"><a class="sidenav-link" href="#" class="bg-font">GET QUOTE</a></li>
+			<li class="sidenav-li"><a class="sidenav-link bg-font"  href="#"  data-toggle="modal" data-target="#qouteModal">GET QUOTE</a></li>
 
-			<!-- More Dropdown Button -->
+			<!-- MATERIAL Dropdown Button -->
 			<li class="sidenav-li more-drp-btn">
 				<a href="#" class="sidenav-link" id="more-link">
-					MORE 
+					MATERIAL 
 					<span class="fa fa-angle-right" id="angle-down-symbol"></span>
 				</a>
 			</li>
 
-			<li class="sidenav-li"><a class="sidenav-link" href="#">ADVERTISE WITH US</a></li>
-			<li class="sidenav-li"><a class="sidenav-link" href="./signup">SIGNUP</a></li>
-			<li class="sidenav-li"><a class="sidenav-link" href="#!login">LOGIN</a></li>
+			<li class="sidenav-li"><a class="sidenav-link" href="./partner-with-us">PARTNER WITH US</a></li>
+			<li class="sidenav-li"><a class="sidenav-link" href="./events">EVENTS</a></li>
+			<li class="sidenav-li"><a class="sidenav-link" href="./jobs">JOBS</a></li>
+			<li class="sidenav-li"><a class="sidenav-link" href="./competition">COMPETITION</a></li>
+			<li class="sidenav-li"><a class="sidenav-link" href="./login" ng-show="!isShow">LOGIN</a></li>
 		</ul>
 	</nav>
 
-	<!-- More Dropdown Mwnu -->
+	<!-- MATERIAL Dropdown Mwnu -->
 	<div class="more-drop-dn-div">
 		<ul class="more-drp-menu">
 			<li>
@@ -512,13 +520,13 @@
 					Back
 				</a>
 			</li>
-			<li class="sidenav-li"><a class="sidenav-link" href="./events">EVENTS</a></li>
-			<li class="sidenav-li"><a class="sidenav-link" href="#">CAREER</a></li>
-			<li class="sidenav-li"><a class="sidenav-link" href="#">OTHERS</a></li>
+			<li class="sidenav-li"><a class="sidenav-link" href="./events"></a></li>
+			<li class="sidenav-li"><a class="sidenav-link" href="#"></a></li>
+			<li class="sidenav-li"><a class="sidenav-link" href="#"></a></li>
 		</ul>
 	</div>
 
-	<!-- Material Dropdown Menu -->
+	<!-- student Dropdown Menu -->
 	<div class="material-drop-dn-div">
 		<ul class="material-drp-menu">
 			<li>
@@ -527,9 +535,11 @@
 					Back
 				</a>
 			</li>
-			<li class="sidenav-li"><a class="sidenav-link" href="#">EVENTS</a></li>
-			<li class="sidenav-li"><a class="sidenav-link" href="#">CAREER</a></li>
-			<li class="sidenav-li"><a class="sidenav-link" href="#">OTHERS</a></li>
+			<li class="sidenav-li"><a class="sidenav-link" href="./thesis">THESIS</a></li>
+			<li class="sidenav-li"><a class="sidenav-link" href="./portfolio">PORTFOLIO</a></li>
+			<li class="sidenav-li"><a class="sidenav-link" href="./dissertation">DISSERTATION</a></li>
+			<li class="sidenav-li"><a class="sidenav-link" href="./thesis-report">THESIS REPORT</a></li>
+			<li class="sidenav-li"><a class="sidenav-link" href="./student-work">STUDENT WORK</a></li>
 		</ul>
 	</div>
 </header>

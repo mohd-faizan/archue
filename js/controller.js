@@ -232,3 +232,14 @@ app.controller("fetchImageController",(fetchservice,$scope)=>{
  		})
  	}
  })
+
+ /*forgot controller*/
+ app.controller("forgotController",(myService,$scope)=>{
+ 	var forgotData = {};
+ 	$scope.onSubmit = (form)=>{
+ 		forgotData.email = $scope.email;
+	 	myService.forgotPassword(forgotData,(data)=>{
+	 		console.log(data);
+	 	});
+ 	}
+ })

@@ -59,6 +59,7 @@ app.controller("myHomeController",($scope,fetchservice)=>{
 		fetchservice.setImages(images);
 		$scope.$parent.isShowViewImages();
 	}
+	$scope.myLimit = 10;
 })
 
 
@@ -144,6 +145,7 @@ app.controller("projectsController",($route,$scope,fetchservice)=>{
 		$scope.category = cat;
 		console.log(cat);
 	}
+	$scope.myLimit = 15;
 	
 })
 /*portfolio */

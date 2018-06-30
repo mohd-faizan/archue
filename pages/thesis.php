@@ -40,6 +40,9 @@
 							<li ng-if="res.length>0" ng-repeat="singlepro in res = (fullThesisArr|filter:category) track by $index">
 								<a href="./full-thesis/{{singlepro.singleThesis.file_name}}" class="text-dark" ng-click="setThesis(singlepro)">
 									<img ng-src="uploads/{{singlepro.singleThesis.file}}" width="100%" height="100%">
+									
+								</a>
+								<a href="./full-thesis/{{singlepro.singleThesis.file_name}}" class="text-dark" ng-click="setThesis(singlepro)">
 									<p>{{singlepro.singleThesis.file_name}}</p>
 								</a>
 							</li>
