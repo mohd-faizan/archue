@@ -49,3 +49,9 @@
 	border-radius: 20px;
     width: 100px;
 }
+@media(max-width: 500px){
+	.login-box{
+		height: 300px;
+		width: 300px;
+	}
+}

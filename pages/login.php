@@ -48,11 +48,11 @@
 		<div class="space"></div>
 		<div class="login-with-social" social-login>
 			<div class="s-btn">
-				<button class="btn btn-lg btn-primary"><span class="fa fa-facebook">&nbsp;&nbsp; Login With Facebook</span></button>
+				<button class="btn btn-lg btn-primary"><span class="fa fa-facebook"  ng-click="onFBLogin()">&nbsp;&nbsp; Login With Facebook</span></button>
 			</div>
 			<div class="space"></div>
 			<div class="s-btn">
-				<button class="btn btn-lg btn-danger"><span class="fa fa-google-plus" >&nbsp;&nbsp; Login With Google</span></button>
+				<button class="btn btn-lg btn-danger"><span class="fa fa-google-plus"  ng-click="onGoogleLogin()">&nbsp;&nbsp; Login With Google</span></button>
 			</div>
 			<div class="g-signin2" data-onsuccess="onSignIn"></div>
 			<div class="space"></div>
@@ -63,3 +63,17 @@
 	</div>
 </section>
 <script type="text/javascript" src="js/route.js"></script>
+<script type="text/javascript">
+	(function(){
+		var mynode = document.createElement('script'); 
+		mynode.type = "text/javascript";
+		mynode.async = true;
+		mynode.src = "https://apis.google.com/js/client.js?onload=onLoadFunction";
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(mynode,s);
+	})();
+</script>
+
+
+
+

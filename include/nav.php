@@ -42,7 +42,7 @@
 						    		<div class="container-fluid">
 						    			<div class="row">
 						    				<div class="col-lg-6 col-md-6">
-						    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Metallics</a></li>
 						    						<li><a href="#">Porcelain Stoneware</a></li>
@@ -55,30 +55,30 @@
 						    						<li><a href="#">Composites</a></li>
 						    						<li><a href="#">Organics / Rubber / Cork</a></li>
 						    					</ul>
-						    					<h6><a href="#">Doors / Partitions</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Doors</a></li>
 						    					</ul>
-						    					<h6><a href="#">CEILINGS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Dropped Ceilings</a></li>
 						    						<li><a href="#">Suspension Systems</a></li>
 						    					</ul>
-						    					<h6><a href="#">WINDOWS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Skylights</a></li>
 						    						<li><a href="#">Windows</a></li>
 						    					</ul>
 						    				</div>
 						    				<div class="col-lg-6 col-md-6">
-						    					<h6><a href="#">FLOORS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Concrete Floors</a></li>
 						    						<li><a href="#">Wodern Flooring</a></li>
 						    						<li><a href="#">Linoleum/Vina Flooring</a></li>
 						    						<li><a href="#">Wodern Flooring</a></li>
 						    					</ul>
-						    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
 						    						<li><a href="#">Louvers / Shutters</a></li>
@@ -94,7 +94,7 @@
 						    		<div class="container-fluid">
 						    			<div class="row">
 						    				<div class="col-lg-6 col-md-6">
-						    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Metallics</a></li>
 						    						<li><a href="#">Porcelain Stoneware</a></li>
@@ -107,30 +107,30 @@
 						    						<li><a href="#">Composites</a></li>
 						    						<li><a href="#">Organics / Rubber / Cork</a></li>
 						    					</ul>
-						    					<h6><a href="#">Doors / Partitions</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Doors</a></li>
 						    					</ul>
-						    					<h6><a href="#">CEILINGS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Dropped Ceilings</a></li>
 						    						<li><a href="#">Suspension Systems</a></li>
 						    					</ul>
-						    					<h6><a href="#">WINDOWS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Skylights</a></li>
 						    						<li><a href="#">Windows</a></li>
 						    					</ul>
 						    				</div>
 						    				<div class="col-lg-6 col-md-6">
-						    					<h6><a href="#">FLOORS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Concrete Floors</a></li>
 						    						<li><a href="#">Wodern Flooring</a></li>
 						    						<li><a href="#">Linoleum/Vina Flooring</a></li>
 						    						<li><a href="#">Wodern Flooring</a></li>
 						    					</ul>
-						    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
 						    						<li><a href="#">Louvers / Shutters</a></li>
@@ -146,7 +146,7 @@
 						    		<div class="container-fluid">
 						    			<div class="row">
 						    				<div class="col-lg-6 col-md-6">
-						    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Metallics</a></li>
 						    						<li><a href="#">Porcelain Stoneware</a></li>
@@ -159,30 +159,30 @@
 						    						<li><a href="#">Composites</a></li>
 						    						<li><a href="#">Organics / Rubber / Cork</a></li>
 						    					</ul>
-						    					<h6><a href="#">Doors / Partitions</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Doors</a></li>
 						    					</ul>
-						    					<h6><a href="#">CEILINGS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Dropped Ceilings</a></li>
 						    						<li><a href="#">Suspension Systems</a></li>
 						    					</ul>
-						    					<h6><a href="#">WINDOWS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Skylights</a></li>
 						    						<li><a href="#">Windows</a></li>
 						    					</ul>
 						    				</div>
 						    				<div class="col-lg-6 col-md-6">
-						    					<h6><a href="#">FLOORS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Concrete Floors</a></li>
 						    						<li><a href="#">Wodern Flooring</a></li>
 						    						<li><a href="#">Linoleum/Vina Flooring</a></li>
 						    						<li><a href="#">Wodern Flooring</a></li>
 						    					</ul>
-						    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
 						    						<li><a href="#">Louvers / Shutters</a></li>
@@ -198,7 +198,7 @@
 						    		<div class="container-fluid">
 						    			<div class="row">
 						    				<div class="col-lg-6 col-md-6">
-						    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Metallics</a></li>
 						    						<li><a href="#">Porcelain Stoneware</a></li>
@@ -211,30 +211,30 @@
 						    						<li><a href="#">Composites</a></li>
 						    						<li><a href="#">Organics / Rubber / Cork</a></li>
 						    					</ul>
-						    					<h6><a href="#">Doors / Partitions</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Doors</a></li>
 						    					</ul>
-						    					<h6><a href="#">CEILINGS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Dropped Ceilings</a></li>
 						    						<li><a href="#">Suspension Systems</a></li>
 						    					</ul>
-						    					<h6><a href="#">WINDOWS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Skylights</a></li>
 						    						<li><a href="#">Windows</a></li>
 						    					</ul>
 						    				</div>
 						    				<div class="col-lg-6 col-md-6">
-						    					<h6><a href="#">FLOORS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Concrete Floors</a></li>
 						    						<li><a href="#">Wodern Flooring</a></li>
 						    						<li><a href="#">Linoleum/Vina Flooring</a></li>
 						    						<li><a href="#">Wodern Flooring</a></li>
 						    					</ul>
-						    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
 						    						<li><a href="#">Louvers / Shutters</a></li>
@@ -250,7 +250,7 @@
 						    		<div class="container-fluid">
 						    			<div class="row">
 						    				<div class="col-lg-6 col-md-6">
-						    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Metallics</a></li>
 						    						<li><a href="#">Porcelain Stoneware</a></li>
@@ -263,30 +263,30 @@
 						    						<li><a href="#">Composites</a></li>
 						    						<li><a href="#">Organics / Rubber / Cork</a></li>
 						    					</ul>
-						    					<h6><a href="#">Doors / Partitions</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Doors</a></li>
 						    					</ul>
-						    					<h6><a href="#">CEILINGS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Dropped Ceilings</a></li>
 						    						<li><a href="#">Suspension Systems</a></li>
 						    					</ul>
-						    					<h6><a href="#">WINDOWS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Skylights</a></li>
 						    						<li><a href="#">Windows</a></li>
 						    					</ul>
 						    				</div>
 						    				<div class="col-lg-6 col-md-6">
-						    					<h6><a href="#">FLOORS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Concrete Floors</a></li>
 						    						<li><a href="#">Wodern Flooring</a></li>
 						    						<li><a href="#">Linoleum/Vina Flooring</a></li>
 						    						<li><a href="#">Wodern Flooring</a></li>
 						    					</ul>
-						    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
 						    						<li><a href="#">Louvers / Shutters</a></li>
@@ -302,7 +302,7 @@
 						    		<div class="container-fluid">
 						    			<div class="row">
 						    				<div class="col-lg-6 col-md-6">
-						    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Metallics</a></li>
 						    						<li><a href="#">Porcelain Stoneware</a></li>
@@ -315,30 +315,30 @@
 						    						<li><a href="#">Composites</a></li>
 						    						<li><a href="#">Organics / Rubber / Cork</a></li>
 						    					</ul>
-						    					<h6><a href="#">Doors / Partitions</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Doors</a></li>
 						    					</ul>
-						    					<h6><a href="#">CEILINGS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Dropped Ceilings</a></li>
 						    						<li><a href="#">Suspension Systems</a></li>
 						    					</ul>
-						    					<h6><a href="#">WINDOWS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Skylights</a></li>
 						    						<li><a href="#">Windows</a></li>
 						    					</ul>
 						    				</div>
 						    				<div class="col-lg-6 col-md-6">
-						    					<h6><a href="#">FLOORS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Concrete Floors</a></li>
 						    						<li><a href="#">Wodern Flooring</a></li>
 						    						<li><a href="#">Linoleum/Vina Flooring</a></li>
 						    						<li><a href="#">Wodern Flooring</a></li>
 						    					</ul>
-						    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
 						    						<li><a href="#">Louvers / Shutters</a></li>
@@ -354,7 +354,7 @@
 						    		<div class="container-fluid">
 						    			<div class="row">
 						    				<div class="col-lg-6 col-md-6">
-						    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Metallics</a></li>
 						    						<li><a href="#">Porcelain Stoneware</a></li>
@@ -367,30 +367,30 @@
 						    						<li><a href="#">Composites</a></li>
 						    						<li><a href="#">Organics / Rubber / Cork</a></li>
 						    					</ul>
-						    					<h6><a href="#">Doors / Partitions</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Doors</a></li>
 						    					</ul>
-						    					<h6><a href="#">CEILINGS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Dropped Ceilings</a></li>
 						    						<li><a href="#">Suspension Systems</a></li>
 						    					</ul>
-						    					<h6><a href="#">WINDOWS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Skylights</a></li>
 						    						<li><a href="#">Windows</a></li>
 						    					</ul>
 						    				</div>
 						    				<div class="col-lg-6 col-md-6">
-						    					<h6><a href="#">FLOORS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Concrete Floors</a></li>
 						    						<li><a href="#">Wodern Flooring</a></li>
 						    						<li><a href="#">Linoleum/Vina Flooring</a></li>
 						    						<li><a href="#">Wodern Flooring</a></li>
 						    					</ul>
-						    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
+						    					
 						    					<ul class="sub-menu-list">
 						    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
 						    						<li><a href="#">Louvers / Shutters</a></li>
@@ -432,36 +432,25 @@
 		</div>
 		<div class="nav-bottom-container">
 			<ul class="inline-list">
-				<!-- <li class="dropdown">
-					<a href="#"  class="dropdown-toggle" data-toggle="dropdown">MORE</a>
-					<div class="dropdown-menu">
-					    <a class="dropdown-item" href="#">EVENTS</a>
-					    <a class="dropdown-item" href="#">JOBS</a>
-					    <a class="dropdown-item" href="#">COMPETITION</a>
-					   
-					</div>
-				</li> -->
 				<li><a href="./events">EVENTS</a></li>
 				<li><a href="./jobs">JOBS</a></li>
 				<li><a  href="./competition">COMPETITION</a></li>
 				<li><a  href="./partner-with-us" ng-show="!isShow">PARTNERS WITH US</a></li>
 				<li><a href="./login" ng-show="!isShow">LOGIN</a></li>
-				<!-- <li class="my-search-parent"><a href="#" ng-click="showHideSearch()" ng-show="!isShowSearch"><span class="fa fa-search"></span></a>
-					 <form ng-show="isShowSearch" class="my-search-child">
-						<div class="input-group">
-			                <input type="text" class="form-control" placeholder="Search&hellip;">
-			                <span class="input-group-btn">
-			                    <button type="button" class="btn btn-default">Go</button>
-			                </span>
-			            </div>
-					 </form>	
-				</li> -->
 				<li>
-					<form class="my-search-child">
+					<form class="my-search-child" ng-submit="querySubmit($event.target)">
 						<div class="input-group">
-			                <input type="text" class="form-control" placeholder="Search&hellip;">
+							<select class="myselect" ng-model="searchtype">
+								<option>{{searchtype}}</option>
+								<option>PROJECTS</option>
+								<option>THESIS</option>
+								<option>EVENTS</option>
+								<option>JOBS</option>
+								<option>COMPETITION</option>
+							</select>
+			                <input type="text" class="form-control" style="border:1px solid #dddddd" placeholder="Search&hellip;" ng-model="searchquery">
 			                <span class="input-group-btn">
-			                    <button type="button" class="btn btn-default"><span class="fa fa-search"></span></button>
+			                    <button  class="btn btn-default"><span class="fa fa-search"></span></button>
 			                </span>
 			            </div>
 					 </form>	
@@ -503,7 +492,7 @@
 				</a>
 			</li>
 
-			<li class="sidenav-li"><a class="sidenav-link" href="./partner-with-us">PARTNER WITH US</a></li>
+			<li class="sidenav-li" ng-show="!isShow"><a class="sidenav-link" href="./partner-with-us" >PARTNER WITH US</a></li>
 			<li class="sidenav-li"><a class="sidenav-link" href="./events">EVENTS</a></li>
 			<li class="sidenav-li"><a class="sidenav-link" href="./jobs">JOBS</a></li>
 			<li class="sidenav-li"><a class="sidenav-link" href="./competition">COMPETITION</a></li>
@@ -688,7 +677,7 @@
 					    		<div class="container">
 					    			<div class="row">
 					    				<div class="col-lg-6 col-md-6">
-					    					<h6><a href="#">WALLCOVERING/CLADDING</a></h6>
+					    					
 					    					<ul class="sub-menu-list">
 					    						<li><a href="#">Metallics</a></li>
 					    						<li><a href="#">Porcelain Stoneware</a></li>
@@ -701,30 +690,30 @@
 					    						<li><a href="#">Composites</a></li>
 					    						<li><a href="#">Organics / Rubber / Cork</a></li>
 					    					</ul>
-					    					<h6><a href="#">Doors / Partitions</a></h6>
+					    					
 					    					<ul class="sub-menu-list">
 					    						<li><a href="#">Doors</a></li>
 					    					</ul>
-					    					<h6><a href="#">CEILINGS</a></h6>
+					    					
 					    					<ul class="sub-menu-list">
 					    						<li><a href="#">Dropped Ceilings</a></li>
 					    						<li><a href="#">Suspension Systems</a></li>
 					    					</ul>
-					    					<h6><a href="#">WINDOWS</a></h6>
+					    					
 					    					<ul class="sub-menu-list">
 					    						<li><a href="#">Skylights</a></li>
 					    						<li><a href="#">Windows</a></li>
 					    					</ul>
 					    				</div>
 					    				<div class="col-lg-6 col-md-6">
-					    					<h6><a href="#">FLOORS</a></h6>
+					    					
 					    					<ul class="sub-menu-list">
 					    						<li><a href="#">Concrete Floors</a></li>
 					    						<li><a href="#">Wodern Flooring</a></li>
 					    						<li><a href="#">Linoleum/Vina Flooring</a></li>
 					    						<li><a href="#">Wodern Flooring</a></li>
 					    					</ul>
-					    					<h6><a href="#">WINDOW SHADES/AWNINGS</a></h6>
+					    					
 					    					<ul class="sub-menu-list">
 					    						<li><a href="#">Blinds / Mosquito Nets / Curtains</a></li>
 					    						<li><a href="#">Louvers / Shutters</a></li>

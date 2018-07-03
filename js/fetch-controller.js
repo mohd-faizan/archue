@@ -169,7 +169,7 @@ app.controller("fullPortfolioController",($sce,$scope,fetchservice)=>{
 	$scope.portfolio = fetchservice.getPortfolio();
 	// let file = $scope.portfolio.portfolio_file.split(" ");
 
-	$scope.url = $sce.trustAsResourceUrl("http://docs.google.com/gview?url=http://archue.professionalaccountingnow.com/upload-file/"
+	$scope.url = $sce.trustAsResourceUrl("http://docs.google.com/gview?url=http://archue.com/upload-file/"
 		+$scope.portfolio.portfolio_file
 		+"&embedded=true");
 	var fd = new FormData();
@@ -204,7 +204,7 @@ app.controller("fetchDessertController",($scope,fetchservice)=>{
 /* full dessertation controller */
 app.controller("fetchFullDessert",($sce,$scope,fetchservice)=>{
 	$scope.dessertation = fetchservice.getDessertation();
-	$scope.url = $sce.trustAsResourceUrl("https://docs.google.com/gview?url=http://archue.professionalaccountingnow.com/upload-file/"
+	$scope.url = $sce.trustAsResourceUrl("https://docs.google.com/gview?url=http://archue.com/upload-file/"
 		+$scope.dessertation.dessertation_file+
 		"&embedded=true");
 	var fd = new FormData();

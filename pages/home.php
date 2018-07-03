@@ -72,14 +72,14 @@
 				                        socialshare-hashtags="Architect, development, internet"
 				                        socialshare-via="twitter"
 				                        socialshare-text=""
-				                        socialshare-url="http://www.archue.com//full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+				                        socialshare-url="http://www.archue.com/full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
 				                        socialshare-popup-height="300"
 				                        socialshare-popup-width="400"
 				                        socialshare-trigger="click"></span></a>
 									<a href=""
 									socialshare
 			                        socialshare-provider="google"
-			                        socialshare-url="http://www.archue.com//full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+			                        socialshare-url="http://www.archue.com/full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
 			                        socialshare-popup-height="300"
 			                        socialshare-popup-width="400"
 			                        socialshare-trigger="click"><span class="fa fa-google-plus"></span></a>
@@ -88,7 +88,7 @@
 			                        socialshare-media="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTWGNvatNjOUyli3tBacDdAHmienfptFVStj_olGCWmaUXoIGYI"
 			                        socialshare-provider="pinterest"
 			                        socialshare-text="Architect"
-			                        socialshare-url="http://www.archue.com//full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+			                        socialshare-url="http://www.archue.com/full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
 			                        socialshare-popup-height="300"
 			                        socialshare-popup-width="400"
 			                        socialshare-trigger="click"><span class="fa fa-pinterest"></span></a>
@@ -98,7 +98,7 @@
 			                        socialshare-provider="tumblr"
 			                        socialshare-type="link"
 			                        socialshare-text="Architect"
-			                        socialshare-url="http://www.archue.com//full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+			                        socialshare-url="http://www.archue.com/full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
 			                        socialshare-popup-height="300"
 			                        socialshare-popup-width="540"
 			                        socialshare-trigger="click"><span class="fa fa-tumblr"></span></a>
@@ -106,7 +106,7 @@
 									socialshare
 			                        socialshare-provider="linkedin"
 			                        socialshare-text="Architect"
-			                        socialshare-url="http://www.archue.com//full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
+			                        socialshare-url="http://www.archue.com/full-project/{{myproject.mainData.project_id}}/{{myproject.url}}"
 			                        socialshare-description="Architect"
 			                        socialshare-source="Archue"
 			                        socialshare-popup-height="300"

@@ -88,7 +88,13 @@ app.controller("fullProjectController",($location,deleteService,$scope,fetchserv
 	}
 	$scope.approve = (id)=>{
 		deleteService.approveProject(id,(data)=>{
-			console.log(data);
+			if(data.status=="ok"){
+				alert("succefully approved");
+				window.location.href="./projects"
+			}
+			else{
+				alert("Erro! not approved ");
+			}
 		});
 	}
 	$scope.del = (id)=>{
@@ -96,7 +102,13 @@ app.controller("fullProjectController",($location,deleteService,$scope,fetchserv
 		if(isDel){
 			deleteService.delete(id,(data)=>{
 				console.log(data);
-				$location.path('./projects');
+				if(data.status=="ok"){
+					alert("succesfully deleted");
+					$location.path('./projects');
+				}
+				else{
+					alert("error found");
+				}
 			});
 		}
 		else{

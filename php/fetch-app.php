@@ -216,7 +216,7 @@ class FetchApp extends Conn{
 		echo json_encode($resp);
 	}
 	public static function fetchCompetitor(){
-		$sql = "SELECT * FROM competitor ORDER BY competitor_id DESC,competitor_date DESC";
+		$sql = "SELECT * FROM competition ORDER BY competitor_id DESC,competitor_date DESC";
 			$arr = array();
 		if($res = self::$conn->query($sql)){
 			while($row = $res->fetch_assoc()){

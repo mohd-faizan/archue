@@ -158,13 +158,45 @@
 				if($res->num_rows>0){
 					$row = $res->fetch_assoc();
 					$resp = self::mailTo($email,$row['password']);
+					$resp['status'] = "ok";
 				} 
 				else{
 					$resp['data'] = "No Data";
+					$resp['status'] = "no";
 				}
 				echo json_encode($resp);
-				
 			}
+		}
+		public static function contacts($post){
+			echo json_encode(self::contactMailTo($post));
+		}
+		public static function contactMailTo($post){
+			$name = $post['name'];
+			$email = $post['email'];
+			$query = $post['query'];
+			$to = "submissions@archue.com";
+			$subject = "User contact throught website";
+			$msg = "
+					<html>
+						<body>
+							<table>
+								<tr>
+								  <th>Name</th>
+								  <th>Email</th>
+								  <th>query</th>
+								</tr>
+								<tr>
+								  <td>$name</td>
+								  <td>$email</td>
+								  <td>$query</td>
+								</tr>
+							</table>
+						</body>
+					</html>
+			       ";
+			$headers = "MIME-Version:1.0".PHP_EOL;
+			$headers .= "Content-Type:text/html;charset=UTF-8";
+			return mail($to,$subject,$msg,$headers);
 		}
 		public static function mailTo($email,$pass){
 			$to = $email;
@@ -174,6 +206,63 @@
 			$headers .= "Content-Type:text/html;charset=UTF-8".PHP_EOL;
 			$headers .= "From:archue@gmail.com";
 			return mail($to,$subject,$message,$headers);
+		}
+		public static function searchQuery($post){
+			$query = $post['query'];
+			$type = $post['type'];
+			switch($type){
+				case "projects":
+					 $sql = "SELECT * FROM projects WHERE project_name LIKE '%$query' OR project_name LIKE '$query%' OR project_name LIKE '%$query%'";
+					$proResp = self::excuteQuery($sql);
+					$proResp['type'] = "project";
+					echo json_encode($proResp);
+				break;
+				case "thesis":
+					$sql = "SELECT * FROM thesis WHERE thesis_name LIKE '%$query' OR thesis_name LIKE '$query%' OR thesis_name LIKE '%$query%'";
+					$thesisResp = self::excuteQuery($sql);
+					$thesisResp['type'] = "thesis";
+					echo json_encode($thesisResp);
+				break;
+				case "events":
+					$sql = "SELECT * FROM events WHERE event_name LIKE '%$query' OR event_name LIKE '$query%' OR event_name LIKE '%$query%'";
+					$thesisResp = self::excuteQuery($sql);
+					$thesisResp['type'] = "events";
+					echo json_encode($thesisResp);
+				break;
+				case "competition":
+					$sql = "SELECT * FROM competition WHERE competition_heading LIKE '%$query' OR competition_heading LIKE '$query%' OR competition_heading LIKE '%$query%'";
+					$thesisResp = self::excuteQuery($sql);
+					$thesisResp['type'] = "competition";
+					echo json_encode($thesisResp);
+				break;
+				case "jobs":
+					$sql = "SELECT * FROM jobs WHERE job_heading LIKE '%$query' OR job_heading LIKE '$query%' OR job_heading LIKE '%$query%'";
+					$thesisResp = self::excuteQuery($sql);
+					$thesisResp['type'] = "jobs";
+					echo json_encode($thesisResp);
+				break;
+			}
+		}
+		public static function excuteQuery($sql){
+			$arr = array();
+			if($res=self::$conn->query($sql)){
+				if($res->num_rows>0){
+					while($row=$res->fetch_assoc()){
+						array_push($arr, $row);
+					}
+					$resp['data'] = $arr;
+					$resp['status'] = 1;
+				}
+				else{
+					$resp['data'] = [];
+					$resp['status'] = 2;
+				}
+			}
+			else{
+				$resp['data'] = self::$conn->error;
+				$resp['status'] = 3;
+			}
+			return $resp;
 		}
 	}
 	App::setConnect();

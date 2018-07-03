@@ -47,7 +47,7 @@
 						</li>
 					</ul>
 					<div ng-if="res.length==0" class="alert alert-danger">
-						No Project Found For Such Category
+						No Projects 
 					</div>
 				</div>	
 			</div>

@@ -169,4 +169,31 @@ app.service("myService",function($http){
 			cb(resp.data)
 		},(error)=>console.log(error));
 	}
+	this.contact = (data,cb)=>{
+		var fd = this.convertToForm(data);
+		$http({
+			method:"POST",
+			data:fd,
+			url:"php/contact.php",
+			headers:{
+				"Content-Type":undefined
+			}
+		})
+		.then((resp)=>{
+			cb(resp.data)
+		},(error)=>console.log(error));
+	}
+	this.runSearchQuery = (fd,cb)=>{
+		$http({
+			method:"POST",
+			data:fd,
+			url:"php/search-query.php",
+			headers:{
+				"Content-Type":undefined
+			}
+		})
+		.then((resp)=>{
+			cb(resp.data)
+		},(error)=>console.log(error));
+	}
 });

@@ -40,11 +40,16 @@ app.directive("myNav",()=>{
 					elem.find(".navbar-container .material-dropdown-menu").removeClass("onscroll-material-drop-menu");
 				}
 			})
-			elem.find(".navbar-container ul li>a,nav-bottom-container  ul li").on('click',(x)=>{
-				elem.find(".navbar-container ul li a,nav-bottom-container  ul li").removeClass('active');
+			elem.find(".navbar-container ul li>a").on('click',(x)=>{
+				elem.find(".navbar-container ul li a").removeClass('active');
+				elem.find(".nav-bottom-container ul li>a").removeClass('active');
 				angular.element(x.target).addClass('active');
 			})
-
+			elem.find(".nav-bottom-container ul li>a").on('click',(x)=>{
+				elem.find(".navbar-container ul li a").removeClass('active');
+				elem.find(".nav-bottom-container ul li>a").removeClass('active');
+				angular.element(x.target).addClass('active');
+			});
 			// More Dropdown Button Action
 			elem.find('.more-drp-btn').click((event)=>{
 				event.preventDefault();
@@ -75,11 +80,14 @@ app.directive("myNav",()=>{
 		}
 	}
 });
-app.directive("myCarousel",()=>{
+app.directive("myCarousel",($timeout)=>{
 	return{
 		link:(scope,elem,attr)=>{
 			var counter = 0;
-			var changeImg = (event,proname)=>{
+			var changeImg = (event,proname,project)=>{
+				if(typeof project=="string"){
+					project = JSON.parse(project);
+				} 
 				var img = angular.element(event);
 				var imgSrc = img.attr('src');
 				if(img.parent().hasClass("whiteness")){
@@ -87,17 +95,21 @@ app.directive("myCarousel",()=>{
 					img.parent().siblings().addClass("whiteness");
 				}
 				elem.find(".main-image img").attr("src",imgSrc);
-				elem.find(".main-image-con-div p").html(proname)				
+				elem.find(".main-image-con-div p").html(proname);
+				elem.find(".main-image").attr('href','./full-project/'+project.mainData.project_id+"/"+project.url);
+				if(elem.find(".main-image").on('click',()=>{
+					scope.setFullProject(project);
+				}));
 			}
 			elem.find('.myclass').click((e)=>{
-				changeImg(e.target,angular.element(e.target).attr('data-project'));
+				changeImg(e.target,angular.element(e.target).attr('data-project'),angular.element(e.target).attr('data-fullproject'));
 			});
 			scope.interval(()=>{
 				var images = elem.find('.img-ref img');
 				if(counter==3){
 					counter=0;
 				}
-				changeImg(images[counter],scope.singleProjectImages[counter].projectname);
+				changeImg(images[counter],scope.singleProjectImages[counter].projectname,scope.myProjectsArr[counter]);
 				counter++;
 			},2000);
 		}

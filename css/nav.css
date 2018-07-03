@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+.myselect{
+    background: #dddddd;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    color: #555;
+    border-color: #dddddd;
+    outline: none;
+    padding-left: .5rem;
+    font-size: 10px;
+}
 #header .header-container{
 	padding:1rem 2rem; 
 }

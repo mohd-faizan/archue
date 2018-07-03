@@ -232,7 +232,7 @@
 		$competitor_content = self::$conn->real_escape_string($post['competitor_content']);
 		if(self::upload_file($file)){
 			$competitor_file = self::$conn->real_escape_string($file['name']);
-			$sql = "INSERT INTO competitor(competition_heading,competition_category,competitor_name,competitor_content,competitor_file,competitor_date) VALUES('$competition_heading','$competition_category','$competitor_name','$competitor_content','$competitor_file',NOW())";
+			$sql = "INSERT INTO competition(competition_heading,competition_category,competitor_name,competitor_content,competitor_file,competitor_date) VALUES('$competition_heading','$competition_category','$competitor_name','$competitor_content','$competitor_file',NOW())";
 			if(self::$conn->query($sql)){
 				$resp['status'] = "ok";
 				$resp['message'] = "succesfully submit";

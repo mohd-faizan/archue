@@ -31,3 +31,4 @@
 	<link rel="stylesheet" type="text/css" href="css/uploadstyle.css">
 	<link rel="stylesheet" type="text/css" href="css/home.css"><link rel="stylesheet" type="text/css" href="css/projectstyle.css">
 	<link rel="stylesheet" type="text/css" href="css/studentcornerstyle.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">

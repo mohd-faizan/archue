@@ -205,6 +205,12 @@ app.config(($routeProvider,$locationProvider)=>{
 	})
 	.when("/full-thesis/:name",{
 		templateUrl:"pages/full-thesis.php"
+	}).
+	when("/search/:query/:type",{
+		templateUrl:"pages/search.php"
+	})
+	.otherwise({
+		templateUrl:"pages/home.php"
 	})
 	$locationProvider.html5Mode(true);
 });

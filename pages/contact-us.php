@@ -28,6 +28,9 @@
 		</div>
 	</div>
 </section>
+<section class="d-flex flex-row-reverse pr-4 pt-4">
+	<p>Designed &amp; Developed By<a href="http://wampinfotech.com" target="_blank">wampinfotech</a></p>
+</section>
 <section id="contact-sec-2" class="section-padding">
 	<div class="home-margin">
 		<div class="container">
@@ -35,30 +38,30 @@
 				<h4>Any Other Query?</h4>
 				<p class="text-center p-text">Just Fill Up the Form</p>
 			</div>
-			<div class="contact-form-div">
-				<form id="contact-form">
+			<div class="contact-form-div" ng-controller="contactController">
+				<form id="contact-form" name="contactForm" ng-submit="onsubmit($event.target)">
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-lg-6 col-md-6 col-sm-12">
 								<div class="form-group">
-									<input type="text" name="name" class="form-control" placeholder="Your Name..." id="nameid">
+									<input type="text" name="name" class="form-control" placeholder="Your Name..." id="nameid" required ng-model="name">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-12">
 								<div class="form-group">
-									<input type="email" name="email" class="form-control" placeholder="Your Email..." id="emailid">
+									<input type="email" name="email" class="form-control" placeholder="Your Email..." id="emailid" required ng-model="email">
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-lg-12 col-md-12 col-sm-12">
 								<div class="form-group">
-									<textarea cols="20" rows="5" class="form-control" placeholder="Your Query..." id="queryid"></textarea>
+									<textarea cols="20" rows="5" class="form-control" placeholder="Your Query..." id="queryid" required ng-model="query"></textarea>
 								</div>
 							</div>
 						</div>
 						<div class="contact-form-sub-btn text-center">
-							<button class="btn btn-lg">Submit</button>
+							<button class="btn btn-lg" ng-disabled="!contactForm.$valid">Submit</button>
 						</div>
 					</div>
 				</form>
