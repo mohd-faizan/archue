@@ -12,10 +12,7 @@
  		self::$database = "archue";
 		 
 		 
- 		//  self::$user = "archue1_archue";
-		//  self::$database = "archue1_archue";
-		//  self::$password = "Archue@12345";
-		 
+ 		
  		$conn = new mysqli(self::$server,self::$user,self::$password,self::$database);
  		if($conn->connect_error){
 			 exit;
