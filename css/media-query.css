@@ -1,0 +1,29 @@
+@media(max-width: 768px) {
+    .home-button {
+        margin-left: 0;
+    }
+    .yellow-section {
+        text-align: center;
+    }
+    .yellow-section .home-button-container {
+        display: flex;
+        justify-content: center;
+    }
+    .my-caption {
+        top: 35%;
+        left: 7%;
+        width: 85%;
+    }
+}
+
+@media(min-width: 767px) {
+    a.blog-comp-student:hover {
+        background-color: #fa8a11 !important;
+    }
+    .blog-comp-student:hover .hover-text {
+        display: block;
+    }
+    .blog-comp-student:hover .blog-name {
+        display: none;
+    }
+}

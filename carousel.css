@@ -1,0 +1,73 @@
+.carousel-indicators li {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+}
+
+.my-carousal-container .my-caption {
+    position: absolute;
+    top: 26%;
+    left: 26%;
+    text-align: center;
+    width: 50%;
+}
+
+.my-carousal-container .designation {
+    height: 120px;
+    background: rgba(255, 255, 255, 0.7);
+    border-top: 5px solid #000;
+    border-bottom: 5px solid #000;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .my-carousal-container .designation {
+        height: 160px;
+    }
+    .my-tetimonial {
+        width: 100% !important;
+    }
+    .my-carousal-container .my-caption {
+        width: 90%;
+        left: 5%;
+    }
+    .my-carousal-container .my-caption p {
+        font-size: 15px;
+    }
+}
+
+.my-bg-primary {
+    background-color: #fa8a11 !important;
+}
+
+.my-carousal-container .my-carousel:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.my-carousal-container .carousel-control-next,
+.carousel-control-prev {
+    width: 10% !important;
+}
+
+.my-tetimonial {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.my-tetimonial .carousel-inner {
+    min-height: 250px;
+}
+
+.my-tetimonial .carousel-indicators .active {
+    background-color: #555 !important;
+}
+
+.my-tetimonial .carousel-indicators li {
+    background-color: #bdbdbd;
+}

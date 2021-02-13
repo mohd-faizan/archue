@@ -1,0 +1,24 @@
+.add-magazine-btn button{
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #fa8a11;
+    color: #ffffff;
+}
+.add-magazine-container {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add-magazine-container .card {
+    width: 500px;
+}
+
+#e-magazine .card-img-top {
+    max-height: 8rem;
+    object-fit: cover;
+}

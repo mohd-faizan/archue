@@ -1,0 +1,55 @@
+[
+    {
+        "id":1,
+        "item":"Manufacturers",
+        "subItem":["Hunter Douglas Architectural","EQUITONE","Shildan","ShapeShell","Danpal","Pure + FreeForm",
+        "Cascade Architectural","EGGER","Rieder Smart Elements ","Ceramica Rondine","Kaldewei","Tremco","GIRA"
+        ,"HAVER & BOECKER","Fastmount®"]
+    },
+    {
+        "id":2,
+        "item":"Finishes",
+        "subItem":["Metallics","Porcelain Stoneware","Ceramics","Stones","Wood/Bamboo","Fiber Cements/Cements"
+        ,"Glass","Plastics","Composites","Doors","Partitions","Dropped Ceilings","Suspension Systems","Blinds/ Mosquito Nets/Curtains",
+        "Louvers/Shutters","Louvers/Shutters","Awnings","windows","skylights","Sealents/Protectors","Wooden Flooring",
+        "Linoleum/Vinyl/Epoxy/Urethane","Carpets","Adhesives","Wallpaper"]
+    },
+    {
+        "id":3,
+        "item":"Construction And Material",
+        "subItem":["Glass","Wood","Metal","System/Prefabricated Panells","Plastics/Fibers","Enclosures/Double Skin Facades",
+        "Louvers","Curtain Walls","Green Facades","Metallics","Tiles","Planting","Fasteners","Railing","Stairs",
+        "Freestanding Umbrellas","Tensile Structures","Retractable Structures","Membranes","Sealants","Acoustic",
+        "Thermal"]
+    },
+    {
+        "id":4,
+        "item":"Equipment",
+        "subItem":["Sinks","Accessories","Shower","Toilets/Urinals","Bathroom Furniture","Faucets","Residential",
+        "Office Furniture","Cultural/Sports","Kitchen Furniture/Countertops","Equipment","Elevators"]
+    },
+    {
+        "id":5,
+        "item":"MEP and HVAC",
+        "subItem":["Lights","Bulbs/Spots/Wall Lights","Reflectors/Street Lighting","Switches/Ballasts","Comfort",
+        "Fluids Treatment","Heating"]
+    },
+    {
+        "id":6,
+        "item":"Application",
+        "subItem":["Residential Applications","Corporate Applications","Educational Applications","Hotel Applications",
+        "Urban Applications","Cultural/Patrimonial","Retail Applications","Healthcare Applications","Sports Applications",
+        "Industrial Applications"]
+    },
+    {
+        "id":7,
+        "item":"Outdoor Spaces",
+        "subItem":["Bicycle Rack/Bollards","Playground/Sports Equipment","Urban Shading","Patio Furniture","Exterior Decking",
+        "Living Fences"]
+    },
+    {
+        "id":8,
+        "item":"Technology",
+        "subItem":["Home Appliances","Connectivity Accessories","Renders/3D Animation"]
+    }
+]
