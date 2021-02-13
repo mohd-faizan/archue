@@ -10,8 +10,6 @@
 		self::$user = "root";
  		self::$password = "";
  		self::$database = "archue";
-		 
-		 
  		
  		$conn = new mysqli(self::$server,self::$user,self::$password,self::$database);
  		if($conn->connect_error){
