@@ -8,8 +8,8 @@
                     <div class="d-flex justify-content-center">
                         <div class="img position-ralative">
                             <img src="../uploads/{{ user.profile }}" class="profile-image"  alt="">
-                            <label for="profile">Change profile photo</label>
-                            <input type="file" id="profile" accept="image/*" hidden>
+                            <label for="profile" ng-if="loggedIn">Change profile photo</label>
+                            <input ng-change="onChange($event)" ng-model="profile" type="file" id="profile" accept="image/*"  hidden>
                         </div>
                     </div>
                     <div class="bg-grey d-flex pt-3 pb-3 justify-content-center">

@@ -633,9 +633,35 @@ app.controller("editController", (user, myService, validationService, $scope, $r
         })
     }
 })
-app.controller('userProfileController', ($scope, $route, myService) => {
+app.controller('userProfileController', ($scope, $route, myService, validationService) => {
     $scope.username = $route.current.params.username;
+    $scope.profile = '';
     $scope.isDataFound = false;
+    $scope.loggedIn = $scope.$parent.user.isLoggedIn();
+    console.log('$scope.loggedIn', $scope.loggedIn);
+    $scope.validatePortfolioFile = (img) => {
+        var ext = ['png', 'jpeg', 'jpg'];
+        return validationService.validPortfolio(img, ext);
+    }
+   $scope.onChange = (event) => {
+    // console.log('event', event);
+    // return;
+    // let editData = {}
+    // editData.profile = $scope.portfolioFile;
+    //     editData.profession = $scope.user.profession;
+    //     editData.name = $scope.user.name;
+    //     editData.id = $scope.user.user_id;
+    //     console.log(editData);
+    //     myService.updateUser(editData, (data) => {
+    //         if (data.status == "ok") {
+    //             alert("you have succesfully updated. Login to See Changes");
+    //             user.clearData();
+    //             window.location.href = "./";
+    //         } else {
+    //             alert("Error");
+    //         }
+    //     });
+   }
     $scope.getProfileData = () => {
         myService.getUserProfile($scope.username).then(
             (resp) => {
