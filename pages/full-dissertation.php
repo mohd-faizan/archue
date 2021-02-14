@@ -6,7 +6,7 @@
 				<div class="file-details">
 					<div class="content-data">
 						<h5>{{dessertation.dessertation_name | toUpperCaseFirst}}</h5>
-						<p><b>Name</b>&nbsp;&nbsp;{{dessertation.name}}</p>
+						<p><b>Name</b>&nbsp;&nbsp;<a style="color: #f4900d" href="./user-profile/{{ dessertation.username }}">{{dessertation.name}}</a></p>
 						<p><b>College</b>&nbsp;&nbsp;{{dessertation.dessertation_college}}</p>
 						<p><b>Year</b>&nbsp;&nbsp;{{dessertation.dessertation_year}}</p>
 					</div>

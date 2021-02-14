@@ -6,7 +6,7 @@
 				<div class="file-details">
 					<div class="content-data">
 						<h5>{{portfolio.portfolio_name | toUpperCaseFirst}}</h5>
-						<p><b>Name</b>&nbsp;&nbsp;{{portfolio.name |toUpperCaseFirst}}</p>
+						<p><b>Name</b>&nbsp;&nbsp;<a style="color: #f4900d" href="./user-profile/{{ portfolio.username }}">{{portfolio.name |toUpperCaseFirst}}</a></p>
 						<p><b>College</b>&nbsp;&nbsp;{{portfolio.portfolio_college | toUpperCaseFirst}}</p>
 						<p><b>Year</b>&nbsp;&nbsp;{{portfolio.portfolio_year}}</p>
 					</div>

@@ -22,7 +22,7 @@
                                     <p class="mr-3">
                                         <span class="fa fa-calendar"></span> &nbsp; {{blog.blog_date|date:'mediumDate'}}
                                     </p>
-                                    <p class="mr-3"><span class="fa fa-user"></span> {{blog.user_name}}
+                                    <p class="mr-3"><span class="fa fa-user"></span> <a style="color: #f4900d" href="./user-profile/{{ blog.username }}">{{blog.user_name}}</a>
                                     </p>
                                     <p class="m-0"><span class="fa fa-clock-o"></span> {{duration}} min read</p>
                                 </div>

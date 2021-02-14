@@ -676,12 +676,12 @@ app.controller('userProfileController', ($scope, $route, myService) => {
                             obj.mainImage = obj.blog_file;
                             obj.myTitle = obj.heading;
                             obj.fullUrl = `./blogs/${obj.blog_id}/${encodeURIComponent(obj.heading)}`;
-                            obj.imgPath = `upload-file/${blog.blog_file}`;
+                            obj.imgPath = `upload-file/${obj.blog_file}`;
                         }
                         if (key === 'dessertations') {
                             obj.mainImage = '';
                             obj.myTitle = obj.dessertation_name;
-                            obj.fullUrl = `./full-dissertation/${obj.dessertation_id}/${encodeURIComponent(obj.myTitle)}`;
+                            obj.fullUrl = `./full-dissertation/${obj.dessertation_id}/${obj.dessertation_college}/${encodeURIComponent(obj.myTitle)}`;
                             obj.imgPath = `image/pdf-icon.png`;
                         }
                         if (key === 'portfolios') {

@@ -7,7 +7,7 @@
 					<div class="content-data">
 						<h5>{{thesis_report.thesis_report_name | toUpperCaseFirst}}</h5>
 						<!-- <p class="p-text">{{thesis_report.thesis_report_place}}</p> -->
-						<p><b>Name</b>&nbsp;&nbsp;{{thesis_report.name}}</p>
+						<p><b>Name</b>&nbsp;&nbsp;<a style="color: #f4900d" href="./user-profile/{{ thesis_report.username }}">{{thesis_report.name}}</a></p>
 						<p><b>College</b>&nbsp;&nbsp;{{thesis_report.thesis_report_college}}</p>
 						<p><b>Year</b>&nbsp;&nbsp;{{thesis_report.thesis_report_year}}</p>
 					</div>
