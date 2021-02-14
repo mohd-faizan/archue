@@ -633,6 +633,103 @@ app.controller("editController", (user, myService, validationService, $scope, $r
         })
     }
 })
+app.controller('userProfileController', ($scope, $route, myService) => {
+    $scope.username = $route.current.params.username;
+    $scope.isDataFound = false;
+    $scope.getProfileData = () => {
+        myService.getUserProfile($scope.username).then(
+            (resp) => {
+                console.log(resp);
+                if (resp.status) {
+                    $scope.user = resp.data;
+                    $scope.isDataFound = true;
+                    $scope.getUserData();
+                } else {
+                    $scope.isDataFound = false;
+                }
+            },
+            (err) => {
+                console.log(err);
+                $scope.isDataFound = false;
+            }
+        );
+    }
+    $scope.getProfileData();
+    $scope.getUserData = () => {
+        myService.fetchUserData1($scope.user.user_id).then(
+            (resp) => {
+                const response = resp;
+                delete response['payLeads'];
+                $scope.keys = Object.keys(response);
+                for(key in response) {
+                    const arrayOfObj = response[key];
+                    for(let obj of arrayOfObj) {
+                        obj.myCategory = key;
+                        if (key === 'projects') {
+                            var images = obj.view3d_img ? obj.view3d_img.split(',') : [];
+                            obj.mainImage = images.length > 1 ? images[0] : obj.view3d_img;
+                            obj.myTitle = obj.project_name;
+                            obj.fullUrl = `./full-project/${obj.project_id}/${encodeURIComponent(obj.project_name)}`;
+                            obj.imgPath = `uploads/${obj.mainImage}`;
+                        }
+                        if (key === 'blogs') {
+                            obj.mainImage = obj.blog_file;
+                            obj.myTitle = obj.heading;
+                            obj.fullUrl = `./blogs/${obj.blog_id}/${encodeURIComponent(obj.heading)}`;
+                            obj.imgPath = `upload-file/${blog.blog_file}`;
+                        }
+                        if (key === 'dessertations') {
+                            obj.mainImage = '';
+                            obj.myTitle = obj.dessertation_name;
+                            obj.fullUrl = `./full-dissertation/${obj.dessertation_id}/${encodeURIComponent(obj.myTitle)}`;
+                            obj.imgPath = `image/pdf-icon.png`;
+                        }
+                        if (key === 'portfolios') {
+                            obj.mainImage = '';
+                            obj.myTitle = obj.portfolio_name;
+                            obj.fullUrl = `./full-portfolio/${obj.portfolio_id}/${encodeURIComponent(obj.myTitle)}`;
+                            obj.imgPath = `image/pdf-icon.png`;
+                        }
+                        if (key === 'thesis_reports') {
+                            obj.mainImage = '';
+                            obj.myTitle = obj.thesis_report_name;
+                            obj.fullUrl = `./full-thesis-report/${obj.thesis_report_id}/${encodeURIComponent(obj.myTitle)}`;
+                            obj.imgPath = `image/pdf-icon.png`;
+                        }
+                        if (key === 'thesises') {
+                            var images = obj.casestudy ? obj.casestudy.split(',') : [];
+                            obj.mainImage = images.length > 1 ? images[0] : obj.casestudy;
+                            obj.myTitle = obj.thesis_title;
+                            obj.fullUrl = `./full-thesis/${obj.thesis_id}/${encodeURIComponent(obj.myTitle)}`;
+                            obj.imgPath = `uploads/${obj.mainImage}`;
+                        }
+                    }
+                }
+                $scope.data = [];
+                $scope.category = ''
+                $scope.keys.forEach(key => {
+                    $scope.data = [...$scope.data, ...response[key]];
+                });
+                $scope.userData = $scope.data;
+                console.log('$scope.data', $scope.data);
+                $scope.setCategory = (category) => {
+                    console.log(category);
+                    if (!category) {
+                        $scope.category = 'All' 
+                        $scope.data = $scope.userData
+                        return;
+                    }
+                    $scope.category = category;
+                    $scope.data = $scope.userData.filter(el => el.myCategory === $scope.category);
+                    console.log('$scope.data', $scope.data);
+                }
+            },
+            (err) => {
+                console.log(err);
+            }
+        );
+    }
+});
 app.controller("fetchImageController", (fetchservice, $scope) => {
     if ($scope.$parent.isShowViewImage) {
         $scope.images = fetchservice.getImages();

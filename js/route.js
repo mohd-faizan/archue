@@ -482,6 +482,9 @@ app.config(($routeProvider, $locationProvider) => {
             },
             templateUrl: "pages/edit-profile.php"
         })
+        .when("/user-profile/:username", {
+            templateUrl: "pages/user-profile.php"
+        })
         .when("/plan-info", {
             resolve: {
                 check: ($location, user) => {

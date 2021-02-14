@@ -1,4 +1,4 @@
-app.service("user", function() {
+app.service("user", function () {
     this.saveDataSession = (data) => {
         console.log(data);
         username = data.name;
@@ -61,17 +61,17 @@ app.service("user", function() {
         return data;
     }
 })
-app.service("myService", function($http) {
+app.service("myService", function ($http) {
     this.subscribeNewsletter = (data, cb) => {
         var formd = this.convertToForm(data);
         $http({
-                method: "POST",
-                data: formd,
-                url: "php/subscribe-newsletter.php",
-                headers: {
-                    "Content-Type": undefined
-                }
-            })
+            method: "POST",
+            data: formd,
+            url: "php/subscribe-newsletter.php",
+            headers: {
+                "Content-Type": undefined
+            }
+        })
             .then((resp) => cb(resp.data), (err) => console.log(err));
     }
     this.convertToForm = (formdata) => {
@@ -98,26 +98,26 @@ app.service("myService", function($http) {
     this.signup = (formdata, cb) => {
         var formd = this.convertToForm(formdata);
         $http({
-                method: "POST",
-                data: formd,
-                url: "php/sign-up.php",
-                headers: {
-                    "Content-Type": undefined
-                }
-            })
+            method: "POST",
+            data: formd,
+            url: "php/sign-up.php",
+            headers: {
+                "Content-Type": undefined
+            }
+        })
             .then((resp) => cb(resp.data), (err) => console.log(err));
     }
 
     this.login = (formData, cb) => {
         var fd = this.convertToForm(formData);
         $http({
-                method: "POST",
-                data: fd,
-                url: "php/login.php",
-                headers: {
-                    "Content-Type": undefined
-                }
-            })
+            method: "POST",
+            data: fd,
+            url: "php/login.php",
+            headers: {
+                "Content-Type": undefined
+            }
+        })
             .then((resp) => {
                 cb(resp.data)
             }, (error) => console.log(error));
@@ -126,13 +126,13 @@ app.service("myService", function($http) {
         var fd = new FormData();
         fd.append('id', id);
         $http({
-                method: "POST",
-                data: fd,
-                url: "php/delete-him.php",
-                headers: {
-                    "Content-Type": undefined
-                }
-            })
+            method: "POST",
+            data: fd,
+            url: "php/delete-him.php",
+            headers: {
+                "Content-Type": undefined
+            }
+        })
             .then((resp) => cb(resp.data), (err) => console.log(err));
     }
     this.delete = (id, tableName, cb) => {
@@ -140,40 +140,52 @@ app.service("myService", function($http) {
         fd.append('id', id);
         fd.append('tableName', tableName);
         $http({
-                method: "POST",
-                data: fd,
-                url: "php/delete.php",
-                headers: {
-                    "Content-Type": undefined
-                }
-            })
+            method: "POST",
+            data: fd,
+            url: "php/delete.php",
+            headers: {
+                "Content-Type": undefined
+            }
+        })
             .then((resp) => cb(resp.data), (err) => console.log(err));
     }
     this.fetchUserData = (myid, cb) => {
         var fd = new FormData();
         fd.append('id', myid);
         $http({
-                method: "POST",
-                data: fd,
-                url: "php/user-data.php",
-                headers: {
-                    "Content-Type": undefined
-                }
-            })
+            method: "POST",
+            data: fd,
+            url: "php/user-data.php",
+            headers: {
+                "Content-Type": undefined
+            }
+        })
             .then((resp) => {
                 cb(resp.data)
             }, (error) => console.log(error));
     }
+    this.fetchUserData1 = (myid) => {
+        var fd = new FormData();
+        fd.append('id', myid);
+        return $http({
+            method: "POST",
+            data: fd,
+            url: "php/user-data.php",
+            headers: {
+                "Content-Type": undefined
+            }
+        }).then(resp => resp.data);
+    }
     this.updateUser = (data, cb) => {
         var fd = this.convertToForm(data);
         $http({
-                method: "POST",
-                data: fd,
-                url: "php/update-user.php",
-                headers: {
-                    "Content-Type": undefined
-                }
-            })
+            method: "POST",
+            data: fd,
+            url: "php/update-user.php",
+            headers: {
+                "Content-Type": undefined
+            }
+        })
             .then((resp) => {
                 cb(resp.data)
             }, (error) => console.log(error));
@@ -181,13 +193,13 @@ app.service("myService", function($http) {
     this.uploadMaterial = (fdata, cb) => {
         var fd = this.convertToForm(fdata);
         $http({
-                method: "POST",
-                data: fd,
-                url: "php/update-material.php",
-                headers: {
-                    "Content-Type": undefined
-                }
-            })
+            method: "POST",
+            data: fd,
+            url: "php/update-material.php",
+            headers: {
+                "Content-Type": undefined
+            }
+        })
             .then((resp) => {
                 cb(resp.data)
             }, (error) => console.log(error));
@@ -195,13 +207,13 @@ app.service("myService", function($http) {
     this.uploadArchitect = (fdata, cb) => {
         var fd = this.convertToForm(fdata);
         $http({
-                method: "POST",
-                data: fd,
-                url: "php/update-architect.php",
-                headers: {
-                    "Content-Type": undefined
-                }
-            })
+            method: "POST",
+            data: fd,
+            url: "php/update-architect.php",
+            headers: {
+                "Content-Type": undefined
+            }
+        })
             .then((resp) => {
                 cb(resp.data)
             }, (error) => console.log(error));
@@ -209,13 +221,13 @@ app.service("myService", function($http) {
     this.forgotPassword = (fData, cb) => {
         var fd = this.convertToForm(fData);
         $http({
-                method: "POST",
-                data: fd,
-                url: "php/forgot-password.php",
-                headers: {
-                    "Content-Type": undefined
-                }
-            })
+            method: "POST",
+            data: fd,
+            url: "php/forgot-password.php",
+            headers: {
+                "Content-Type": undefined
+            }
+        })
             .then((resp) => {
                 cb(resp.data)
             }, (error) => console.log(error));
@@ -223,26 +235,26 @@ app.service("myService", function($http) {
     this.contact = (data, cb) => {
         var fd = this.convertToForm(data);
         $http({
-                method: "POST",
-                data: fd,
-                url: "php/contact.php",
-                headers: {
-                    "Content-Type": undefined
-                }
-            })
+            method: "POST",
+            data: fd,
+            url: "php/contact.php",
+            headers: {
+                "Content-Type": undefined
+            }
+        })
             .then((resp) => {
                 cb(resp.data)
             }, (error) => console.log(error));
     }
     this.runSearchQuery = (fd, cb) => {
         $http({
-                method: "POST",
-                data: fd,
-                url: "php/search-query.php",
-                headers: {
-                    "Content-Type": undefined
-                }
-            })
+            method: "POST",
+            data: fd,
+            url: "php/search-query.php",
+            headers: {
+                "Content-Type": undefined
+            }
+        })
             .then((resp) => {
                 cb(resp.data);
             }, (error) => console.log(error));
@@ -251,13 +263,13 @@ app.service("myService", function($http) {
         var fd = new FormData();
         fd.append("id", id);
         $http({
-                method: "POST",
-                data: fd,
-                url: "php/fecth-plan-info.php",
-                headers: {
-                    "Content-Type": undefined
-                }
-            })
+            method: "POST",
+            data: fd,
+            url: "php/fecth-plan-info.php",
+            headers: {
+                "Content-Type": undefined
+            }
+        })
             .then((resp) => cb(resp.data), (err) => console.log(err));
     }
     this.uploadMaterilas = (mateData, proimages, cb) => {
@@ -266,61 +278,65 @@ app.service("myService", function($http) {
             fd.append("prodimages[]", obj);
         }
         $http({
-                method: "POST",
-                data: fd,
-                url: "php/material-upload.php",
-                headers: {
-                    "Content-Type": undefined
-                }
-            })
+            method: "POST",
+            data: fd,
+            url: "php/material-upload.php",
+            headers: {
+                "Content-Type": undefined
+            }
+        })
             .then((resp) => cb(resp.data), (err) => console.log(err));
     }
     this.loginWith = (additionWith, cb) => {
         var fd = this.convertToForm(additionWith);
         $http({
-                method: "POST",
-                url: "php/login-with.php",
-                data: fd,
-                headers: {
-                    "Content-Type": undefined
-                }
-            })
+            method: "POST",
+            url: "php/login-with.php",
+            data: fd,
+            headers: {
+                "Content-Type": undefined
+            }
+        })
             .then((resp) => cb(resp.data), (err) => console.log(err));
     }
     this.forgotPass = (data) => {
         let fd = this.convertToForm(data);
         return $http.post("php/reset-password.php", fd, { headers: { "content-type": undefined } });
     }
+    this.getUserProfile = (username) => {
+        // let fd = this.convertToForm({username});
+        return $http.get(`php/user-profile.php?username=${username}`, { headers: { "content-type": undefined } }).then(resp => resp.data);
+    }
 });
 
 
-app.service("leadService", function($http) {
+app.service("leadService", function ($http) {
     this.fetchLeads = (cb) => {
         $http({
-                method: "GET",
-                url: "php/fetch-leads.php"
-            })
+            method: "GET",
+            url: "php/fetch-leads.php"
+        })
             .then((resp) => cb(resp.data), (err) => console.log(err))
     }
 })
-app.service("planService", function($http) {
+app.service("planService", function ($http) {
     this.uploadPlan = (data, cb) => {
         var fd = new FormData();
         for (let i in data) {
             fd.append(i, data[i]);
         }
         $http({
-                method: "POST",
-                data: fd,
-                url: 'php/upload-plan.php',
-                headers: {
-                    "Content-Type": undefined
-                }
-            })
+            method: "POST",
+            data: fd,
+            url: 'php/upload-plan.php',
+            headers: {
+                "Content-Type": undefined
+            }
+        })
             .then((resp) => cb(resp.data), (err) => console.log(err));
     }
 })
-app.service('mailService', function($http) {
+app.service('mailService', function ($http) {
     this.mailWhileLogin = (data) => {
         var fd = new FormData();
         fd.append('email', data);
@@ -346,7 +362,7 @@ app.service('mailService', function($http) {
             })
     }
 })
-app.service('magazine', function($http) {
+app.service('magazine', function ($http) {
     this.setSubscriptionData = (data) => {
         stringdata = JSON.stringify(data);
         localStorage.setItem('subscriptionData', stringdata);

@@ -57,3 +57,37 @@ a.blog-comp-student>span {
 
 
 /* // testimonials */
+/* profile css */
+.img label{
+    position: absolute;
+    top: 13%;
+    left: 35%;
+    font-size: 9px;
+    cursor: pointer;
+    opacity: 0; 
+}
+label:hover{
+    opacity: 1;
+}
+.profile-image:hover + label{
+    opacity: 1;
+    transition: all 0.2 linear;
+}
+.profile-image {
+    width: 150px;
+    height: 110px;
+    border-radius: 50%;
+}
+.profile-container{
+    /* position: fixed; */
+}
+.work-container{
+    /* max-height: 350px;
+    overflow-y: scroll; */
+}
+.bg-grey{
+    background-color: #eee;
+}
+.w-18{
+    width: 18%;
+}

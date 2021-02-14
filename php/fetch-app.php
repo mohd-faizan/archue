@@ -1409,9 +1409,11 @@ class FetchApp extends Conn
         if ($res = self::$conn->query($sql)) {
             if ($res->num_rows) {
                 $row = $res->fetch_assoc();
-                $user_sql = "SELECT name FROM users WHERE user_id = $row[user_id]";
+                $user_sql = "SELECT name, username FROM users WHERE user_id = $row[user_id]";
                 if ($user_res = self::$conn->query($user_sql)){
-                    $row['user_name'] = $user_res->fetch_assoc()['name'];
+                    $myUserRow = $user_res->fetch_assoc();
+                    $row['user_name'] = $myUserRow['name'];
+                    $row['username'] = $myUserRow['username'];
                 }
                 if (isset($_SESSION['user_id']) || isset($_COOKIE['user_id'])) {
                     $projectid = $row['project_id'];

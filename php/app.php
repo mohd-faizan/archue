@@ -500,6 +500,27 @@
 			}
 			return $resp;
 		}
+		public static function getUserprofile($username) {
+			$sql = "SELECT * from users WHERE username='$username'";
+			if ($result = self::$conn->query($sql)) {
+				if ($result->num_rows > 0) {										
+					$row = $result->fetch_assoc();
+					$row['password'] = '';
+					$resp['data'] = $row;
+					$resp['message'] = "Succefully fetched";
+					$resp['status'] = true;
+				} else {
+					$resp['data'] = null;
+					$resp['message']="No Data found";
+					$resp['status'] = false;
+				}
+			} else {
+				$resp['data'] = self::$conn->error;
+				$resp['message']="Query error";
+				$resp['status'] = false;
+			}
+			echo json_encode($resp);
+		}
 		public static function resetPassword($post)
 		{
 			extract($post);

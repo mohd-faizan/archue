@@ -17,7 +17,7 @@
                         <h2 class="home-page-heading">{{fullProject.mainData.project_name | toUpperCaseFirst}}</h2>
                     </div>
                     <div class="d-flex mt-2 mb-4">
-                        <span class="m-0"><span class="fa fa-user"></span> {{fullProject.mainData.user_name}}
+                        <span class="m-0"><span class="fa fa-user"></span> <a href="/user-profile/{{ fullProject.mainData.username }}">{{fullProject.mainData.user_name}}</a>
                         </span>
                     </div>
                     <div class="whats-app-btn mb-4  mt-2">

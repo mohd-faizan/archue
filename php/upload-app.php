@@ -273,7 +273,7 @@ class uploadApp extends Conn
 				$resp['message'] = "succesfully submit";
 			} else {
 				$resp['status'] = "no";
-				$resp['message'] = "Error! Please contact to web admin.";
+				$resp['message'] = self::$conn->error;
 			}
 			echo json_encode($resp);
 		} else {
