@@ -167,7 +167,6 @@ app.controller("competitionController", (uploadService, validationService, $scop
         for (let i in competitorData) {
             fd.append(i, competitorData[i]);
         }
-        debugger;
         uploadService.uploadCompetition(fd, (data) => {
             console.log(data);
             if (data.status == "ok") {
