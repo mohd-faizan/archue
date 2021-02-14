@@ -305,7 +305,10 @@ app.service("myService", function ($http) {
     }
     this.getUserProfile = (username) => {
         // let fd = this.convertToForm({username});
-        return $http.get(`php/user-profile.php?username=${username}`, { headers: { "content-type": undefined } }).then(resp => resp.data);
+        return $http.get(`php/user-profile.php?username=${username}`).then(resp => resp.data);
+    }
+    this.incrementUserviews = (id) => {
+        return $http.get(`php/increment-user-view.php?id=${id}`).then(resp => resp.data);
     }
 });
 

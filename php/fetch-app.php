@@ -1310,6 +1310,14 @@ class FetchApp extends Conn
             echo "Eror ".self::$conn->error;
         }
     }
+    public static function increaseViewUserProfile($id){
+        $sql = "UPDATE users SET views = views + 1 WHERE user_id = $id";
+        if (self::$conn->query($sql)) {
+            echo 'successfully incremented';
+        } else {
+            echo "Eror ".self::$conn->error;
+        }
+    }
     public static function getMatProducts($offset, $limit, $cat)
     {
         $sql = "SELECT * FROM material_upload WHERE category = '$cat' ORDER BY material_upload_id DESC LIMIT $limit OFFSET $offset";

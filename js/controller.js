@@ -644,6 +644,7 @@ app.controller('userProfileController', ($scope, $route, myService) => {
                     $scope.user = resp.data;
                     $scope.isDataFound = true;
                     $scope.getUserData();
+                    $scope.incrementViews();
                 } else {
                     $scope.isDataFound = false;
                 }
@@ -655,6 +656,16 @@ app.controller('userProfileController', ($scope, $route, myService) => {
         );
     }
     $scope.getProfileData();
+    $scope.incrementViews = () => {
+        myService.incrementUserviews($scope.user.user_id).then(
+            (resp) => {
+                console.log(resp);
+            },
+            (err) => {
+                console.log(err);
+            }
+        );
+    }
     $scope.getUserData = () => {
         myService.fetchUserData1($scope.user.user_id).then(
             (resp) => {
