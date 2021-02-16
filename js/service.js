@@ -55,6 +55,7 @@ app.service("user", function () {
     }
     this.getSaveData = () => {
         var data;
+        console.log('sessionStorage.getItem("slogin")', sessionStorage.getItem("slogin"));
         if (sessionStorage.getItem("slogin") != null) {
             data = JSON.parse(sessionStorage.getItem("slogin"));
         } else if (localStorage.getItem("clogin") != null) {

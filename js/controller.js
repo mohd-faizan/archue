@@ -121,7 +121,7 @@ app.controller("signUpController", ($scope, myService, mailService) => {
                 $scope.isLoad = true;
                 $scope.$parent.isShowError = 1;
                 $scope.$parent.errorMessage = "Signed Up";
-                $scope.$parent.user.saveDataLocal({ name: formData.name, user_id: data.data.user_id, profession: formData.profession, company_name: '', profile: "default-user.png", myUsername: data.data.username });
+                $scope.$parent.user.saveDataSession({ name: formData.name, user_id: data.data.user_id, profession: formData.profession, company_name: '', profile: "default-user.png", username: data.data.username });
                 $scope.$parent.setUser();
             } else {
                 $scope.$parent.isShowError = 2;
