@@ -12,7 +12,8 @@ app.service("user", function () {
             profession: profession,
             company_name: company_name,
             profile: profile,
-            loggedIn: true
+            loggedIn: true,
+            myUsername: data.username
         }));
         console.log(this.isLoggedIn());
     }
@@ -28,7 +29,8 @@ app.service("user", function () {
             profession: profession,
             company_name: company_name,
             profile: profile,
-            loggedIn: true
+            loggedIn: true,
+            myUsername: data.username
         }));
         // console.log(this.isLoggedIn());
     }
@@ -309,6 +311,18 @@ app.service("myService", function ($http) {
     }
     this.incrementUserviews = (id) => {
         return $http.get(`php/increment-user-view.php?id=${id}`).then(resp => resp.data);
+    }
+    this.updateProfilePhoto = (file, id) => {
+        let fd = this.convertToForm({photo: file, id});
+        return $http.post(`php/update-profile-photo.php`, fd, { headers: { "content-type": undefined } }).then(resp => resp.data);
+    }
+    this.updateFullProfile = (userData) => {
+        let fd = this.convertToForm(userData);
+        return $http.post(`php/update-full-profile.php`, fd, { headers: { "content-type": undefined } }).then(resp => resp.data);
+
+    }
+    this.validateUsername = (username) => {
+        return $http.get(`php/validate-username.php?username=${username}`).then(resp => resp.data);
     }
 });
 

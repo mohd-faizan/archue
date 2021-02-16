@@ -15,8 +15,8 @@
                 <br>
                 <a ng-href="./upload" class="btn btn-primary bg-color border-0" ng-if="pro.indexOf(userData.profession) == -1"><span
 						class="fa fa-file">&nbsp;&nbsp;</span>Upload</a>
-                <a href="./edit-profile" class="btn btn-primary bg-color border-0"><span
-						class="fa fa-pencil ">&nbsp;&nbsp;</span>Edit</a>
+                <a href="./user-profile/{{userData.myUsername}}" class="btn btn-primary bg-color border-0"><span
+						class="fa fa-eye">&nbsp;&nbsp;</span>View profile</a>
                 <button class="btn btn-danger" ng-click="delHimself(userData.id)" disabled>Delete</button>
             </div>
             <div class="buy-now">

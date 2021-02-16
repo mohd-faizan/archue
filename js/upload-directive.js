@@ -22,7 +22,31 @@ app.directive('validFile', function() {
     };
 });
 
-
+app.directive('profilePhoto', (myService) => {
+    return {
+        require: 'ngModel',
+        link: function(scope, el, attrs, ngModel) {
+            ngModel.$render = function() {
+                ngModel.$setViewValue(el.val());
+            };
+            el.bind('change', function(e) {
+                const file = e.target.files[0];
+                myService.updateProfilePhoto(file, scope.user.user_id).then(
+                    (resp) => {
+                        console.log(resp);
+                        if (resp.status === 'ok') {
+                            scope.user = resp.message;
+                        }
+                    },
+                    (err) => {
+                        console.log(err);
+                    }
+                );
+            });
+            
+        },
+    };
+});
 app.directive('ngFile', ['$parse', 'validationService', function($parse, validationService) {
     return {
         restrict: 'A',

@@ -116,11 +116,12 @@ app.controller("signUpController", ($scope, myService, mailService) => {
         formData.isInterest = $scope.isInterest;
         formData.emailMe = $scope.emailMe;
         $scope.$parent.myser.signup(formData, (data) => {
+            console.log('data', data);
             if (data.status == "ok") {
                 $scope.isLoad = true;
                 $scope.$parent.isShowError = 1;
                 $scope.$parent.errorMessage = "Signed Up";
-                $scope.$parent.user.saveDataSession({ name: formData.name, user_id: data.data, profession: formData.profession, company_name: '', profile: "default-user.png" });
+                $scope.$parent.user.saveDataLocal({ name: formData.name, user_id: data.data.user_id, profession: formData.profession, company_name: '', profile: "default-user.png", myUsername: data.data.username });
                 $scope.$parent.setUser();
             } else {
                 $scope.$parent.isShowError = 2;
@@ -638,30 +639,18 @@ app.controller('userProfileController', ($scope, $route, myService, validationSe
     $scope.profile = '';
     $scope.isDataFound = false;
     $scope.loggedIn = $scope.$parent.user.isLoggedIn();
+    if ($scope.loggedIn) {
+        const userData = $scope.$parent.user.getSaveData();
+        if (userData.myUsername !== $scope.username) {
+            window.location = './dashboard';
+        }
+    }
     console.log('$scope.loggedIn', $scope.loggedIn);
+    $scope.professions = ["Architect", "Architecture Student", "Interior Designer", "Others"];
     $scope.validatePortfolioFile = (img) => {
         var ext = ['png', 'jpeg', 'jpg'];
         return validationService.validPortfolio(img, ext);
     }
-   $scope.onChange = (event) => {
-    // console.log('event', event);
-    // return;
-    // let editData = {}
-    // editData.profile = $scope.portfolioFile;
-    //     editData.profession = $scope.user.profession;
-    //     editData.name = $scope.user.name;
-    //     editData.id = $scope.user.user_id;
-    //     console.log(editData);
-    //     myService.updateUser(editData, (data) => {
-    //         if (data.status == "ok") {
-    //             alert("you have succesfully updated. Login to See Changes");
-    //             user.clearData();
-    //             window.location.href = "./";
-    //         } else {
-    //             alert("Error");
-    //         }
-    //     });
-   }
     $scope.getProfileData = () => {
         myService.getUserProfile($scope.username).then(
             (resp) => {
@@ -762,6 +751,59 @@ app.controller('userProfileController', ($scope, $route, myService, validationSe
                 }
             },
             (err) => {
+                console.log(err);
+            }
+        );
+    }
+    $scope.isEdit = false;
+    $scope.edit = () => {
+        $scope.isEdit = true;
+    } 
+    $scope.cancel = () => {
+        $scope.isEdit = false;
+    }
+    $scope.updateProfile = () => {
+        if ($scope.invalidUsername) {
+            return;
+        }
+        myService.updateFullProfile($scope.user).then(
+            (resp) => {
+                // console.log(resp);
+                $scope.isEdit = false;
+                // window.location = './dashboard';
+                let isLocal = true;
+                let data = localStorage.getItem('clogin');
+                if (!data) {
+                    isLocal = false;
+                    data = sessionStorage.getItem('slogin')
+                }
+                data = JSON.parse(data);
+                data.myUsername = $scope.user.username;
+                if (isLocal) {
+                    localStorage.setItem('clogin', JSON.stringify(data));
+                } else {
+                    sessionStorage.setItem('clogin', JSON.stringify(data));
+                }
+            },
+            (err) => {
+                console.log(err);
+            }
+        );
+    }
+    $scope.invalidUsername = false;
+    $scope.validateUsername = () => {
+        // console.log($scope.user.username);
+        myService.validateUsername($scope.user.username).then(
+            (resp) => {
+                console.log(resp);
+                if (resp.unique) {
+                    $scope.invalidUsername = false;
+                } else {
+                    $scope.invalidUsername = true;
+                }
+            },
+            (err) => {
+                $scope.invalidUsername = false;
                 console.log(err);
             }
         );

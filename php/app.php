@@ -34,11 +34,24 @@
 			$password = self::$conn->real_escape_string(md5($post['password']));
 			$is_interest = self::$conn->real_escape_string($post['isInterest']);
 			$email_me = self::$conn->real_escape_string($post['emailMe']);
-			$sql = "INSERT INTO users(name,email,mobileno,profession,password,is_interest,email_me) VALUES('$name','$email','$mobileno','$profession','$password','$is_interest','$email_me')";
+			// $uid = UUID();
+			$sql = "INSERT INTO users(name,email,mobileno,profession,password,is_interest,email_me, username) VALUES('$name','$email','$mobileno','$profession','$password','$is_interest','$email_me', UUID())";
 			if (self::$conn->query($sql)) {
 				$resp['status'] = "ok";
 				$resp['message'] = "succesfully Inserted";
-				$resp['data'] = self::$conn->insert_id;
+				$id = self::$conn->insert_id;
+				$sql = "SELECT * FROM users WHERE user_id = $id";
+				if ($res = self::$conn->query($sql)) {
+					if ($res->num_rows > 0) {
+						$row = $res->fetch_assoc();
+						$resp['data'] = $row;
+					} else {
+						$resp['data'] = 'No Data';
+					}
+				} else {
+					$resp['data'] = 'Query error';
+				}
+				// $resp['data'] = array('user_id' => self::$conn->insert_id, 'username' => $uid);
 				echo json_encode($resp);
 			} else {
 				$resp['status'] = "ok";
@@ -51,7 +64,7 @@
 			$email = $post['email'];
 			$password = md5($post['password']);
 			$remember = $post['remember'];
-			$sql = "SELECT user_id,name,profession,company_name,profile,email FROM users WHERE email='$email' AND password='$password'";
+			$sql = "SELECT user_id,name,profession,company_name,username,profile,email FROM users WHERE email='$email' AND password='$password'";
 			if ($result = self::$conn->query($sql)) {
 				if ($result->num_rows > 0) {					
 					$cookie_name = "isLoggedIn";
@@ -124,6 +137,42 @@
 			}
 			$resp['payLeads'] = $leadArr;
 			echo json_encode($resp);
+		}
+		public static function updateFullProfile($post) {
+			// var_dump($post);
+			$name = $post['name'];
+			$profession = $post['profession'];
+			$about_me = $post['about_me'];
+			$email = $post['email'];
+			$mobileno = $post['mobileno'];
+			$user_id = $post['user_id'];
+			$username = $post['username'];
+			$sql = "UPDATE users SET name='$name',profession='$profession', about_me='$about_me', email='$email', mobileno='$mobileno', username='$username' WHERE user_id=$user_id";
+				if (self::$conn->query($sql)) {
+					$resp['status'] = "ok";
+					$sql2 = "SELECT * FROM users WHERE user_id=$user_id";
+					$res = self::$conn->query($sql2);
+					$row = $res->fetch_assoc();
+					$resp['message'] = $row;
+				} else {
+					$resp['status'] = "no";
+					$resp['message'] = self::$conn->error;
+				}
+				echo json_encode($resp);
+			// echo json_encode($post);
+		}
+		public static function validateUsername($username) {
+			$sql = "SELECT * FROM users WHERE username='$username'";
+				if ($res = self::$conn->query($sql)) {
+					if($res->num_rows > 0) {
+						$resp['unique'] = false;
+					} else {
+						$resp['unique'] = true;
+					}
+				} else {
+					$resp['unique'] = false;
+				}
+				echo json_encode($resp);
 		}
 		public static function updateUser($file, $post)
 		{
@@ -499,6 +548,24 @@
 				$resp['status'] = 3;
 			}
 			return $resp;
+		}
+		public static function updateProfilePhoto($file, $id) {
+			$location = "../uploads/";
+			$filename = str_replace(" ", "_", $file['name']);
+			if (move_uploaded_file($file['tmp_name'], $location . "" . $filename)) {
+				$sql = "UPDATE users SET profile='$filename' WHERE user_id=$id";
+				if (self::$conn->query($sql)) {
+					$resp['status'] = "ok";
+					$sql2 = "SELECT user_id,name,profession,company_name,profile FROM users WHERE user_id=$id";
+					$res = self::$conn->query($sql2);
+					$row = $res->fetch_assoc();
+					$resp['message'] = $row;
+				} else {
+					$resp['status'] = "no";
+					$resp['message'] = self::$conn->error;
+				}
+				echo json_encode($resp);
+			}
 		}
 		public static function getUserprofile($username) {
 			$sql = "SELECT * from users WHERE username='$username'";
