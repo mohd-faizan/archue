@@ -298,7 +298,7 @@ class uploadApp extends Conn
 				if ($res->num_rows > 0) {
 					while ($row = $res->fetch_assoc()) {
 						$id = $row['user_id'];
-						$sql2 = "INSERT INTO plan_info(plan_name, pages, impression, leads, duration, price, transaction_id, plan_update_date,user_id) VALUES('Free', 1, 'limited', 'limited', '12 month', 0.00, 'FREE_TRANSACTION', NOW(), $id)";
+						$sql2 = "INSERT INTO plan_info(plan_name, pages, impression, leads, duration, price, transaction_id, plan_update_date,user_id) VALUES('Free', 1, 'limited', 'limited', '12 month', 0.00, null, NOW(), $id)";
 						if (self::$conn->query($sql2)) {
 							$resp['data'] = $row;
 							$resp['status'] = "ok";
