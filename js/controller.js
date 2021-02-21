@@ -637,6 +637,9 @@ app.controller("editController", (user, myService, validationService, $scope, $r
 app.controller('userProfileController', ($scope, $route, myService, validationService) => {
     $scope.username = $route.current.params.username;
     $scope.profile = '';
+    const today = new Date();
+    $scope.minDob = today.getDate() + '-' + ((today.getMonth() + 1) > 9 ? today.getMonth() + 1 : '0' + (today.getMonth() + 1)) + '-' + today.getFullYear();
+    console.log('$scope.minDob', $scope.minDob);
     $scope.isDataFound = false;
     $scope.loggedIn = $scope.$parent.user.isLoggedIn();
     if ($scope.loggedIn) {
@@ -657,6 +660,7 @@ app.controller('userProfileController', ($scope, $route, myService, validationSe
                 console.log(resp);
                 if (resp.status) {
                     $scope.user = resp.data;
+                    $scope.user.dob = new Date($scope.user.dob);
                     $scope.isDataFound = true;
                     $scope.getUserData();
                     $scope.incrementViews();
@@ -766,9 +770,14 @@ app.controller('userProfileController', ($scope, $route, myService, validationSe
         if ($scope.invalidUsername) {
             return;
         }
+        console.log('$scope.user', $scope.user);
         myService.updateFullProfile($scope.user).then(
             (resp) => {
                 // console.log(resp);
+                if (resp.status === 'no') {
+                    alert(resp.message);
+                    return;
+                }
                 $scope.isEdit = false;
                 // window.location = './dashboard';
                 let isLocal = true;

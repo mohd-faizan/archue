@@ -147,7 +147,12 @@
 			$mobileno = $post['mobileno'];
 			$user_id = $post['user_id'];
 			$username = $post['username'];
-			$sql = "UPDATE users SET name='$name',profession='$profession', about_me='$about_me', email='$email', mobileno='$mobileno', username='$username' WHERE user_id=$user_id";
+
+			$company_name = $post['company_name'];
+			$dob = $post['dob'];
+			$country = $post['country'];
+			$website = $post['website'];
+			$sql = "UPDATE users SET name='$name',profession='$profession', about_me='$about_me', email='$email', mobileno='$mobileno', username='$username', company_name='$company_name', dob='$dob', country='$country', website='$website' WHERE user_id=$user_id";
 				if (self::$conn->query($sql)) {
 					$resp['status'] = "ok";
 					$sql2 = "SELECT * FROM users WHERE user_id=$user_id";
