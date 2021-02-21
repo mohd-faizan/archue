@@ -114,7 +114,8 @@
                     padding: 17px;
                     padding-left: 10px;">{{user.about_me}}</p>
                 </div>
-                <div>
+                <div ng-if="loggedIn">
+                    <h5>Leads</h5>
                     <table class="table table-striped table-bordered">
                         <tr>
                             <td>Sr.No.</td>
