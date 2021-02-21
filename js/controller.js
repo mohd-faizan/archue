@@ -689,6 +689,7 @@ app.controller('userProfileController', ($scope, $route, myService, validationSe
         myService.fetchUserData1($scope.user.user_id).then(
             (resp) => {
                 const response = resp;
+                $scope.leads = response['payLeads'];
                 delete response['payLeads'];
                 $scope.keys = Object.keys(response);
                 for(key in response) {

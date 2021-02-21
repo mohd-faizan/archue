@@ -24,8 +24,9 @@
                             <p class="mt-1 mb-0 font-weight-bold">Total likes</p>
                             <span>{{ user.likes }}</span>
                             <div ng-if="loggedIn && (!isEdit)">
-                                <button type="button" class="ml-auto btn btn-primary bg-color border-0" ng-click="edit()">Edit
-                                profile</button>
+                                <button type="button" class="ml-auto btn btn-primary bg-color border-0"
+                                    ng-click="edit()">Edit
+                                    profile</button>
                             </div>
                         </div>
                     </div>
@@ -36,7 +37,7 @@
                     <div class="col-md-12 d-flex mb-2">
                         <div class="ml-auto">
                             <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
-                            <button class="btn btn-primary bg-color border-0" >Update</button>
+                            <button class="btn btn-primary bg-color border-0">Update</button>
                         </div>
                     </div>
                     <div class="col-md-6 bg-white pt-2">
@@ -47,19 +48,19 @@
                         </div>
                         <div class="form-group">
                             <label for="company">Name of the firm/Company:</label>
-                            <input type="text" class="form-control" id="company" placeholder="Enter company" name="company"
-                                ng-model="user.company_name" required>
+                            <input type="text" class="form-control" id="company" placeholder="Enter company"
+                                name="company" ng-model="user.company_name" required>
                         </div>
                         <div class="form-group">
                             <label for="username">Username:</label>
                             <input type="text" class="form-control" id="username" placeholder="Enter name"
                                 name="username" ng-model="user.username" ng-change="validateUsername()" required>
-                                <span class="text-danger" ng-if="invalidUsername">Invalid username</span>
+                            <span class="text-danger" ng-if="invalidUsername">Invalid username</span>
                         </div>
                         <div class="form-group">
                             <label for="username">Website:</label>
                             <input type="website" class="form-control" id="website" placeholder="Enter website"
-                                name="website" ng-model="user.website" >
+                                name="website" ng-model="user.website">
                         </div>
 
                         <div class="form-group">
@@ -70,15 +71,16 @@
                     </div>
                     <div class="col-md-6 bg-white pt-2">
                         <div class="form-group">
-                            <label for="email">Email:(<span class="text-danger" ng-if="user.is_email_verified == 0">Email not verified</span>)</label>
+                            <label for="email">Email:(<span class="text-danger"
+                                    ng-if="user.is_email_verified == 0">Email not verified</span>)</label>
                             <input type="email" ng-model="user.email" class="form-control" id="email"
                                 placeholder="Enter email" name="email" required>
-                                
+
                         </div>
                         <div class="form-group">
                             <label for="dob">Date of Birth:</label>
-                            <input type="date" ng-model="user.dob" class="form-control" id="dob"
-                                placeholder="Enter dob"  name="dob" required>
+                            <input type="date" ng-model="user.dob" class="form-control" id="dob" placeholder="Enter dob"
+                                name="dob" required>
                         </div>
                         <div class="form-group">
                             <label for="country">Country:</label>
@@ -87,15 +89,17 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Profession</label>
-                            <select class="form-control" id="profession" ng-model="user.profession" name="profession" required>
+                            <select class="form-control" id="profession" ng-model="user.profession" name="profession"
+                                required>
                                 <option ng-repeat="profession in professions">{{profession}}</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="mobile">Mobile number: (<span class="text-danger" ng-if="user.is_mobile_verified == 0">Mobile not verified</span>)</label>
+                            <label for="mobile">Mobile number: (<span class="text-danger"
+                                    ng-if="user.is_mobile_verified == 0">Mobile not verified</span>)</label>
                             <input type="text" min="10" max="12" class="form-control" id="mobile"
                                 placeholder="Enter mobile" name="mobile" ng-model="user.mobileno" required>
-                                
+
                         </div>
                     </div>
                 </form>
@@ -104,11 +108,36 @@
                 <div class="d-flex" ng-if="loggedIn">
                     <a type="button" class="ml-auto btn btn-primary bg-color border-0" href="./upload">Upload</a>
                 </div>
-                <div >
+                <div>
                     <h3>About {{loggedIn ? 'you' : user.name}}</h3>
                     <p style="background: white;
                     padding: 17px;
                     padding-left: 10px;">{{user.about_me}}</p>
+                </div>
+                <div>
+                    <table class="table table-striped table-bordered">
+                        <tr>
+                            <td>Sr.No.</td>
+                            <td>Name</td>
+                            <td>Email</td>
+                            <td>Purchased on</td>
+                            <td>Cost</td>
+                            <td>Phone</td>
+                            <td>Description</td>
+                        </tr>
+                        <tr ng-repeat="lead in leads track by $index">
+                            <td>{{$index + 1}}</td>
+                            <td>{{lead.name}}</td>
+                            <td>{{lead.email}}</td>
+                            <td>{{lead.purchasedOn | date :'mediumDate'}}</td>
+                            <td>{{lead.cost}}</td>
+                            <td>{{lead.phone}}</td>
+                            <td>{{lead.description}}</td>
+                        </tr>
+                        <tr class="text-center" ng-if="leads.length == 0">
+                            <td colspan="7">No Data Found</td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="work-container">
                     <div class="d-flex">
@@ -131,6 +160,7 @@
                         </div>
                     </div>
                     <div class="yellow-line bg-color"></div>
+                   
                     <div class="user-upload-container" style="max-height: 20rem;overflow-y: auto;">
                         <div ng-if="data.length > 0" ng-repeat="singlepro in data" class="user-upload">
                             <a href="{{singlepro.fullUrl}}">
