@@ -131,7 +131,7 @@
                         </div>
                     </div>
                     <div class="yellow-line bg-color"></div>
-                    <div class="user-upload-container">
+                    <div class="user-upload-container" style="max-height: 20rem;overflow-y: auto;">
                         <div ng-if="data.length > 0" ng-repeat="singlepro in data" class="user-upload">
                             <a href="{{singlepro.fullUrl}}">
                                 <img ng-src="{{singlepro.imgPath}}" class="img-fluid">
