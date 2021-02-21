@@ -65,6 +65,7 @@ a.blog-comp-student>span {
     font-size: 9px;
     cursor: pointer;
     opacity: 0; 
+    font-weight: bold;
 }
 label:hover{
     opacity: 1;
