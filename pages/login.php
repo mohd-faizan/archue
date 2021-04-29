@@ -3,7 +3,7 @@
 	<div class="mid-box">
 		<form id="login-form" name="loginForm" ng-submit="onLogin()">
 			<div class="container-fluid">
-				<h5 class="text-center">New in Archue? <a href="./signup" class="bg-font">Sign Up</a></h5>
+				<h5 class="text-center">New in Archue? <a href="./signup" class="bg-font">Register</a></h5>
 				<p class="error text-center" ng-show="isShowError">Invalid Username or Password</p>
 				<div class="space"></div>
 				

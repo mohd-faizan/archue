@@ -104,6 +104,7 @@ app.controller("signUpController", ($scope, myService, mailService) => {
         console.log('working');
         $scope.type = $scope.type === 'password' ? 'text' : 'password'
     }
+    
     $scope.onSignup = (form) => {
         var formData = {};
         formData.name = $scope.fname;
@@ -118,6 +119,7 @@ app.controller("signUpController", ($scope, myService, mailService) => {
         $scope.$parent.myser.signup(formData, (data) => {
             console.log('data', data);
             if (data.status == "ok") {
+                $scope.signupResponse = data.data;
                 $scope.isLoad = true;
                 $scope.$parent.isShowError = 1;
                 $scope.$parent.errorMessage = "Signed Up";
@@ -130,7 +132,8 @@ app.controller("signUpController", ($scope, myService, mailService) => {
         });
         $scope.$parent.timeout(() => {
             if ($scope.$parent.isShowError == 1) {
-                $scope.$parent.location.path("/dashboard");
+                console.log('$scope.signupResponse', $scope.signupResponse)
+                $scope.$parent.location.path("/user-profile/" + $scope.signupResponse.username);
                 mailService.mailWhileLogin(formData.email)
                 $scope.$parent.isShowError = 0;
             } else {
@@ -210,7 +213,7 @@ app.controller("loginController", ($scope, $location) => {
                     if ($scope.pro.indexOf(resp.data.profession) == -1) {
                         $scope.$parent.location.path("/upload");
                     } else {
-                        $scope.$parent.location.path("/dashboard");
+                        $scope.$parent.location.path("/user-profile/" + resp.data.username);
                     }
                 }
             } else if (resp.status == "remember") {
@@ -234,7 +237,7 @@ app.controller("loginController", ($scope, $location) => {
                     if ($scope.pro.indexOf(resp.data.profession) == -1) {
                         $scope.$parent.location.path("/upload");
                     } else {
-                        $scope.$parent.location.path("/dashboard");
+                        $scope.$parent.location.path("/user-profile/" + resp.data.username);
                     }
                 }
             } else {

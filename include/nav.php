@@ -388,11 +388,11 @@
                     <li><a href="./leads" >LEADS</a></li>
                     <li><a href="#" class="bg-font" data-toggle="modal" data-target="#qouteModal" ng-if="isShowGetQuote">BUY PRODUCTS/SERVICES</a></li>
                     <li ng-show="isShow" class="dropdown">
-                        <a href="/dashboard" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="./user-profile/{{userData.myUsername}}" class="dropdown-toggle" data-toggle="dropdown">
                             <img ng-src="uploads/{{userData.profile}}" height="25" width="25"> {{userData.username}}
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="./dashboard">Dashboard</a>
+                            <a class="dropdown-item" href="./user-profile/{{userData.myUsername}}">Dashboard</a>
                             <a class="dropdown-item" href="./logout">Logout</a>
                         </div>
                     </li>
@@ -405,7 +405,7 @@
                     <li><a href="./jobs">CAREERS</a></li>
                     <li><a href="./competitions">COMPETITION</a></li>
                     <li><a href="./partner-with-us" ng-show="!isShow">SELL YOUR PRODUCT/SERVICE</a></li>
-                    <li><a href="./login" ng-show="!isShow">LOGIN/SIGNUP</a></li>
+                    <li><a href="./login" ng-show="!isShow">LOGIN/REGISTER</a></li>
 
                 </ul>
             </div>
@@ -418,11 +418,11 @@
         <nav id="sidenav">
             <ul class="sidenav-list">
                 <li ng-show="isShow" class="dropdown">
-                    <a href="/dashboard" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="./user-profile/{{userData.myUsername}}" class="dropdown-toggle" data-toggle="dropdown">
                         <img ng-src="uploads/{{userData.profile}}" height="25" width="25"> {{userData.username}}
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item sidenav-li" href="./dashboard">Dashboard</a>
+                        <a class="dropdown-item sidenav-li" href="./user-profile/{{userData.myUsername}}">Dashboard</a>
                         <a class="dropdown-item sidenav-li" href="./logout">logout</a>
                     </div>
                 </li>
@@ -453,7 +453,7 @@
                 <li class="sidenav-li"><a class="sidenav-link" href="./events">EVENTS</a></li>
                 <li class="sidenav-li"><a class="sidenav-link" href="./jobs">CAREERS</a></li>
                 <li class="sidenav-li"><a class="sidenav-link" href="./competitions">COMPETITION</a></li>
-                <li class="sidenav-li"><a class="sidenav-link" href="./login" ng-show="!isShow">LOGIN/SIGNUP</a></li>
+                <li class="sidenav-li"><a class="sidenav-link" href="./login" ng-show="!isShow">LOGIN/REGISTER</a></li>
             </ul>
         </nav>
 

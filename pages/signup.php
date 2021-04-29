@@ -102,7 +102,7 @@
 				</div>
 				<div class="space"></div>
 				<div class="signup-btn text-center">
-					<button class="btn btn-lg bg-color text-white" ng-disabled="!(signupForm.$valid && !existCheck)">Sign up</button>
+					<button class="btn btn-lg bg-color text-white" ng-disabled="!(signupForm.$valid && !existCheck)">Register</button>
 				</div>	
 			</div>
 		</form>
