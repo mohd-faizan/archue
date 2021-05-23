@@ -8,7 +8,7 @@
                     <div class="d-flex justify-content-center">
                         <div class="img position-ralative">
                             <img src="../uploads/{{ user.profile }}" class="profile-image" alt="">
-                            <label for="profile" ng-if="loggedIn">Change profile photo</label>
+                            <label for="profile" ng-if="loggedIn">Change profile</label>
                             <input name="profile" ng-model="profile" type="file" id="profile" accept="image/*"
                                 profile-photo hidden>
                         </div>
@@ -106,10 +106,10 @@
             </div>
             <div class="col-md-9" ng-if="!isEdit">
                 <div class="d-flex" ng-if="loggedIn">
-                    <a type="button" class="ml-auto btn btn-primary bg-color border-0" href="./upload">Upload</a>
+                    <a type="button" class="ml-auto btn btn-primary bg-color border-0" href="./upload">Upload your work here</a>
                 </div>
-                <div>
-                    <h3>About {{loggedIn ? 'you' : user.name}}</h3>
+                <div ng-if="!loggedIn">
+                    <h3>About {{ user.name }}</h3>
                     <p style="background: white;
                     padding: 17px;
                     padding-left: 10px;">{{user.about_me}}</p>
@@ -136,7 +136,9 @@
                             <td>{{lead.description}}</td>
                         </tr>
                         <tr class="text-center" ng-if="leads.length == 0">
-                            <td colspan="7">No Data Found</td>
+                            <td colspan="7">
+                                <p class="font-weight-bold">It seems you haven't purchased any lead.<br> To purchase leads <a class="bg-font" href="/leads">Click here</a></p>
+                            </td>
                         </tr>
                     </table>
                 </div>

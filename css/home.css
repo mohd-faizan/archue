@@ -60,12 +60,13 @@ a.blog-comp-student>span {
 /* profile css */
 .img label{
     position: absolute;
-    top: 13%;
-    left: 35%;
-    font-size: 9px;
+    top: 10%;
+    left: 32%;
+    font-size: 15px;
     cursor: pointer;
-    opacity: 0; 
+    opacity: 0;
     font-weight: bold;
+    color: #fa8a11;
 }
 label:hover{
     opacity: 1;
@@ -75,7 +76,7 @@ label:hover{
     transition: all 0.2 linear;
 }
 .profile-image {
-    width: 100px;
+    width: 130px;
     height: 100px;
     border-radius: 50%;
 }

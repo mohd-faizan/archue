@@ -96,7 +96,8 @@ app.controller("signUpController", ($scope, myService, mailService) => {
     $scope.isLoad = false;
     $scope.passRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]/;
     $scope.profession = "Select Profession";
-    $scope.professions = ["Architect", "Architecture Student", "Interior Designer", "Others"];
+    // $scope.professions = ["Architect", "Architecture Student", "Interior Designer", "Others"];
+    $scope.professions = ["Architect/Interior designer", "Building consultant", "Building contractor"];
     $scope.isInterest = false;
     $scope.emailMe = false;
     $scope.type = 'password';
@@ -209,12 +210,12 @@ app.controller("loginController", ($scope, $location) => {
                     $scope.$parent.location.path("./" + searchObject.redirect);
                 } else {
                     /*New Changes*/
-                    $scope.pro = ["Manufacture and Supplier", "vendor"];
-                    if ($scope.pro.indexOf(resp.data.profession) == -1) {
-                        $scope.$parent.location.path("/upload");
-                    } else {
-                        $scope.$parent.location.path("/user-profile/" + resp.data.username);
-                    }
+                    // $scope.pro = ["Manufacture and Supplier", "vendor"];
+                    // if ($scope.pro.indexOf(resp.data.profession) == -1) {
+                    //     $scope.$parent.location.path("/upload");
+                    // } else {
+                    // }
+                    $scope.$parent.location.path("/user-profile/" + resp.data.username);
                 }
             } else if (resp.status == "remember") {
                 $scope.$parent.user.saveDataLocal(resp.data);
@@ -233,12 +234,12 @@ app.controller("loginController", ($scope, $location) => {
                     $scope.$parent.location.path("./" + searchObject.redirect);
                 } else {
                     /*New Changes*/
-                    $scope.pro = ["Manufacture and Supplier", "vendor"];
-                    if ($scope.pro.indexOf(resp.data.profession) == -1) {
-                        $scope.$parent.location.path("/upload");
-                    } else {
-                        $scope.$parent.location.path("/user-profile/" + resp.data.username);
-                    }
+                    // $scope.pro = ["Manufacture and Supplier", "vendor"];
+                    // if ($scope.pro.indexOf(resp.data.profession) == -1) {
+                    //     $scope.$parent.location.path("/upload");
+                    // } else {
+                    // }
+                    $scope.$parent.location.path("/user-profile/" + resp.data.username);
                 }
             } else {
                 $scope.isShowError = true;

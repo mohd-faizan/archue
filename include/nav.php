@@ -393,7 +393,7 @@
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="./user-profile/{{userData.myUsername}}">Dashboard</a>
-                            <a class="dropdown-item" href="./logout">Logout</a>
+                            <a class="dropdown-item" href="logout">Logout</a>
                         </div>
                     </li>
                 </ul>

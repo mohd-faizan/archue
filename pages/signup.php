@@ -7,6 +7,15 @@
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-sm-12">
 						<div class="form-group">
+							<select id="professionid" name="profession" class="form-control" required ng-model="profession">
+								<option>{{profession}}</option>
+								<option ng-repeat="profession in professions">{{profession}}</option>
+							</select>
+							<small class="error" ng-show="signupForm.profession.$error.required">please select one option</small>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12">
+						<div class="form-group">
 							<input type="text" name="fname" id="fnameid" class="form-control" placeholder="Name..." required ng-model="fname">
 						</div>
 					</div>
@@ -15,15 +24,7 @@
 							<input type="text" name="lname" id="lnameid" class="form-control" placeholder="Last Name..." required ng-model="lname">
 						</div>
 					</div> -->
-					<div class="col-lg-6 col-md-6 col-sm-12">
-						<div class="form-group">
-							<select id="professionid" name="profession" class="form-control" required ng-model="profession">
-								<option>{{profession}}</option>
-								<option ng-repeat="profession in professions">{{profession}}</option>
-							</select>
-							<small class="error" ng-show="signupForm.profession.$error.required">please select one option</small>
-						</div>
-					</div>
+					
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-sm-12">
@@ -34,9 +35,17 @@
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-12">
 						<div class="form-group">
-							<input type="email" name="cemail" id="cemailid" class="form-control" placeholder="Confirm Email..." required ng-model="cemail" ng-pattern="email">
+							<input type="text" name="mobno" id="mobnoid" class="form-control" placeholder="Mobile Number..." required ng-model="mobileno" ng-minlength="10" ng-maxlength="10" ng-pattern="regex">
+							<small class="error" ng-show="signupForm.mobno.$error.maxlength">Maxlength  should be 10</small>
+							<small class="error" ng-show="signupForm.mobno.$error.minlength">Minlength  should be 10</small>
+							<small class="error" ng-show="signupForm.mobno.$error.pattern">Should have valid no</small>
 						</div>
 					</div>
+					<!-- <div class="col-lg-6 col-md-6 col-sm-12">
+						<div class="form-group">
+							<input type="email" name="cemail" id="cemailid" class="form-control" placeholder="Confirm Email..." required ng-model="cemail" ng-pattern="email">
+						</div>
+					</div> -->
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-sm-12">
@@ -65,14 +74,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-lg-6 col-md-6 col-sm-12">
-						<div class="form-group">
-							<input type="text" name="mobno" id="mobnoid" class="form-control" placeholder="Mobile Number..." required ng-model="mobileno" ng-minlength="10" ng-maxlength="10" ng-pattern="regex">
-							<small class="error" ng-show="signupForm.mobno.$error.maxlength">Maxlength  should be 10</small>
-							<small class="error" ng-show="signupForm.mobno.$error.minlength">Minlength  should be 10</small>
-							<small class="error" ng-show="signupForm.mobno.$error.pattern">Should have valid no</small>
-						</div>
-					</div>
+					
 				</div>
 				<!-- <div class="row">
 					<div class="col-lg-6 col-md-6 col-sm-12">
@@ -102,7 +104,7 @@
 				</div>
 				<div class="space"></div>
 				<div class="signup-btn text-center">
-					<button class="btn btn-lg bg-color text-white" ng-disabled="!(signupForm.$valid && !existCheck)">Register</button>
+					<button class="btn btn-lg bg-color text-white  w-25" ng-disabled="!(signupForm.$valid && !existCheck)">Register</button>
 				</div>	
 			</div>
 		</form>
