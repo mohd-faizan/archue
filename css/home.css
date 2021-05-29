@@ -58,7 +58,7 @@ a.blog-comp-student>span {
 
 /* // testimonials */
 /* profile css */
-.img label{
+.img label span{
     position: absolute;
     top: 10%;
     left: 32%;
@@ -69,16 +69,22 @@ a.blog-comp-student>span {
     color: #fa8a11;
 }
 label:hover{
+    cursor: pointer;
+}
+label:hover span{
     opacity: 1;
 }
-.profile-image:hover + label{
+.profile-image:hover + label span{
     opacity: 1;
     transition: all 0.2 linear;
 }
 .profile-image {
     width: 130px;
-    height: 100px;
+    height: 130px;
     border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 10px 5px #eae4e4;
 }
 .profile-container{
     /* position: fixed; */

@@ -653,7 +653,7 @@ app.controller('userProfileController', ($scope, $route, myService, validationSe
         }
     }
     console.log('$scope.loggedIn', $scope.loggedIn);
-    $scope.professions = ["Architect", "Architecture Student", "Interior Designer", "Others"];
+    $scope.professions = ["Architect/Interior designer", "Building consultant", "Building contractor"];
     $scope.validatePortfolioFile = (img) => {
         var ext = ['png', 'jpeg', 'jpg'];
         return validationService.validPortfolio(img, ext);
@@ -664,6 +664,9 @@ app.controller('userProfileController', ($scope, $route, myService, validationSe
                 console.log(resp);
                 if (resp.status) {
                     $scope.user = resp.data;
+                    if($scope.user.company_name === 'No Available') {
+                        $scope.user.company_name = '';
+                    }
                     $scope.user.dob = new Date($scope.user.dob);
                     $scope.isDataFound = true;
                     $scope.getUserData();

@@ -6,9 +6,11 @@
             <div class="col-md-3">
                 <div class="profile-container">
                     <div class="d-flex justify-content-center">
-                        <div class="img position-ralative">
-                            <img src="../uploads/{{ user.profile }}" class="profile-image" alt="">
-                            <label for="profile" ng-if="loggedIn">Change profile</label>
+                        <div class="img">
+                            <label for="profile"class="position-ralative" ng-if="loggedIn">
+                                <span> Change profile</span>
+                                <div style="background-image: url(../uploads/{{ user.profile }})" class="profile-image"  alt=""></div>
+                            </label>
                             <input name="profile" ng-model="profile" type="file" id="profile" accept="image/*"
                                 profile-photo hidden>
                         </div>
@@ -48,7 +50,7 @@
                         </div>
                         <div class="form-group">
                             <label for="company">Name of the firm/Company:</label>
-                            <input type="text" class="form-control" id="company" placeholder="Enter company"
+                            <input type="text" class="form-control" id="company" placeholder="Write here"
                                 name="company" ng-model="user.company_name" required>
                         </div>
                         <div class="form-group">
@@ -91,6 +93,8 @@
                             <label for="email">Profession</label>
                             <select class="form-control" id="profession" ng-model="user.profession" name="profession"
                                 required>
+                                <option value="" ng-if="user.profession === ''" disabled>Select Profession</option>
+                                <option value="Select Profession" ng-if="user.profession === 'Select Profession'" disabled>Select Profession</option>
                                 <option ng-repeat="profession in professions">{{profession}}</option>
                             </select>
                         </div>
