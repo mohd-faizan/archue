@@ -50,7 +50,10 @@
 			        <td>{{lead.city}}</td>
 			        <td>{{lead.cost}}</td>
 			        <td>{{lead.description}}</td>
-			        <td><button class="btn btn-danger" ng-click="dellead(lead.lead_id)">Delete</button></td>
+			        <td>
+						<button class="btn btn-danger" ng-click="dellead(lead.lead_id)"><span class="fa fa-trash"></span></button>
+						<a class="btn btn-primary" ng-href="/dashboardpanel/edit-lead/{{ lead.lead_id }}"><span class="fa fa-edit"></span></a>
+					</td>
 			      </tr>
                   <tr class="text-center" ng-if="leads.length === 0">
                   <td colspan="11">No lead found</td>

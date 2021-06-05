@@ -366,4 +366,15 @@ app.service('uploadLeadService', function($http) {
             }
         });
     }
+    this.updateLeadById = (data) => {
+        console.log('data', data);
+        return $http({
+            method: 'POST',
+            data: this.convertToFormData(data),
+            url: 'php/update-lead.php',
+            headers: {
+                "Content-Type": undefined
+            }
+        });
+    }
 })

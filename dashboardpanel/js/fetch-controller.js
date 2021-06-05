@@ -955,7 +955,7 @@ app.controller("usersController", ($scope, fetchservice, saveData) => {
 //
 app.controller('leadsController', ($scope, fetchservice) => {
     $scope.leads = [];
-    $scope.myLimit = 15;
+    $scope.myLimit = 10;
     $scope.increaseUserLimit = () => {
         $scope.myLimit += 5;
     }

@@ -487,5 +487,29 @@ class App extends Conn
 		}
 		echo json_encode($resp);
 	}
+	public static function updateLeadById($post) {
+		$name = self::$conn->real_escape_string($post['name']);
+		$phone = self::$conn->real_escape_string($post['phone']);
+		$email = self::$conn->real_escape_string($post['email']);
+		$tentativeBudget = self::$conn->real_escape_string($post['tentativeBudget']);
+		$workType = self::$conn->real_escape_string($post['workType']);
+		$city = self::$conn->real_escape_string($post['city']);
+		$leadType = self::$conn->real_escape_string($post['leadType']);
+		$cost = self::$conn->real_escape_string($post['cost']);
+		$personCount = self::$conn->real_escape_string($post['person_count']);
+		$expectedStartTime = self::$conn->real_escape_string($post['expectedStartTime']);
+		$description = self::$conn->real_escape_string($post['description']);
+		$id = $post['lead_id'];
+		$sql = "UPDATE leads SET name = '$name',phone = '$phone',email = '$email',tentativeBudget = $tentativeBudget,workType = '$workType',city = '$city',leadType = '$leadType', expectedStartTime = '$expectedStartTime', cost = $cost, person_count = $personCount, description = '$description' WHERE lead_id = $id";
+
+		if (self::$conn->query($sql)) {
+			$resp['status'] = true;
+			$resp['message']  = "You have successfully updated the lead";
+		} else {
+			$resp['status'] = false;
+			$resp['message']  = "Something went wrong";
+		}
+		echo json_encode($resp);
+	}
 }
 App::setConnect();

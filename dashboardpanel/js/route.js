@@ -96,6 +96,10 @@ app.config(($routeProvider, $locationProvider) => {
             resolve: myresolve(),
             templateUrl: 'pages/upload-lead.php'
         })
+        .when('/edit-lead/:id', {
+            resolve: myresolve(),
+            templateUrl: 'pages/edit-lead.php'
+        })
         .when('/leads', {
             resolve: myresolve(),
             templateUrl: 'pages/leads.php'

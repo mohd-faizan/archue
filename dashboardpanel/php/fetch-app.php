@@ -340,6 +340,22 @@ class FetchApp extends Conn{
 			echo "Error ".self::$conn->error;
 		}
 	}
+	public static function getLeadById($id) {
+		$sql = "SELECT * FROM leads WHERE lead_id = $id";
+		$arr = array();
+		if($res = self::$conn->query($sql)){
+			while($row = $res->fetch_assoc()){
+				$row = array_push($arr, $row);
+			}
+			$resp['status'] = true;
+			$resp['data'] = $arr;
+		}
+		else{
+			$resp['status'] = false;
+			$resp['data'] = self::$conn->error;
+		}
+		echo json_encode($resp);
+	}
 	public static function fetchCount(){
 
 		$sql = "SELECT COUNT(is_approve) As blogUnapprove from blog WHERE is_approve = 0";

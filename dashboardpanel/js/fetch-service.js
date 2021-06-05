@@ -324,6 +324,9 @@ app.service("fetchservice", function($http) {
     this.fetchLeads = () => {
         return $http.get("php/get-leads.php");
     }
+    this.getLeadById = (id) => {
+        return $http.get('php/get-lead.php?id=' + id).then(resp => resp.data);
+    }
     this.deleteLead = (id) => {
         return $http.get("php/delete-lead.php?id=" + id);
     }

@@ -344,7 +344,83 @@ app.controller('addEMagazines', ($scope, uploadService, validationService, $time
 });
 
 //upload controller
+app.controller('EditLeadController', ($scope, $route, uploadLeadService, fetchservice, $timeout) => {
+    $scope.budgets = ["1 lakh-5 lakh", '5 lakh-10 lakh', '10 lakh-20 lakh', '20 lakh-50 lakh', '50 lakh+'];
+    $scope.workTypes = ["Interiors", "Architectural Design", "Construction", "Landscape"];
+    $scope.leadTypes = ['Normal', 'Featured', 'Featured & verified'];
+    $scope.isLoading = false;
+    $scope.errMessage = ''
+    $scope.successMessage = ''
+    $scope.getLeadById = async (id) => {
+        try{
+            const leadResp = await fetchservice.getLeadById(id);
+            if (leadResp.status) {
+                $scope.lead = leadResp.data[0];
+                for(let key of Object.keys($scope.lead)) {
+                    if (['phone', 'tentativeBudget', 'cost'].includes(key)) {
+                        $scope.lead[key] = +$scope.lead[key];
+                    }
+                    if (key === 'expectedStartTime') {
+                        $scope.lead[key] = new Date($scope.lead[key]);
+                    }
+                }
+                if ($scope.lead.person_count !== '0') {
+                    $scope.lead.status = '1';
+                } else {
+                    $scope.lead.status = '0';
+                }
+                console.log('$scope.lead', $scope.lead);
+            } else {
+                console.log('something wrong while fetching lead by id')
+            }
+        }catch(e) {
+            console.log('something wrong while fetching lead by id')
+            console.log(e);
+        }
+    }
+    $scope.getLeadById($route.current.params.id)
+    $scope.onSubmit = () => {
+        // check if status is avaialeble and person count before update is not 0
+        if ($scope.lead.status === '1' && $scope.lead.person_count === '0') {
+            if ($scope.lead.leadType === 'Normal') {
+                $scope.lead.person_count = 4;
+            } else if ($scope.lead.leadType === 'Featured') {
+                $scope.lead.person_count = 2;
+            } else if ($scope.lead.leadType === 'Featured & verified') {
+                $scope.lead.person_count = 1;
+            }
+        } else if ($scope.lead.status === '0' && $scope.lead.person_count !== '0') {
+            $scope.lead.person_count = 0;
+        }
+        $scope.isLoading = true;
+        uploadLeadService.updateLeadById($scope.lead).then(
+            (resp) => {
+                console.log(resp)
+                $scope.errMessage = ''
+                $scope.isLoading = false;
+                if (resp.data.status) {
+                    $scope.successMessage = resp.data.message;
 
+                } else {
+                    $scope.successMessage = '';
+                    $scope.errMessage = resp.data.message;
+                }
+                $timeout(() => {
+                    $scope.successMessage = ''
+                    $scope.errMessage = ''
+                    window.location.href = '/dashboardpanel/leads'
+                }, 3000);
+            },
+            (err) => {
+                $scope.isLoading = false;
+                $scope.successMessage = '';
+                console.log(err)
+                $scope.errMessage = 'Lead upload failed.';
+            }
+        );
+    }
+
+});
 app.controller('uploadLeadController', ($scope, uploadLeadService, $timeout) => {
     $scope.budgets = ["1 lakh-5 lakh", '5 lakh-10 lakh', '10 lakh-20 lakh', '20 lakh-50 lakh', '50 lakh+'];
     $scope.workTypes = ["Interiors", "Architectural Design", "Construction", "Landscape"];
