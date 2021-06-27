@@ -1957,6 +1957,7 @@ h3.home-page-heading {
     flex-basis: 30%;
     margin-right: 1.2rem;
     height: 200px;
+    margin-bottom: 1rem;
 }
 
 .projects li a:first-child {
@@ -1964,6 +1965,7 @@ h3.home-page-heading {
     display: block;
     box-shadow: 0 0 10px #eee;
     box-shadow: 0 0 10px #555;
+    overflow: hidden;
 }
 
 .projects li a img {

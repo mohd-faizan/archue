@@ -81,6 +81,18 @@
                             </a>
                         </div>
                     </div>
+                    <hr class="black-line">
+                    <div clas="similar-container">
+                        <h3>Similar Competition </h3>
+                        <div class="row">
+                            <a href="/competition/{{comp.competitor_id}}/{{comp.competition_heading}}" class="col-md-2" ng-repeat="comp in similarsCompetitions">
+                                <img src="upload-file/{{comp.competitor_file}}" class="img-fluid" alt="">
+                                <p class="bg-font competetion-heading">{{ comp.competition_heading }}</p>
+                            </a>
+                        </div>
+                        <div ng-if="!similarsCompetitions">No Similar competition found</div>
+                    </div>
+                    <hr class="black-line">
                     <comment></comment>
                 </div>
                 <div class="col-md-3 col-sm-12">

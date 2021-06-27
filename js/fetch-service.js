@@ -401,6 +401,13 @@ app.service("fetchservice", function($http) {
     this.getCompetition = () => {
         return JSON.parse(localStorage.getItem("comp"));
     }
+    this.getSimilarCompetitions = (category, id) => {
+        return $http({
+            method: "get",
+            url: "php/fetch-similar-competitor.php?category=" + category + "&id=" + id
+        })
+        .then((resp) => resp.data, (err) => console.log(err));
+    }
 
     /*TO Fetch One Item From Array OF Object*/
     this.getOneFromArrObj = async(id, data, cb) => {

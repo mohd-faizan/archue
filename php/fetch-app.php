@@ -1435,6 +1435,22 @@ class FetchApp extends Conn
             echo json_encode(array("data"=>self::$conn->error,"status"=>"no"));
         }
     }
+    public static function fetchSimilarCompetitions($category, $id) {
+        $arr = array();
+        $sql = "SELECT * FROM competition WHERE competitor_id != $id AND competition_category = '$category' ORDER BY competitor_id LIMIT 5";
+        if ($res = self::$conn->query($sql)) {
+            if ($res->num_rows) {
+                while ($row = $res->fetch_assoc()) {
+                    array_push($arr, $row);
+                }
+                echo json_encode(array("data"=>$arr,"status"=>"ok"));
+            } else {
+                echo json_encode(array("data"=>"No rows Found","status"=>"no"));
+            }
+        } else {
+            echo json_encode(array("data"=>self::$conn->error,"status"=>"no"));
+        }
+    }
     public static function fetchSingleProject($id) {
         $sql = "SELECT * FROM projects WHERE project_id = $id";
         if ($res = self::$conn->query($sql)) {
