@@ -295,10 +295,11 @@ app.service("fetchservice", function($http) {
                 .then((resp) => cb(resp.data), (err) => console.log(err));
         }
         /* Fetch Comments of Particular Blog */
-    this.fetchCommentsOfBlog = (id, cb) => {
+    this.fetchCommentsOfBlog = ({id, type}, cb) => {
         //  console.log("In Service While Getting Comments : " + id);
         var fd = new FormData();
-        fd.append('blog_id', id);
+        fd.append('id', id);
+        fd.append('type', type);
 
         $http({
                 method: "POST",

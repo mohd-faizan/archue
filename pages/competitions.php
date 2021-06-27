@@ -1,4 +1,4 @@
-<div class="space"></div>
+<!-- <div class="space"></div>
 <section class="section-padding" id="blog-sec-1" ng-controller="fetchCompetitionController">
     <div class="container-fluid">
         <div class="row" ng-if="competitions">
@@ -47,35 +47,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-share-option">
-                        <div>
-
-                            <a href="" class="fa {{competition.like ? 'fa-heart text-danger' : 'fa-heart-o'}}" ng-click="increaseLike(competition.competitor_id)">&nbsp;{{competition.likes}}</a>
-                            <a href=""><span class="fa fa-eye"></span>&nbsp;{{competition.views}}</a>
-                            <a href=""><span class="fa fa-facebook" socialshare socialshare-provider="facebook"
-									socialshare-type="sharer" socialshare-via="167503137442216"
-									socialshare-url="https://www.archue.com/competition/{{competition.competitor_id}}/{{competition.competition_heading}}"
-									socialshare-redirect-uri="http://google.com" socialshare-popup-height="300"
-									socialshare-popup-width="400" socialshare-trigger="click"></span></a>
-                            <a href=""><span class="fa fa-twitter" socialshare socialshare-provider="twitter"
-									socialshare-hashtags="Architect, development, internet" socialshare-via="twitter"
-									socialshare-text=""
-									socialshare-url="https://www.archue.com/competition/{{competition.competitor_id}}/{{competition.competition_heading}}"
-									socialshare-popup-height="300" socialshare-popup-width="400"
-									socialshare-trigger="click"></span></a>
-                            <a href="" socialshare socialshare-provider="google" socialshare-url="https://www.archue.com/competition/{{competition.competitor_id}}/{{competition.competition_heading}}" socialshare-popup-height="300" socialshare-popup-width="400" socialshare-trigger="click"><span class="fa fa-google-plus"></span></a>
-                            <a href="" socialshare socialshare-media="https://www.archue.com/upload-file/{{competition.competitor_file}}" socialshare-provider="pinterest" socialshare-text="{{competition.competition_heading}}" socialshare-url="https://www.archue.com/competition/{{competition.competitor_id}}/{{competition.competition_heading}}"
-                                socialshare-popup-height="300" socialshare-popup-width="400" socialshare-trigger="click"><span class="fa fa-pinterest"></span></a>
-
-                            <a href="" socialshare socialshare-provider="tumblr" socialshare-type="link" socialshare-text="{{competition.competition_heading}}" socialshare-url="https://www.archue.com/competition/{{competition.competitor_id}}/{{competition.competition_heading}}"
-                                socialshare-popup-height="300" socialshare-popup-width="540" socialshare-trigger="click"><span class="fa fa-tumblr"></span></a>
-                            <a href="" socialshare socialshare-provider="linkedin" socialshare-text="Architect" socialshare-url="https://www.archue.com/competition/{{competition.competitor_id}}/{{competition.competition_heading}}" socialshare-description="Architect" socialshare-source="Archue"
-                                socialshare-popup-height="300" socialshare-popup-width="400" socialshare-trigger="click"><span class="fa fa-linkedin"></span></a>
-                        </div>
-                        <div class="ml-auto">
-                            <a ng-href="./competition/{{competition.competitor_id}}/{{competition.competition_heading}}" ng-click="setCompetition(competition)">Read More</a>
-                        </div>
-                    </div>
+                    
                 </div>
                 <nav aria-label="pagination" class="mt-2" ng-if="(competitions).length > 0">
                     <ul class="pagination justify-content-center">
@@ -101,5 +73,97 @@
         </div>
         <div ng-if="!competitions" ng-include="'../include/loader.php'"></div>
 
+    </div>
+</section> -->
+
+
+
+<section ng-controller="fetchCompetitionController" id="project-sec">
+    <div class="home-margin">
+        <div class="space"></div>
+        <div class="container-fluid " ng-if="competitions">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="cur-page-div">
+                        <a href="./">Archue</a>
+                        <span class="fa fa-angle-right"></span>
+                        <a href="competitions">Competitions</a>
+                        <span class="fa fa-angle-right"></span>
+                        <span>
+                            <span ng-if="category">{{category}}</span>
+                            <span ng-if="category==undefined">All</span>
+                            <span ng-if="category==''">All</span>
+                        </span>
+                    </div>
+                    <div class="space"></div>
+                    <div class="d-flex">
+                        <div class="project-top-header">
+                            <h5>{{category ? category : 'All'}}</h5>
+                        </div>
+                        <div style="margin-left: auto;margin-top: -3px;">
+                            <button class="btn btn-primary bg-color text-dark" style="height: 32px;padding-top: 2px;border-radius: 0;">Register By</button>
+                            <button class="btn btn-primary bg-color text-dark" style="height: 32px;padding-top: 2px;border-radius: 0;">Submit By</button>
+                        </div>
+                        <div class="category">
+                            <div class="dropdown">
+                                <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+                                    CATEGORY+
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item" ng-click="setCategory($)">All</a>
+                                    <a class="dropdown-item" href="#"
+                                        ng-repeat="cat in categories|orderBy:cat track by $index"
+                                        ng-click="setCategory(cat)">{{cat}}</a>
+                                </div>
+                            </div>
+                            <!-- <select ng-model="category" class="project-select">
+								<option>{{category}}</option>
+								<option ng-repeat="cat in categories track by $index">{{cat}}</option>
+								}
+							</select> -->
+                        </div>
+                    </div>
+                    <div class="yellow-line bg-color"></div>
+                    <div class="project-container">
+                        <ul class="projects">
+                            <li ng-if="competitions.length>0" ng-repeat="competition in competitions | searchList: 'competition_category' : category">
+                                <a
+                                    ng-href="./competition/{{competition.competitor_id}}/{{competition.competition_heading}}"><img
+                                        ng-src="upload-file/{{competition.competitor_file}}" class="img-fluid"></a>
+                                <a class="competetion-heading" ng-href="./competition/{{competition.competitor_id}}/{{competition.competition_heading}}"
+                                    ng-click="setCompetition(competition)">{{competition.competition_heading |
+                                    toUpperCaseFirst}}</a>
+                            </li>
+                        </ul>
+                        <nav aria-label="pagination" class="mt-2" ng-if="(competitions | searchList: 'competition_category' : category).length > 0">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item" ng-class="{'disabled': active === 1}">
+                                    <a class="page-link" href="#" tabindex="-1" ng-click="prev()">Previous</a>
+                                </li>
+                                <li class="page-item" ng-class="{'active': active === ($index +1)}"
+                                    ng-repeat="page in paginations track by $index"><a class="page-link" href="#"
+                                        ng-click="toPage($index+1)">{{$index+1}}</a></li>
+
+                                <li class="page-item" ng-class="{'disabled': active === paginations.length}">
+                                    <a class="page-link" href="#" ng-click="next()">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="alert alert-danger" ng-if="(competitions | searchList: 'competition_category' : category).length == 0">
+                            No Competition Found!
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-3 pr-0 ">
+                    <div class="recent-post-container">
+                        <a href="./add-competition" class="btn btn-primary bg-color border-0">Add Competition Here</a>
+                        <div ng-include="'include/sidematerial.php'" style="margin-top:3rem;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="!competitions" ng-include="'../include/loader.php'"></div>
     </div>
 </section>

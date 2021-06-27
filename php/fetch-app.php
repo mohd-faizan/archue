@@ -571,33 +571,54 @@ class FetchApp extends Conn
 
     public static function submitCommentBlog($post)
     {
+
         $name = $post['name'];
         $comment = $post['comment'];
-        $blog_id = $post['blog_id'];
-        $sql = "INSERT INTO blogcomments(commented_by, comment, commented_on, commented_at, is_approved, blog_id) values('$name', '$comment', CONVERT_TZ(NOW(),'+00:00', '+05:30'), CONVERT_TZ(NOW(),'+00:00', '+05:30'), 0, $blog_id)";
+        $id = $post['id'];
+        $type = $post['type'];
+        switch($type) {
+            case 'BLOG':
+                $sql = "INSERT INTO comments(commented_by, comment, commented_on, commented_at, is_approved, blog_id) values('$name', '$comment', CONVERT_TZ(NOW(),'+00:00', '+05:30'), CONVERT_TZ(NOW(),'+00:00', '+05:30'), 0, $id)";
+                break;
+            case 'COMPETITION':
+                $sql = "INSERT INTO comments(commented_by, comment, commented_on, commented_at, is_approved, competition_id) values('$name', '$comment', CONVERT_TZ(NOW(),'+00:00', '+05:30'), CONVERT_TZ(NOW(),'+00:00', '+05:30'), 0, $id)";
+                break;
+        }
+
         if (self::$conn->query($sql)) {
             $resp['status'] = "yes";
         } else {
             $resp['status'] = "no";
+            $resp['error'] = self::$conn->error;
         }
         echo json_encode($resp);
     }
-    public static function fetchCommentsOfBlog($id)
+    public static function fetchCommentsOfBlog($post)
     {
         $commentsArr = [];
-        $sql = "SELECT * FROM blogcomments WHERE blog_id = $id AND is_approved = 1 ORDER BY id DESC";
+        $id = $post['id'];
+        switch($post['type']) {
+            case 'BLOG':
+                $sql = "SELECT * FROM comments WHERE blog_id = $id AND is_approved = 1 ORDER BY id DESC LIMIT 15";
+                break;
+            case 'COMPETITION':
+                $sql = "SELECT * FROM comments WHERE competition_id = $id AND is_approved = 1 ORDER BY id DESC LIMIT 15";
+                break;
+        }
         if ($res = self::$conn->query($sql)) {
             if ($res->num_rows > 0) {
                 while ($row = $res->fetch_assoc()) {
                     array_push($commentsArr, $row);
                 }
                 $resp['data'] = $commentsArr;
-                $resp['status'] = 'Ok';
+                $resp['status'] = 'yes';
             } else {
                 $resp['status'] = "No";
+                $resp['error'] = "No data found";
             }
         } else {
             $resp['status'] = 'No';
+            $resp['error'] = self::$conn->error;
         }
         echo json_encode($resp);
     }

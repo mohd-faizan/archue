@@ -76,5 +76,5 @@ session_start();
 
 <!-- Editor cdn-->
 <script src="localcdn/decoupled-document/ckeditor.js"></script>
-  <script type="text/javascript" src="js/custom-upload-adapter.js"></script>
+<script type="text/javascript" src="js/custom-upload-adapter.js"></script>
 <base target="_blank">

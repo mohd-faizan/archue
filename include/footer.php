@@ -120,6 +120,7 @@
     </section>
 </footer>
 
+<script type="text/javascript" src="js/date-util/date-util.js"></script>
 <script type="text/javascript" src="js/fetch-service.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
 <script type="text/javascript" src="js/filter.js"></script>
@@ -154,3 +155,5 @@
 <script type="text/javascript" src="js/service/buy-now-service.js"></script>
 <script type="text/javascript" src="js/service/project-service.js"></script>
 <script type="text/javascript" src="js/service/thesis-service.js"></script>
+<!-- components -->
+<script type="text/javascript" src="js/component/comment.component.js"></script>

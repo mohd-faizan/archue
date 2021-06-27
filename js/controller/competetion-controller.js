@@ -3,6 +3,11 @@ app.controller("fetchCompetitionController", ($sce, fetchservice, $scope) => {
     $scope.limit = 15;
     $scope.active = 1;
     $scope.skip = 0;
+    $scope.categories = ['Awards/Grants/Scholarships', 'International', 'Regional/National', 'Student/Young architects', 'Ideas/Virtual', 'Non-architectural', 'Call for papers/architects'];
+    $scope.category = '';
+    $scope.setCategory = (cat) => {
+        $scope.category = cat;
+    }
     $scope.fetchCompetetions = (skip, limit) => {
         fetchservice.fetchCompetitor(skip, limit, (data) => {
             console.log(data);
@@ -70,6 +75,8 @@ app.controller("fetchCompetitionController", ($sce, fetchservice, $scope) => {
     }
 })
 app.controller("fullCompController", async function(fetchservice, $sce, $scope, $routeParams, ngMeta) {
+    $scope.id = $routeParams.id;
+    $scope.type = 'COMPETITION';
         $scope.getOneCompetition = () => {
             fetchservice.fetchOneCompetitor($routeParams.id, (data) => {
                 console.log("full compettion", data);
@@ -148,24 +155,30 @@ app.controller("fullCompController", async function(fetchservice, $sce, $scope, 
     // material category controllers
     /*competition controller*/
 app.controller("competitionController", (uploadService, validationService, $scope) => {
-    $scope.fontsize = [8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72]
-    $scope.competition_category = "Select Category";
     $scope.isShowLoad = false;
-    let competitorData = {};
+    $scope.competitorData = {
+        competition_heading: '',
+        competition_category: '',
+        competitor_sub_deadline: '',
+        competitor_reg_deadline: '',
+        competitor_name: '',
+        competitor_file: '',
+        competitor_content: '',
+        advertise: false
+    };
+    $scope.minDate = getFormattedDate(new Date());
+    $scope.categories = ['Awards/Grants/Scholarships', 'International', 'Regional/National', 'Student/Young architects', 'Ideas/Virtual', 'Non-architectural', 'Call for papers/architects'];
     $scope.validatePortfolioFile = (file) => {
         ext = ['jpeg', 'jpg', 'png'];
         return validationService.validPortfolio(file, ext);
     };
     $scope.submitBlog = () => {
         $scope.isShowLoad = true;
-        competitorData.competition_heading = $scope.competition_heading;
-        competitorData.competition_category = $scope.competition_category;
-        competitorData.competitor_name = $scope.competitor_name;
-        competitorData.competitor_file = $scope.portfolioFile;
-        competitorData.competitor_content = $scope.myBlog;
+        $scope.competitorData.competitor_file = $scope.portfolioFile;
+        $scope.competitorData.competitor_content = $scope.myBlog;
         let fd = new FormData();
-        for (let i in competitorData) {
-            fd.append(i, competitorData[i]);
+        for (let i in $scope.competitorData) {
+            fd.append(i, $scope.competitorData[i]);
         }
         uploadService.uploadCompetition(fd, (data) => {
             console.log(data);
@@ -174,7 +187,7 @@ app.controller("competitionController", (uploadService, validationService, $scop
                 window.location.href = "./competitions"
             } else {
                 $scope.isShowLoad = false;
-                alert(data.message);
+                console.error('eror in com', data.message);
             }
         })
     }

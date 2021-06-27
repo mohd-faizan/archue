@@ -75,6 +75,7 @@ app.controller("fullBlogController", ($sce, $scope, fetchservice, $route, ngMeta
     $scope.duration = 0;
 
     var blog_id;
+    $scope.id = ''
     $scope.fetchOneBlog = () => {
         fetchservice.fetchOneBlog($route.current.params.id, (data) => {
             console.log("data", data);
@@ -99,7 +100,8 @@ app.controller("fullBlogController", ($sce, $scope, fetchservice, $route, ngMeta
                     }
                 }
                 blog_id = $scope.blog.blog_id;
-
+                $scope.id = $scope.blog.blog_id;
+                $scope.type = 'BLOG';
                 $scope.blog.url = $scope.blog.heading.replace(/\//g, 'OR');
                 $scope.blog.url = $scope.blog.heading.replace(/ /g, '-');
                 $scope.blog.url = encodeURI($scope.blog.url);

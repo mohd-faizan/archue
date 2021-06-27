@@ -99,3 +99,10 @@ label:hover span{
 .w-18{
     width: 18%;
 }
+/* compettiotion  */
+.competetion-heading {
+    font-size: 12px;
+    line-height: 1.5;
+    display: inline-block;
+    margin-top: 5px;
+}

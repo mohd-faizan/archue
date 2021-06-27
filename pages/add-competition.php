@@ -1,6 +1,6 @@
 <section class="section-padding" id="project-upload-sec-1" ng-controller="competitionController">
 	<div class="container">
-		<div class="upload-frame">
+		<div class="competition-frame">
 			<div id="blog-form-div">
 				<form id="blog-form" name="competitionForm">
 					<div class="container-fluid">
@@ -12,32 +12,46 @@
 						<div class="space"></div>
 						<div class="row">
 							<div class="col-lg-6 col-md-6 col-sm-12">
-								<div class="form-group">
+								<div class="form-group text-left">
 									<div class="form-group">
-									<input type="text" name="competition_heading" id="competition_heading_id" placeholder="Name...." class="form-control" ng-model="competition_heading" required>
+									<input type="text" name="competition_heading" id="competition_heading_id" placeholder="Competition title" class="form-control" ng-model="competitorData.competition_heading" required>
 									<small class="error" ng-show="competitionForm.competition_heading.$error.required&&competitionForm.competition_heading.$dirty">Required Field</small>
 								</div>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-12" >
-								<select class="form-control" ng-model="competition_category" name="competition_category" select-validate>
-									<option>{{competition_category}}</option>
-									<option>Architecture</option>
-									<option>Enviromental/Social/Cultural</option>
-									<option>Others</option>
+								<select class="form-control" ng-model="competitorData.competition_category" name="competition_category" select-validate>
+									<option value="" disabled>Select Category</option>
+									<option ng-repeat="category in categories">{{ category }}</option>
 								</select>
 								<small class="error" ng-show="competitionForm.competition_category.$error.required">Required Field</small>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6 col-lg-6">
-								<div class="form-group">
-									<input type="file" name="competition_file" class="form-control" ng-model="competition_file" valid-file portfolio-valid required>
+								<div class="form-group text-left">
+									<input type="file" name="competition_file" class="form-control" ng-model="competitorData.competition_file" valid-file portfolio-valid required>
 								</div>
 							</div>
 							<div class="col-md-6 col-lg-6">
-								<div class="form-group">
-									<input type="text" name="competitor_name" class="form-control" ng-model="competitor_name"  required placeholder="Your Name*">
+								<div class="form-group text-left">
+									<input type="email" name="competitor_name" class="form-control" ng-model="competitorData.competitor_name"  required email placeholder="Email*">
+									<small class="error" ng-show="competitionForm.competitor_name.$error.required && competitionForm.competitor_name.$dirty">Required Field</small>
+									<small class="error" ng-show="competitionForm.competitor_name.$error.email && competitionForm.competitor_name.$dirty">Enter Valid email</small>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 col-lg-6">
+								<div class="form-group text-left">
+									<input min="{{ minDate }}" type="date" id="competitor_reg_deadline_id" name="competitor_reg_deadline" class="form-control" ng-model="competitorData.competitor_reg_deadline" placeholder="Registration deadline" required>
+									<small class="error" ng-show="competitionForm.competitor_reg_deadline.$error.required&&competitionForm.competitor_reg_deadline.$dirty">Required Field</small>
+								</div>
+							</div>
+							<div class="col-md-6 col-lg-6">
+								<div class="form-group text-left">
+									<input min="{{ minDate }}" type="date" id="competitor_sub_deadline_id" name="competitor_sub_deadline" class="form-control" ng-model="competitorData.competitor_sub_deadline"  required placeholder="Submission deadline">
+									<small class="error" ng-show="competitionForm.competitor_sub_deadline.$error.required&&competitionForm.competitor_sub_deadline.$dirty">Required Field</small>
 								</div>
 							</div>
 						</div>
@@ -52,31 +66,24 @@
 							    <div id="editor">
 							        <p>Write Your Competition here.</p>
 							    </div>
-
-								<!-- <div class="editor-btn-container">
-									<button type="button" class="editor-btn" value="B" onclick="bold(this)">B</button>
-									<button type="button" class="editor-btn" value="I" onclick="italic(this)" style="font-style: italic;">I</button>
-									<button type="button" class="editor-btn" onclick="link(this)">link</button>
-									<select onchange="heading()" id="head">
-										<option value="h1">Heading1</option> 
-										<option value="h2">Heading2</option>
-										<option value="h3">Heading3</option>
-										<option value="h4">Heading4</option>
-										<option value="h5">Heading5</option>
-										<option value="h6">Heading6</option>
-									</select>
-									<button type="button" class="editor-btn" onclick="jleft(this)"><span class="fa fa-align-left"></span></button>
-									<button type="button" class="editor-btn" onclick="jright(this)"><span class="fa fa-align-right"></span></button>
-									<button type="button" class="editor-btn" onclick="justify(this)">
-										<span class="fa fa-align-justify"></span>
-									</button>
-									<button type="button" class="editor-btn" onclick="orderlist(this)"><span class="fa fa-list-ol"></span></button>
-									<button type="button" class="editor-btn" onclick="unorderlist(this)"><span class="fa fa-list"></span></button>
-									<select onchange="fontsize(this)">
-										<option ng-repeat="font in fontsize">{{font}}</option>
-									</select>
+							</div>
+						</div>
+						<div class="space"></div>
+						<div class="space"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="form-check text-left">
+									<label class="form-check-label">
+									<input type="checkbox" class="form-check-input" name="remember"  ng-model="competitorData.advertise">
+									Advertiseme your competition for one month with a flat fee of $150 for one month 
+									</label>
 								</div>
-								<iframe name="editor" id="editor" width="100%" height="200" class="form-control"></iframe> -->
+								<div class="form-check text-left">
+									<label class="form-check-label">
+									<input type="checkbox" class="form-check-input" name="agree" checked>
+									I am agree with <a href="terms-and-conditions" class="bg-font">terms and conditions</a>
+									</label>
+								</div>
 							</div>
 						</div>
 						<div class="space"></div>

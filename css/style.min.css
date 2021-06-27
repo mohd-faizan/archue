@@ -2184,7 +2184,7 @@ h3.home-page-heading {
     }
 }
 
-.upload-frame {
+.upload-frame, .competition-frame {
     padding: 40px;
     text-align: center;
     width: 100%;

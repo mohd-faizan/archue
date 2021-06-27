@@ -159,3 +159,13 @@ app.filter('myfilter', () => {
         return arr;
     }
 })
+app.filter('searchList', () => {
+    return (arr, key, val) => {
+        // console.log('key', key);
+        // console.log('val', val);
+        if (!key || !val) return arr; 
+        const res =  arr.filter(item => item[key].toLowerCase() === val.toLowerCase());
+        // console.log('res', res);
+        return res;
+    } 
+})

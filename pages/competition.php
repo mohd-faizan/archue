@@ -81,6 +81,7 @@
                             </a>
                         </div>
                     </div>
+                    <comment></comment>
                 </div>
                 <div class="col-md-3 col-sm-12">
                     <div ng-include="'include/sidematerial.php'"></div>

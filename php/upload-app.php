@@ -265,9 +265,12 @@ class uploadApp extends Conn
 		$competition_category = self::$conn->real_escape_string($post['competition_category']);
 		$competitor_name = self::$conn->real_escape_string($post['competitor_name']);
 		$competitor_content = self::$conn->real_escape_string($post['competitor_content']);
+		$competitor_sub_deadline = self::$conn->real_escape_string($post['competitor_sub_deadline']);
+		$competitor_reg_deadline = self::$conn->real_escape_string($post['competitor_reg_deadline']);
+		$advertise = self::$conn->real_escape_string($post['advertise']);
 		if (self::upload_file($file)) {
 			$competitor_file = self::$conn->real_escape_string($file['name']);
-			$sql = "INSERT INTO competition(competition_heading,competition_category,competitor_name,competitor_content,competitor_file,competitor_date,is_approve) VALUES('$competition_heading','$competition_category','$competitor_name','$competitor_content','$competitor_file',NOW(),0)";
+			$sql = "INSERT INTO competition(competition_heading,competition_category,competitor_name,competitor_content,competitor_file,competitor_date,is_approve, sub_deadline, reg_deadline, advertise) VALUES('$competition_heading','$competition_category','$competitor_name','$competitor_content','$competitor_file',NOW(),0, '$competitor_sub_deadline', '$competitor_reg_deadline', $advertise)";
 			if (self::$conn->query($sql)) {
 				$resp['status'] = "ok";
 				$resp['message'] = "succesfully submit";
