@@ -209,16 +209,17 @@ class FetchApp extends Conn{
 	
 	public static function fetchBlogsComment(){
 		$arr = array();
-		$sql = "SELECT * FROM blogcomments ORDER BY id DESC";
+		$sql = "SELECT * FROM comments ORDER BY id DESC";
 		if($res = self::$conn->query($sql)){
             while ($blogcomment = $res->fetch_assoc()) {
 				$resp['comment'] = $blogcomment;
-				
-				$blog_id = $blogcomment['blog_id'];
-				
-				$sql2 = "SELECT * FROM blog WHERE blog_id = $blog_id";
+				if ($blogcomment['blog_id']) {
+					$sql2 = "SELECT * FROM blog WHERE blog_id = $blogcomment[blog_id]";
+				} else {
+					$sql2 = "SELECT * FROM competition WHERE competitor_id = $blogcomment[competition_id]";
+				}
 				if($res2 = self::$conn->query($sql2)){
-					$resp['blog'] = $res2->fetch_assoc();
+					$resp['data'] = $res2->fetch_assoc();
 					array_push($arr, $resp);
 				}
             }
@@ -394,7 +395,7 @@ class FetchApp extends Conn{
 		$res = self::$conn->query($sql);
 		$resp['competitionUnapprove'] = $res->fetch_assoc();
 		
-		$sql = "SELECT COUNT(is_approved) As blogCommentsUnapprove from blogcomments WHERE is_approved = 0";
+		$sql = "SELECT COUNT(is_approved) As blogCommentsUnapprove from comments WHERE is_approved = 0";
 		$res = self::$conn->query($sql);
 		$resp['blogCommentsUnapprove'] = $res->fetch_assoc();
 

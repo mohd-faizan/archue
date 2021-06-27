@@ -539,13 +539,7 @@ app.controller("fetchBlogCommentsController", (fetchservice, $scope) => {
     fetchservice.fetchBlogComments((data) => {
         if (data.status == "yes") {
             $scope.commentsWithBlog = data.data;
-
-            for (let commentWithBlog of $scope.commentsWithBlog) {
-                commentWithBlog.blog.url = commentWithBlog.blog.heading.replace(/\//g, "or");
-                commentWithBlog.blog.url = commentWithBlog.blog.url.replace(/ /g, "-");
-                commentWithBlog.blog.url = encodeURI(commentWithBlog.blog.url);
-                console.log($scope.commentsWithBlog);
-            }
+            console.log($scope.commentsWithBlog)
         } else {
             console.log("Error while Fetching Blogs Comment !!")
         }

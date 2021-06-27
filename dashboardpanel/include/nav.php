@@ -60,7 +60,7 @@
 
 			<li class="sidenav-li"><a href="./competitions">COMPETITION <span class="count pull-right">{{competitionUnapprove}}</span></a></li>
 
-			<li class="sidenav-li"><a href="./blog-comments">BLOG COMMENTS <span class="count pull-right">{{blogCommentsUnapprove}}</span></a></li>
+			<li class="sidenav-li"><a href="./blog-comments">COMMENTS <span class="count pull-right">{{blogCommentsUnapprove}}</span></a></li>
 
 			<li class="sidenav-li"><a href="./users">USERS</a></li>
 

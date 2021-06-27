@@ -18,7 +18,8 @@
                                 <th>Commented</th>
                                 <th>Commented_on</th>
                                 <th>Commented_at</th>
-                                <th>Blog</th>
+                                <th>Content</th>
+                                <th>Comment type</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -28,7 +29,10 @@
                                 <td> {{ commentWithBlog.comment.comment }} </td>
                                 <td> {{ commentWithBlog.comment.commented_on }} </td>
                                 <td> {{ commentWithBlog.comment.commented_at }} </td>
-                                <td> <a ng-href="./blog/{{commentWithBlog.blog.blog_id}}/{{commentWithBlog.blog.url}}" ng-click="setBlog(commentWithBlog.blog)">{{ commentWithBlog.blog.heading }} </a></td>
+                                <td> {{ commentWithBlog.data.competition_heading ||  commentWithBlog.data.heading}} </td>
+                                <td>{{commentWithBlog.data.blog_id ? 'Blog' : 'Competition'}}</td>
+
+                                <!-- <td> <a ng-href="./blog/{{commentWithBlog.blog.blog_id}}/{{commentWithBlog.blog.url}}" ng-click="setBlog(commentWithBlog.blog)">{{ commentWithBlog.blog.heading }} </a></td> -->
                                 <td>
                                     <button class="btn btn-sm mb-2 btn-danger" ng-click="deleteBlogComment(commentWithBlog.comment.id)">Delete</button> <br />
                                     <button class="btn btn-sm btn-success" ng-click="approveBlogComment(commentWithBlog.comment.id)">Approve</button> 
@@ -39,7 +43,8 @@
                                 <td> {{ commentWithBlog.comment.comment }} </td>
                                 <td> {{ commentWithBlog.comment.commented_on }} </td>
                                 <td> {{ commentWithBlog.comment.commented_at }} </td>
-                                <td> <a ng-href="./blog/{{commentWithBlog.blog.blog_id}}/{{commentWithBlog.blog.url}}" ng-click="setBlog(commentWithBlog.blog)">{{ commentWithBlog.blog.heading }} </a></td>
+                                <td> {{ commentWithBlog.data.competition_heading ||  commentWithBlog.data.heading}} </td>
+                                <td>{{commentWithBlog.data.blog_id ? 'Blog' : 'Competition'}}</td>
                                 <td>
                                     <button class="btn btn-sm mb-2 btn-danger" ng-click="deleteBlogComment(commentWithBlog.comment.id)">Delete</button> <br />
                                     <!-- <button class="btn btn-sm btn-success">Approve</button>  -->
