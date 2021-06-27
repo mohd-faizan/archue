@@ -184,10 +184,12 @@ app.controller("competitionController", (uploadService, validationService, $scop
             console.log(data);
             if (data.status == "ok") {
                 $scope.isShowLoad = false;
+                alert('You have uploaded competition successfully.');
                 window.location.href = "./competitions"
             } else {
                 $scope.isShowLoad = false;
                 console.error('eror in com', data.message);
+                alert(data.message);
             }
         })
     }

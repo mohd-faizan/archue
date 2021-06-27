@@ -44,13 +44,13 @@
 						<div class="row">
 							<div class="col-md-6 col-lg-6">
 								<div class="form-group text-left">
-									<input min="{{ minDate }}" type="date" id="competitor_reg_deadline_id" name="competitor_reg_deadline" class="form-control" ng-model="competitorData.competitor_reg_deadline" placeholder="Registration deadline" required>
+									<input min="{{ minDate }}" type="text" onfocusout="(this.type='text')" onfocusin="(this.type='date')" id="competitor_reg_deadline_id" name="competitor_reg_deadline" class="form-control" ng-model="competitorData.competitor_reg_deadline" placeholder="Registration deadline" required>
 									<small class="error" ng-show="competitionForm.competitor_reg_deadline.$error.required&&competitionForm.competitor_reg_deadline.$dirty">Required Field</small>
 								</div>
 							</div>
 							<div class="col-md-6 col-lg-6">
 								<div class="form-group text-left">
-									<input min="{{ minDate }}" type="date" id="competitor_sub_deadline_id" name="competitor_sub_deadline" class="form-control" ng-model="competitorData.competitor_sub_deadline"  required placeholder="Submission deadline">
+									<input min="{{ minDate }}" type="text" onfocusout="(this.type='text')" onfocusin="(this.type='date')" id="competitor_sub_deadline_id" name="competitor_sub_deadline" class="form-control" ng-model="competitorData.competitor_sub_deadline"  required placeholder="Submission deadline">
 									<small class="error" ng-show="competitionForm.competitor_sub_deadline.$error.required&&competitionForm.competitor_sub_deadline.$dirty">Required Field</small>
 								</div>
 							</div>
