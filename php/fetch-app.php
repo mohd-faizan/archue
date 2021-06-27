@@ -1437,7 +1437,7 @@ class FetchApp extends Conn
     }
     public static function fetchSimilarCompetitions($category, $id) {
         $arr = array();
-        $sql = "SELECT * FROM competition WHERE competitor_id != $id AND competition_category = '$category' ORDER BY competitor_id LIMIT 5";
+        $sql = "SELECT * FROM competition WHERE competitor_id != $id AND competition_category = '$category' ORDER BY competitor_id LIMIT 6";
         if ($res = self::$conn->query($sql)) {
             if ($res->num_rows) {
                 while ($row = $res->fetch_assoc()) {
