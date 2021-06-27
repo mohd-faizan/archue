@@ -96,13 +96,13 @@ class App extends Conn
 	public function deleteBlogComment($post)
 	{
 		$id = 	$post['comment_id'];
-		$sql = "DELETE FROM blogcomments WHERE id=$id";
+		$sql = "DELETE FROM comments WHERE id=$id";
 		echo json_encode(self::del_app($sql));
 	}
 	public function approveBlogComment($post)
 	{
 		$id = 	$post['comment_id'];
-		$sql = "UPDATE blogcomments SET is_approved = 1 WHERE id=$id";
+		$sql = "UPDATE comments SET is_approved = 1 WHERE id=$id";
 		echo json_encode(self::del_app($sql));
 	}
 

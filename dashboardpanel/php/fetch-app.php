@@ -234,7 +234,7 @@ class FetchApp extends Conn{
 
 	public function fetchCommentsOfBlog($id) {
 		$commentsArr = [];
-		$sql = "SELECT * FROM blogcomments WHERE blog_id = $id AND is_approved = 1 ORDER BY id DESC";
+		$sql = "SELECT * FROM comments WHERE blog_id = $id AND is_approved = 1 ORDER BY id DESC";
 		if($res = self::$conn->query($sql)) {
 			if($res->num_rows > 0 ) {
 				while($row = $res->fetch_assoc()) {
