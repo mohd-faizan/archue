@@ -83,7 +83,7 @@
                     </div>
                     <hr class="black-line">
                     <div clas="similar-container">
-                        <h3>Similar Competition </h3>
+                        <h3>Similar Competitions </h3>
                         <div class="row">
                             <a href="/competition/{{comp.competitor_id}}/{{comp.competition_heading}}" class="col-md-2" ng-repeat="comp in similarsCompetitions">
                                 <img src="upload-file/{{comp.competitor_file}}" class="img-fluid" alt="">
