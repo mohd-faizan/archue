@@ -7,7 +7,6 @@ app.directive("rootDir", () => {
 				}
 			});
 			$('#myModal').on('hide.bs.modal', function (e) {
-				console.log('123');
 				window.location.href = "./dashboard";
 			})
 			// let isIncrement = true;
@@ -117,14 +116,14 @@ app.directive("myNav", () => {
 				$('.material-dropdown-menu').hide();
 				$('.material-dropdown-item > a').removeClass('active-material-item');
 			});
-
-
-			elem.find('.material-sub-dropdown li a').click(() => {
-				$('.material-dropdown-menu').hide();
-			})
-			elem.find(".material-dropdown-item a").click(() => {
-				$('.material-dropdown-menu').hide();
-			})
+			setTimeout(() => {
+				elem.find('.material-sub-dropdown li a').click(() => {
+					$('.material-dropdown-menu').hide();
+				})
+				elem.find(".material-dropdown-item a").click(() => {
+					$('.material-dropdown-menu').hide();
+				})
+			}, 3000)
 			// More Dropdown Button Action
 			elem.find('.more-drp-btn').click((event) => {
 				event.preventDefault();
@@ -142,11 +141,16 @@ app.directive("myNav", () => {
 				event.preventDefault();
 				$('.material-drp-menu').css('margin-left', '0px');
 			})
-			// Matrerial Dropdown Menu Back
-			$('.material-drp-menu #dropdown-back-btn').click(function (event) {
-				event.preventDefault();
-				$('.material-drp-menu').css('margin-left', '-270px');
-			});
+
+			setTimeout(() => {
+				elem.find('.more-drop-dn-div .sidenav-li').click(() => {
+					$('.black-layer').hide();
+					$('.close-btn').hide();
+					$('.open-btn').show();
+					$('#sidenav,.more-drp-menu,.material-drp-menu').css('margin-left', '-270px');
+				})
+			}, 3000)
+			
 			/*elem.find(".material-dropdown").mouseenter(()=>{
 				elem.find(".material-dropdown-menu").css("display","block");
 			});

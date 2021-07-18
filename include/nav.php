@@ -81,8 +81,8 @@
                         <div class="material-dropdown-menu">
                             <ul class="list" ng-if="materialCategories && materialCategories.length">
                                 <li class="material-dropdown-item" ng-repeat="mCategory in materialCategories;">
-                                <a href="./materials/{{mCategory.url}}" ng-class="{'active-material-item': $first}">{{ mCategory.title }}</a>
-                                    <div class="material-sub-dropdown" ng-class="{'first-material-sub-dropdown': $first}">
+                                <a href="./materials/{{mCategory.url}}" ng-class="{'active-material-item': $index==0}">{{ mCategory.title }}</a>
+                                    <div class="material-sub-dropdown" ng-class="{'first-material-sub-dropdown': $index==0}">
                                         <div class="space"></div>
                                         <div class="container-fluid">
                                             <div class="row" >

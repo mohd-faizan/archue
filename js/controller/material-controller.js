@@ -237,6 +237,7 @@ app.controller("matProductsController", ($scope, $routeParams, $location, catego
                         url: subCategory.title.replace(/ /g, '-')
                     }
                 });
+                $scope.$digest();
             }
         }
     }
