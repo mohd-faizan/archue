@@ -499,6 +499,7 @@ app.service("fetchservice", function($http) {
     }
 })
 app.service('categoryListService', function($http) {
+    let categories = [];
     this.searchCategory = (cb) => {
         categoryArr = $http.get("js/category.json")
             .then((resp) => {
@@ -507,6 +508,14 @@ app.service('categoryListService', function($http) {
             .catch((err) => {
                 console.log(err);
             })
+    }
+
+
+    this.getAllMaterialcategories = () => {
+        return $http.get("./php/api/material/get-material-category.php").then(res => {
+            categories = res.data;
+            return categories;
+        });
     }
 
     this.search = (categ, isReplace, cb) => {

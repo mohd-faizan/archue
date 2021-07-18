@@ -1669,7 +1669,7 @@ h3.home-page-heading {
     background-color: #fff;
 }
 
-#first-material-sub-dropdown {
+.first-material-sub-dropdown {
     display: block;
 }
 
@@ -1703,6 +1703,9 @@ h3.home-page-heading {
 
 .material-dropdown-item:hover .material-sub-dropdown {
     display: block;
+}
+.active-categ {
+    color: #fa8a11!important;
 }
 
 .onscroll-material-drop-menu {

@@ -160,6 +160,14 @@ app.config(($routeProvider, $locationProvider) => {
             resolve: myresolve(),
             templateUrl: "pages/newsletter-users.php"
         })
+        .when('/material-category', {
+            resolve: myresolve(),
+            templateUrl: "pages/material-category.php"
+        })
+        .when('/add-material-category', {
+            resolve: myresolve(),
+            templateUrl: 'pages/add-material-category.php'
+        })
         .otherwise({
             templateUrl: "pages/404.php"
         })

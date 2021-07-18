@@ -16,8 +16,8 @@
                             <p><b>All Category</b></p>
                             <ul>
                                 <li ng-repeat="selectedSubCateg in selectedSubCategs track by $index">
-                                    <a href="./materials/{{categoryForUrl}}/{{selectedSubCateg}}">
-                                        {{selectedSubCateg | toUpperCaseFirst}}							
+                                    <a href="./materials/{{categoryForUrl}}/{{selectedSubCateg.url}}">
+                                        {{selectedSubCateg.title | toUpperCaseFirst}}							
                                     </a>
                                 </li>
                             </ul>
@@ -26,7 +26,7 @@
                     <div class="col-md-9">
                         <div class="project-container">
                             <div class="d-flex mb-2">
-                                <p><a href="/">Archue  </a> > <a href="/products/Finishes">Materials  </a> ><a href="/products/{{categoryForUrl}}">{{category | toUpperCaseFirst}}</a><span ng-if="selected!=undefined"> > {{selected | toUpperCaseFirst}}</span>>All</p>
+                                <p><a href="/">Archue  </a> > <a href="/materials/Finishes">Materials  </a> ><a href="/materials/{{categoryForUrl}}">{{category | toUpperCaseFirst}}</a><span ng-if="selected!=undefined"> > {{selected | toUpperCaseFirst}}</span>>All</p>
                                 <!-- <label class="ml-auto">
                                     <select ng-model='selected' id="select"  style="outline: none;border: none;">
                                         <option ng-repeat="subcat in selectedSubCategs track by $index">{{subcat}}</option>
@@ -40,7 +40,7 @@
                                     </button>
                                     <div class="dropdown-menu">
                                         <a href="#" class="dropdown-item" ng-click = "setCategory($)">All</a>
-                                        <a class="dropdown-item" href="#" ng-repeat="cat in selectedSubCategs|orderBy:cat track by $index" ng-click="setCategory(cat)">{{cat | toUpperCaseFirst}}</a>
+                                        <a class="dropdown-item" href="#" ng-repeat="cat in selectedSubCategs|orderBy:cat track by $index" ng-click="setCategory(cat.title)">{{cat.title | toUpperCaseFirst}}</a>
                                     </div>
                                     </div>
                                 </div>

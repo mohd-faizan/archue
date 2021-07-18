@@ -1,4 +1,5 @@
 app.controller('getAllMaterialsController', ($scope, $routeParams, fetchservice, categoryListService) => {
+    // console.log("...................material page...............");
     $scope.limit = 15;
     $scope.active = 1;
     /*Category and Subcategory Passed with URL*/
@@ -27,7 +28,7 @@ app.controller('getAllMaterialsController', ($scope, $routeParams, fetchservice,
                 material.product_name = fetchservice.removeSpeciolChar(material.product_name);
             }
             $scope.count = data.count;
-            console.log($scope.count)
+            // console.log($scope.count)
             let pages = 0;
             if ($scope.count > $scope.limit) {
                 pages = ($scope.count % $scope.limit) === 0 ? ($scope.count / $scope.limit) : Math.floor(($scope.count / $scope.limit)) + 1;
@@ -35,6 +36,7 @@ app.controller('getAllMaterialsController', ($scope, $routeParams, fetchservice,
                 pages = 1;
             }
             $scope.paginations = new Array(pages);
+            $scope.getCategroies();
         });
     }
 
@@ -63,15 +65,24 @@ app.controller('getAllMaterialsController', ($scope, $routeParams, fetchservice,
         const skip = $scope.active * $scope.limit - $scope.limit;
         $scope.fetchMaterials(skip, $scope.limit);
     }
-
-
-    categoryListService.search(category, true, (data) => {
-        $scope.selectedSubCategs = data;
-    });
-    categoryListService.search(category, false, (data) => {
-        $scope.showCategories = data;
-    });
-
+    // $scope.selectedSubCategs = [];
+    $scope.getCategroies = async () => {
+        const categoriesResp = await categoryListService.getAllMaterialcategories();
+        // console.log('categories', categoriesResp);
+        if (categoriesResp.status) {
+            const data = categoriesResp.data;
+            const cat = data.find(category => category.title == $scope.categoryForTemplate);
+            if (cat) {
+                $scope.selectedSubCategs = cat.subCategory.map(subCategory => {
+                    return {
+                        ...subCategory,
+                        url: subCategory.title.replace(/ /g, '-')
+                    }
+                });
+                $scope.$digest();
+            }
+        }
+    }
 })
 app.controller('getMaterialController', ($scope, ngMeta, $window, fetchservice, $routeParams) => {
     $scope.fetchSimilarMaterial = (key, id) => {
@@ -113,7 +124,7 @@ app.controller('getMaterialController', ($scope, ngMeta, $window, fetchservice, 
     fd.append('materialID', $scope.materialID);
     $scope.getMaterial = () => {
         fetchservice.getOneMaterial(fd, async(data) => {
-            console.log(data);
+            // console.log(data);
             $scope.material = data.data;
             $scope.material.product_name = fetchservice.removeSpeciolChar($scope.material.product_name);
             /* Title of the Page as Title of the Project */
@@ -129,7 +140,7 @@ app.controller('getMaterialController', ($scope, ngMeta, $window, fetchservice, 
             ngMeta.setTag('url', 'https://www.archue.com/material/' + $scope.material.material_upload_id + '/' + $scope.material.product_name);
             let prev = await fetchservice.nextPrevMaterial($scope.materialID, $scope.material.category, $scope.material.sub_category, false);
             let next = await fetchservice.nextPrevMaterial($scope.materialID, $scope.material.category, material.sub_category, true);
-            console.log(next, prev);
+            // console.log(next, prev);
             if (prev.data.status) {
                 $scope.prev = prev.data.data;
             }
@@ -157,6 +168,7 @@ app.controller('getMaterialController', ($scope, ngMeta, $window, fetchservice, 
     }
 });
 app.controller("matProductsController", ($scope, $routeParams, $location, categoryListService, fetchservice) => {
+    // console.log("...................products page...............");
     let category = $routeParams.category;
     $scope.limit = 15;
     $scope.active = 1;
@@ -165,7 +177,7 @@ app.controller("matProductsController", ($scope, $routeParams, $location, catego
     $scope.category = category.replace(/-/g, " ");
     $scope.fetchMatproducts = (skip, limit) => {
         fetchservice.fetchMatproducts(skip, limit, $scope.category, (data) => {
-            console.log(data);
+            // console.log(data);
             $scope.materials = [];
             if (data.status == 1) {
                 // console.log(data);
@@ -174,7 +186,7 @@ app.controller("matProductsController", ($scope, $routeParams, $location, catego
                     material.product_name = fetchservice.removeSpeciolChar(material.product_name);
                 }
                 $scope.count = data.count;
-                console.log($scope.count)
+                // console.log($scope.count)
                 let pages = 0;
                 if ($scope.count > $scope.limit) {
                     pages = ($scope.count % $scope.limit) === 0 ? ($scope.count / $scope.limit) : Math.floor(($scope.count / $scope.limit)) + 1;
@@ -212,10 +224,23 @@ app.controller("matProductsController", ($scope, $routeParams, $location, catego
     $scope.setCategory = (cat) => {
         $scope.selected = cat;
     }
-    categoryListService.search($scope.category, true, (data) => {
-        $scope.selectedSubCategs = data;
+    $scope.getCategroies = async () => {
+        const categoriesResp = await categoryListService.getAllMaterialcategories();
+        // console.log('categories', categoriesResp);
+        if (categoriesResp.status) {
+            const category = categoriesResp.data.find(category => category.title === $scope.category);
+            // console.log('category', category);
+            if (category) {
+                $scope.selectedSubCategs = category.subCategory.map(subCategory => {
+                    return {
+                        ...subCategory,
+                        url: subCategory.title.replace(/ /g, '-')
+                    }
+                });
+            }
+        }
+    }
+    $scope.getCategroies();
         // console.log($scope.selected);
         // console.log($scope.selectedSubCategs);
-    })
-
 })

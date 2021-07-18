@@ -14,10 +14,10 @@
                     <div class="categ-list-div">
                         <br>
                         <p><b>{{categoryForTemplate}}</b></p>
-                        <ul>
-                            <li ng-repeat="selectedSubCateg in selectedSubCategs track by $index">
-                                <a href="./materials/{{categoryForUrl}}/{{selectedSubCateg}}" ng-class="{'active-categ':subCategoryForUrl==selectedSubCateg}">
-									{{showCategories[$index]}}
+                        <ul >
+                             <li ng-repeat="subCat in selectedSubCategs">
+                                <a href="./materials/{{categoryForUrl}}/{{subCat.url}}" ng-class="{'active-categ':subCategoryForUrl==subCat.url}">
+									{{ subCat.title }}
 								</a>
                             </li>
                         </ul>
@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-md-9">
                     <div class="project-container">
-                        <p><a href="/">Archue </a> > <a href="/products/Finishes">Materials </a> ><a href="/products/{{categoryForUrl}}">{{categoryForTemplate}}</a>><a href="./materials/{{categoryForUrl}}/{{subCategoryForUrl}}">{{subCategoryForUrl}}</a>
+                        <p><a href="/">Archue </a> > <a >Materials </a> ><a href="/materials/{{categoryForUrl}}">{{categoryForTemplate}}</a>><a href="./materials/{{categoryForUrl}}/{{subCategoryForUrl}}">{{subCategoryForUrl}}</a>
                         </p>
                         <ul class="projects">
                             <li ng-repeat="material in materials track by $index">

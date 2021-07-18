@@ -57,6 +57,14 @@ app.config(($routeProvider, $locationProvider) => {
         })
 
     /* ============== Materials and and Single Material ============== */
+    .when("/materials/:category", {
+        templateUrl: "pages/products.php",
+        data: {
+            meta: {
+                'title': 'Archue products'
+            }
+        }
+    })
     .when("/materials/:category/:subcategory", {
             templateUrl: "pages/materials.php",
             data: {
@@ -532,14 +540,6 @@ app.config(($routeProvider, $locationProvider) => {
                 meta: {
                     'title': 'Looking for Architecture, Interior design and construction of your space ',
                     'description': 'Archue has completed thousands of projects across pan india .Get free consultation and qoutations for design of your space'
-                }
-            }
-        })
-        .when("/products/:category", {
-            templateUrl: "pages/products.php",
-            data: {
-                meta: {
-                    'title': 'Archue products'
                 }
             }
         })

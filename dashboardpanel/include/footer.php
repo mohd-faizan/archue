@@ -13,9 +13,11 @@
 <script type="text/javascript" src="js/directive.js"></script>
 <script type="text/javascript" src="js/route.js"></script>
 <script type="text/javascript" src="js/fetch-controller.js"></script>
+<script type="text/javascript" src="js/controller/material-controller.js"></script>
 <script type="text/javascript" src="js/edit-controller.js"></script>
 <script type="text/javascript" src="js/fetch-service.js"></script>
 <script type="text/javascript" src="js/service.js"></script>
+<script type="text/javascript" src="js/service/material-service.js"></script>
 <script type="text/javascript" src="../../js/filter.js"></script>
 <!-- <script type="text/javascript" src="js/custom.js"></script> -->
 <!-- <script type="text/javascript" src="js/service.js"></script> -->

@@ -1,6 +1,6 @@
 app.service("user", function () {
     this.saveDataSession = (data) => {
-        console.log(data);
+        // console.log(data);
         username = data.name;
         id = data.user_id;
         profession = data.profession;
@@ -15,7 +15,7 @@ app.service("user", function () {
             loggedIn: true,
             myUsername: data.username
         }));
-        console.log(this.isLoggedIn());
+        // console.log(this.isLoggedIn());
     }
     this.saveDataLocal = (data) => {
         username = data.name;
@@ -55,7 +55,7 @@ app.service("user", function () {
     }
     this.getSaveData = () => {
         var data;
-        console.log('sessionStorage.getItem("slogin")', sessionStorage.getItem("slogin"));
+        // console.log('sessionStorage.getItem("slogin")', sessionStorage.getItem("slogin"));
         if (sessionStorage.getItem("slogin") != null) {
             data = JSON.parse(sessionStorage.getItem("slogin"));
         } else if (localStorage.getItem("clogin") != null) {
@@ -366,7 +366,7 @@ app.service('mailService', function ($http) {
                 "Content-Type": undefined
             }
         }).then((resp) => {
-            console.log(resp);
+            // console.log(resp);
         }, (err) => {
             console.log(error);
         });
@@ -374,7 +374,7 @@ app.service('mailService', function ($http) {
     this.maileWhileGetQoute = (email, isFromMaterial) => {
         $http.get("php/send-getquote-mail.php?email=" + email + "&isFromMaterial=" + isFromMaterial)
             .then((resp) => {
-                console.log(resp.data);
+                // console.log(resp.data);
             }, (err) => {
                 console.log(err);
             })

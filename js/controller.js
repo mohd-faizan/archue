@@ -102,7 +102,7 @@ app.controller("signUpController", ($scope, myService, mailService) => {
     $scope.emailMe = false;
     $scope.type = 'password';
     $scope.togglePasswordView = () => {
-        console.log('working');
+        // console.log('working');
         $scope.type = $scope.type === 'password' ? 'text' : 'password'
     }
     
@@ -118,7 +118,7 @@ app.controller("signUpController", ($scope, myService, mailService) => {
         formData.isInterest = $scope.isInterest;
         formData.emailMe = $scope.emailMe;
         $scope.$parent.myser.signup(formData, (data) => {
-            console.log('data', data);
+            // console.log('data', data);
             if (data.status == "ok") {
                 $scope.signupResponse = data.data;
                 $scope.isLoad = true;
@@ -133,7 +133,7 @@ app.controller("signUpController", ($scope, myService, mailService) => {
         });
         $scope.$parent.timeout(() => {
             if ($scope.$parent.isShowError == 1) {
-                console.log('$scope.signupResponse', $scope.signupResponse)
+                // console.log('$scope.signupResponse', $scope.signupResponse)
                 $scope.$parent.location.path("/user-profile/" + $scope.signupResponse.username);
                 mailService.mailWhileLogin(formData.email)
                 $scope.$parent.isShowError = 0;
@@ -154,8 +154,37 @@ app.controller("signUpController", ($scope, myService, mailService) => {
         })
     }
 });
-app.controller("navController", ($scope) => {
+app.controller("navController", ($scope, categoryListService) => {
     $scope.isShowSmallSearch = false;
+    $scope.getMaterialCategories = async () => {
+        try{
+            const materialCatResp = await categoryListService.getAllMaterialcategories();
+            if (materialCatResp.status) {
+                $scope.materialCategories = materialCatResp.data.map(category => {
+                    category.subCategory = category.subCategory.map(subCategory => {
+                      return {
+                          ...subCategory,
+                          url: subCategory.title.replace(/ /g, '-')
+                      }  
+                    });
+                    return {
+                        ...category,
+                        url: category.title.replace(/ /g, '-')
+                    };
+                });
+                console.log('$scope.materialCategories', $scope.materialCategories);
+            } else {
+                $scope.materialCategories = []
+            } 
+
+        } catch(e) {
+            $scope.materialCategories = [];
+        }
+        
+    }
+    //get all material categories
+    $scope.getMaterialCategories();
+
     $scope.ifUpload = () => {
         if ($scope.$parent.user.isLoggedIn()) {
             $scope.$parent.location.path("/upload");
@@ -183,7 +212,7 @@ app.controller("loginController", ($scope, $location) => {
     $scope.passRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]/;
     $scope.type = 'password';
     $scope.togglePasswordView = () => {
-        console.log('working');
+        // console.log('working');
         $scope.type = $scope.type === 'password' ? 'text' : 'password'
     }
     $scope.onLogin = () => {
@@ -193,7 +222,7 @@ app.controller("loginController", ($scope, $location) => {
         data.remember = $scope.remember;
         $scope.isShowError = false;
         $scope.$parent.myser.login(data, (resp) => {
-            console.log(resp);
+            // console.log(resp);
             const user_id = resp.data.user_id;
             if (resp.status == "yes") {
                 $scope.$parent.user.saveDataSession(resp.data);
@@ -333,16 +362,16 @@ app.controller("dashboardController", (myService, $scope, $rootScope, fetchservi
     $scope.$parent.setUser();
     $scope.leadLimit = 3;
     $scope.userData = $rootScope.userData;
-    console.log($scope.userData);
+    // console.log($scope.userData);
     $scope.pro = ["Manufacture and Supplier", "vendor"];
     $scope.leads;
     $scope.incrementLead = () => {
         $scope.leadLimit = $scope.leadLimit + 3;
     }
     if ($scope.pro.indexOf($scope.userData.profession) == -1) {
-        console.log($scope.userData.id);
+        // console.log($scope.userData.id);
         myService.fetchUserData($scope.userData.id, (data) => {
-            console.log(data);
+            // console.log(data);
             /*Blogs*/
             $scope.leads = data.payLeads;
             if ($scope.leads && $scope.leads.length > 0) {
@@ -355,7 +384,7 @@ app.controller("dashboardController", (myService, $scope, $rootScope, fetchservi
                 blog.url = encodeURI(blog.heading);
             }
             $scope.blogs = $scope.blogs.filter((o) => o.is_approve != "0");
-            console.log($scope.blogs);
+            // console.log($scope.blogs);
             /*Projects*/
             $scope.projects = data.projects;
             $scope.projects = $scope.projects.filter((o) => o.project_approve != "0");
@@ -477,7 +506,7 @@ app.controller("dashboardController", (myService, $scope, $rootScope, fetchservi
             if (data.status == 1) {
                 $scope.leads = data.data.leads;
                 $scope.plan = data.data.planinfo;
-                console.log($scope.plan);
+                // console.log($scope.plan);
                 $scope.materials = data.data.material;
                 if ($scope.materials == undefined) {
                     $scope.materials = [];
@@ -506,7 +535,7 @@ app.controller("dashboardController", (myService, $scope, $rootScope, fetchservi
                     $scope.isExpired = true;
                 }
             } else {
-                console.log(data.data);
+                // console.log(data.data);
             }
 
         })
@@ -551,7 +580,7 @@ app.controller("dashboardController", (myService, $scope, $rootScope, fetchservi
         var isDel = confirm("Are you syre to delete");
         if (isDel) {
             myService.delete(id, tableName, (data) => {
-                console.log(data);
+                // console.log(data);
                 if (data.status) {
                     alert("you have succefully delete");
                     window.location.href = './dashboard';
@@ -563,7 +592,7 @@ app.controller("dashboardController", (myService, $scope, $rootScope, fetchservi
     }
 })
 app.controller("newsletterController", ($scope, myService, $timeout) => {
-    console.log("newsletterController");
+    // console.log("newsletterController");
     $scope.showSuccess = false;
     $scope.showError = false;
     var data = {};
@@ -614,7 +643,7 @@ app.controller("getQuotePageCtrl", ($rootScope) => {
     $rootScope.hideGetQuoteButton();
 })
 app.controller("editController", (user, myService, validationService, $scope, $rootScope) => {
-    console.log($rootScope.userData);
+    // console.log($rootScope.userData);
     $scope.name = $rootScope.userData.username;
     $scope.profession = $rootScope.userData.profession;
     $scope.validatePortfolioFile = (img) => {
@@ -643,7 +672,7 @@ app.controller('userProfileController', ($scope, $route, myService, validationSe
     $scope.profile = '';
     const today = new Date();
     $scope.minDob = today.getDate() + '-' + ((today.getMonth() + 1) > 9 ? today.getMonth() + 1 : '0' + (today.getMonth() + 1)) + '-' + today.getFullYear();
-    console.log('$scope.minDob', $scope.minDob);
+    // console.log('$scope.minDob', $scope.minDob);
     $scope.isDataFound = false;
     $scope.loggedIn = $scope.$parent.user.isLoggedIn();
     if ($scope.loggedIn) {
@@ -652,7 +681,7 @@ app.controller('userProfileController', ($scope, $route, myService, validationSe
             window.location = './dashboard';
         }
     }
-    console.log('$scope.loggedIn', $scope.loggedIn);
+    // console.log('$scope.loggedIn', $scope.loggedIn);
     $scope.professions = ["Architect/Interior designer", "Building consultant", "Building contractor"];
     $scope.validatePortfolioFile = (img) => {
         var ext = ['png', 'jpeg', 'jpg'];
@@ -661,7 +690,7 @@ app.controller('userProfileController', ($scope, $route, myService, validationSe
     $scope.getProfileData = () => {
         myService.getUserProfile($scope.username).then(
             (resp) => {
-                console.log(resp);
+                // console.log(resp);
                 if (resp.status) {
                     $scope.user = resp.data;
                     if($scope.user.company_name === 'No Available') {
@@ -749,9 +778,9 @@ app.controller('userProfileController', ($scope, $route, myService, validationSe
                     $scope.data = [...$scope.data, ...response[key]];
                 });
                 $scope.userData = $scope.data;
-                console.log('$scope.data', $scope.data);
+                // console.log('$scope.data', $scope.data);
                 $scope.setCategory = (category) => {
-                    console.log(category);
+                    // console.log(category);
                     if (!category) {
                         $scope.category = 'All' 
                         $scope.data = $scope.userData
@@ -759,7 +788,7 @@ app.controller('userProfileController', ($scope, $route, myService, validationSe
                     }
                     $scope.category = category;
                     $scope.data = $scope.userData.filter(el => el.myCategory === $scope.category);
-                    console.log('$scope.data', $scope.data);
+                    // console.log('$scope.data', $scope.data);
                 }
             },
             (err) => {
@@ -778,7 +807,7 @@ app.controller('userProfileController', ($scope, $route, myService, validationSe
         if ($scope.invalidUsername) {
             return;
         }
-        console.log('$scope.user', $scope.user);
+        // console.log('$scope.user', $scope.user);
         myService.updateFullProfile($scope.user).then(
             (resp) => {
                 // console.log(resp);
@@ -812,7 +841,7 @@ app.controller('userProfileController', ($scope, $route, myService, validationSe
         // console.log($scope.user.username);
         myService.validateUsername($scope.user.username).then(
             (resp) => {
-                console.log(resp);
+                // console.log(resp);
                 if (resp.unique) {
                     $scope.invalidUsername = false;
                 } else {
@@ -830,7 +859,7 @@ app.controller("fetchImageController", (fetchservice, $scope) => {
     if ($scope.$parent.isShowViewImage) {
         $scope.images = fetchservice.getImages();
     }
-    console.log($scope.$parent.isShowViewImage);
+    // console.log($scope.$parent.isShowViewImage);
 });
 
 
@@ -855,7 +884,7 @@ app.controller("materialController", (myService, $scope, $http, mailService) => 
         materialObj.requirement = $scope.requirement;
         materialObj.mat_date = new Date();
         myService.uploadMaterial(materialObj, (data) => {
-            console.log(data);
+            // console.log(data);
             if (data.status == "ok") {
                 mailService.maileWhileGetQoute(materialObj.email, true);
                 alert("Thank You ! We will reach you within 24hrs.");
@@ -902,7 +931,7 @@ app.controller("forgotController", (myService, $scope) => {
     $scope.onSubmit = (form) => {
         forgotData.email = $scope.email;
         myService.forgotPassword(forgotData, (data) => {
-            console.log(data);
+            // console.log(data);
             if (data.status == "ok") {
                 alert("Please Check Your Email For Password Reset");
                 window.location.href = "./login";

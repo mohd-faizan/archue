@@ -116,8 +116,9 @@ app.directive("myNav", () => {
 			elem.find('.material-dropdown-menu').mouseleave(() => {
 				$('.material-dropdown-menu').hide();
 				$('.material-dropdown-item > a').removeClass('active-material-item');
-				$('#first-material-dropdown-item').addClass('active-material-item');
-			})
+			});
+
+
 			elem.find('.material-sub-dropdown li a').click(() => {
 				$('.material-dropdown-menu').hide();
 			})
@@ -128,7 +129,8 @@ app.directive("myNav", () => {
 			elem.find('.more-drp-btn').click((event) => {
 				event.preventDefault();
 				$('.more-drp-menu').css('margin-left', '0px');
-			})
+			});
+
 			// More Dropdown Menu Back 
 			$('.more-drp-menu #dropdown-back-btn').click(function (event) {
 				event.preventDefault();

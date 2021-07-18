@@ -69,6 +69,7 @@
 			<li class="sidenav-li"><a href="./uploaded-material">UPLOADED MATERIAL</a></li>
 			<li class="sidenav-li"><a href="./upload-lead">UPLOADED LEAD</a></li>
 			<li class="sidenav-li"><a href="./leads">LEADS</a></li>
+			<li class="sidenav-li"><a href="./material-category">Material Category</a></li>
 
 			<li class="sidenav-li"><a class="sidenav-link" href="./logout">LOGOUT</a></li>
 		</ul>

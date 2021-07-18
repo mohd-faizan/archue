@@ -79,296 +79,25 @@
                     <li class="material-dropdown">
                         <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MATERIALS</a>
                         <div class="material-dropdown-menu">
-                            <ul class="list">
-                                <li class="material-dropdown-item"><a href="./products/Finishes" class="active-material-item" id="first-material-dropdown-item">Finishes</a>
-                                    <div class="material-sub-dropdown" id="first-material-sub-dropdown">
+                            <ul class="list" ng-if="materialCategories && materialCategories.length">
+                                <li class="material-dropdown-item" ng-repeat="mCategory in materialCategories;">
+                                <a href="./materials/{{mCategory.url}}" ng-class="{'active-material-item': $first}">{{ mCategory.title }}</a>
+                                    <div class="material-sub-dropdown" ng-class="{'first-material-sub-dropdown': $first}">
                                         <div class="space"></div>
                                         <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6">
-                                                    <ul class="sub-menu-list">
-                                                        <li><a href="./materials/Finishes/Metallics">Metallics</a></li>
-                                                        <li><a href="./materials/Finishes/Porcelain-Stoneware">Porcelain
-																Stoneware</a></li>
-                                                        <li><a href="./materials/Finishes/Ceramics">Ceramics</a></li>
-                                                        <li><a href="./materials/Finishes/Wood-Bamboo">Wood / Bamboo</a>
-                                                        </li>
-                                                        <li><a href="./materials/Finishes/Stones">Stones</a></li>
-                                                        <li><a href="./materials/Finishes/Glass">Glass</a></li>
-                                                        <li><a href="./materials/Finishes/Fiber Cements-Cements">Fiber
-																Cements / Cements</a></li>
-                                                        <li><a href="./materials/Finishes/Plastics">Plastics</a></li>
-                                                        <li><a href="./materials/Finishes/Composites">Composites</a>
-                                                        </li>
-                                                        <li><a href="./materials/Finishes/Organics-Rubber-Cork">Organics
-																/ Rubber / Cork</a></li>
-                                                        <li><a href="./materials/Finishes/Doors">Doors</a></li>
-                                                        <li><a href="./materials/Finishes/Dropped-Ceilings">Dropped
-																Ceilings</a></li>
-                                                        <li><a href="./materials/Finishes/Suspension-Systems">Suspension
-																Systems</a></li>
-                                                        <li><a href="./materials/Finishes/Skylights">Skylights</a></li>
-                                                        <li><a href="./materials/Finishes/Windows">Windows</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <ul class="sub-menu-list">
-                                                        <li><a href="./materials/Finishes/Concrete-Floors">Concrete
-																Floors</a></li>
-                                                        <li><a href="./materials/Finishes/Wodern-Flooring">Wodern
-																Flooring</a></li>
-                                                        <li><a href="./materials/Finishes/Linoleum-Vina Flooring">Linoleum/Vina
-																Flooring</a></li>
-                                                        <li><a href="./materials/Finishes/Wodern-Flooring">Wodern
-																Flooring</a></li>
-                                                        <li><a href="./materials/Finishes/Blinds-Mosquito-Nets-Curtains">Blinds
-																/ Mosquito Nets /
-																Curtains</a></li>
-                                                        <li><a href="./materials/Finishes/Louvers-Shutters">Louvers /
-																Shutters</a></li>
-                                                        <li><a href="./materials/Finishes/Awnings">Awnings</a></li>
-                                                        <li><a href="./materials/Finishes/windows">Windows</a></li>
-                                                        <li><a href="./materials/Finishes/skylights">Skylights</a></li>
-                                                        <li><a href="./materials/Finishes/Sealents-Protectors">Sealents/Protectors</a>
-                                                        </li>
-                                                        <li><a href="./materials/Finishes/Wooden-Flooring">Wooden
-																Flooring</a></li>
-                                                        <li><a href="./materials/Finishes/Linoleum-Vinyl-Epoxy-Urethane">Linoleum
-																/ Vinyl / Epoxy /
-																Urethane</a></li>
-                                                        <li><a href="./materials/Finishes/Carpets">Carpets</a></li>
-                                                        <li><a href="./materials/Finishes/Adhesives">Adhesives</a></li>
-                                                        <li><a href="./materials/Finishes/Wallpaper">Wallpaper</a></li>
+                                            <div class="row" >
+                                                <div class="col-lg-6 col-md-6" ng-repeat="sCategory in mCategory.subCategory">
+                                                    <ul class="sub-menu-list" >
+                                                        <li ><a href="./materials/{{mCategory.url}}/{{sCategory.url}}">{{sCategory.title}}</a></li>        
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="material-dropdown-item"><a href="./products/Construction-And-Material">Construction And
-										Material</a>
-                                    <div class="material-sub-dropdown">
-                                        <div class="space"></div>
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6">
-                                                    <ul class="sub-menu-list">
-                                                        <li><a href="#">Glass</a></li>
-                                                        <li><a href="./materials/Construction-And-Material/Wood">Wood</a>
-                                                        </li>
-                                                        <li><a href="./materials/Construction-And-Material/Metals">Metals</a>
-                                                        </li>
-                                                        <li><a href="./materials/Construction-And-Material/System-Prefabricated-Panells">System/Prefabricated
-																Panells</a></li>
-                                                        <li><a href="./materials/Construction-And-Material/Plastics-Fibers">Plastics/Fibers</a>
-                                                        </li>
-                                                        <li><a href="./materials/Construction-And-Material/Enclosures-Double-Skin-Facades">Enclosures
-																/ Double Skin Facades</a></li>
-                                                        <li><a href="./materials/Construction-And-Material/Louvers">Louvers</a>
-                                                        </li>
-                                                        <li><a href="./materials/Construction-And-Material/Curtain-Walls">Curtain
-																Walls</a></li>
-                                                        <li><a href="./materials/Construction-And-Material/Green-Facades">Green
-																Facades</a></li>
-                                                        <li><a href="./materials/Construction-And-Material/Metallics">Metallics</a>
-                                                        </li>
-                                                        <li><a href="./materials/Construction-And-Material/Tiles">Tiles</a>
-                                                        </li>
-                                                        <li><a href="./materials/Construction-And-Material/Planting">Planting</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <ul class="sub-menu-list">
-                                                        <li><a href="./materials/Construction-And-Material/Fasteners">Fasteners</a>
-                                                        </li>
-                                                        <li><a href="./materials/Construction-And-Material/Railing">Railing</a>
-                                                        </li>
-                                                        <li><a href="./materials/Construction-And-Material/Stairs">Stairs</a>
-                                                        </li>
-                                                        <li><a href="./materials/Construction-And-Material/Freestanding-Umbrellas">Freestanding
-																Umbrellas</a></li>
-                                                        <li><a href="./materials/Construction-And-Material/Tensile-Structures">Tensile
-																Structures</a>
-                                                        </li>
-                                                        <li><a href="./materials/Construction-And-Material/Retractable-Structures">Retractable
-																Structures</a></li>
-                                                        <li><a href="./materials/Construction-And-Material/Membranes">Membranes</a>
-                                                        </li>
-                                                        <li><a href="./materials/Construction-And-Material/Sealants">Sealants</a>
-                                                        </li>
-                                                        <li><a href="./materials/Construction-And-Material/Acoustic">Acoustic</a>
-                                                        </li>
-                                                        <li><a href="./materials/Construction-And-Material/Thermal">Thermal</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="material-dropdown-item"><a href="./products/Equipment">Equipment</a>
-                                    <div class="material-sub-dropdown">
-                                        <div class="space"></div>
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6">
-                                                    <ul class="sub-menu-list">
-                                                        <li><a href="./materials/Equipment/Sinks">Sinks</a></li>
-                                                        <li><a href="./materials/Equipment/Accessories">Accessories</a>
-                                                        </li>
-                                                        <li><a href="./materials/Equipment/Shower">Shower</a></li>
-                                                        <li><a href="./materials/Equipment/Toilets-Urinals">Toilets /
-																Urinals</a></li>
-                                                        <li><a href="./materials/Equipment/Bathroom-Furniture">Bathroom
-																Furniture</a></li>
-                                                        <li><a href="./materials/Equipment/Faucets">Faucets</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <ul class="sub-menu-list">
-                                                        <li><a href="./materials/Equipment/Residential">Residential</a>
-                                                        </li>
-                                                        <li><a href="./materials/Equipment/Office-Furniture">Office
-																Furniture</a></li>
-                                                        <li><a href="./materials/Equipment/Cultural-Sports">Cultural /
-																Sports</a></li>
-                                                        <li><a href="./materials/Equipment/Kitchen-Furniture-Countertops">Kitchen
-																Furniture /
-																Countertops</a></li>
-                                                        <li><a href="./materials/Equipment/Equipment">Equipment</a></li>
-                                                        <li><a href="./materials/Equipment/Elevators">Elevators</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="material-dropdown-item"><a href="./products/MEP-and-HVAC">MEP &amp; HVAC</a>
-                                    <div class="material-sub-dropdown">
-                                        <div class="space"></div>
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6">
-                                                    <ul class="sub-menu-list">
-                                                        <li><a href="./materials/MEP-and-HVAC/Lights">Lights</a></li>
-                                                        <li><a href="./materials/MEP-and-HVAC/Bulbs">Bulbs</a></li>
-                                                        <li><a href="./materials/MEP-and-HVAC/Bulbs-Spots-Wall-Lights">Bulbs
-																/ Spots / Wall Lights</a>
-                                                        </li>
-                                                        <li><a href="./materials/MEP-and-HVAC/Reflectors-Street-Lighting">Reflectors
-																/ Street
-																Lighting</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <ul class="sub-menu-list">
-                                                        <li><a href="./materials/MEP-and-HVAC/Switches-Ballasts">Switches
-																/ Ballasts</a></li>
-                                                        <li><a href="./materials/MEP-and-HVAC/Comfort">Comfort</a></li>
-                                                        <li><a href="./materials/MEP-and-HVAC/Fluids-Treatment">Fluids
-																Treatment</a></li>
-                                                        <li><a href="./materials/MEP-and-HVAC/Heating">Heating</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="material-dropdown-item"><a href="./products/Application">Application</a>
-                                    <div class="material-sub-dropdown">
-                                        <div class="space"></div>
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6">
-                                                    <ul class="sub-menu-list">
-                                                        <li><a href="./materials/Application/Residential-Applications">Residential
-																Applications</a>
-                                                        </li>
-                                                        <li><a href="./materials/Application/Corporate-Applications">Corporate
-																Applications</a></li>
-                                                        <li><a href="./materials/Application/Educational-Applications">Educational
-																Applications</a>
-                                                        </li>
-                                                        <li><a href="./materials/Application/Hotel-Applications">Hotel
-																Applications</a></li>
-                                                        <li><a href="./materials/Application/Urban-Applications">Urban
-																Applications</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <ul class="sub-menu-list">
-                                                        <li><a href="./materials/Application/Cultural-Patrimonial">Cultural
-																/ Patrimonial</a></li>
-                                                        <li><a href="./materials/Application/Retail-Applications">Retail
-																Applications</a></li>
-                                                        <li><a href="./materials/Application/Healthcare-Applications">Healthcare
-																Applications</a></li>
-                                                        <li><a href="./materials/Application/Sports-Applications">Sports
-																Applications</a></li>
-                                                        <li><a href="./materials/Application/Industrial-Applications">Industrial
-																Applications</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="material-dropdown-item"><a href="./products/Outdoor-Spaces">Outdoor
-										Spaces</a>
-                                    <div class="material-sub-dropdown">
-                                        <div class="space"></div>
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6">
-                                                    <ul class="sub-menu-list">
-                                                        <li><a href="./materials/Outdoor-Spaces/Outdoor-Spaces">Outdoor
-																Spaces</a></li>
-                                                        <li><a href="./materials/Outdoor-Spaces/Bicycle-Rack-Bollards">Bicycle
-																Rack / Bollards</a>
-                                                        </li>
-                                                        <li><a href="./materials/Outdoor-Spaces/Playground-Sports-Equipment">Playground
-																/ Sports
-																Equipment</a></li>
-                                                        <li><a href="./materials/Outdoor-Spaces/Urban-Shading">Urban
-																Shading</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <ul class="sub-menu-list">
-                                                        <li><a href="./materials/Outdoor-Spaces/Patio-Furniture">Patio
-																Furniture</a></li>
-                                                        <li><a href="./materials/Outdoor-Spaces/Exterior-Decking">Exterior
-																Decking</a></li>
-                                                        <li><a href="./materials/Outdoor-Spaces/Living-Fences">Living
-																Fences</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="material-dropdown-item"><a href="./products/Technology">Technology</a>
-                                    <div class="material-sub-dropdown">
-                                        <div class="space"></div>
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6">
-                                                    <ul class="sub-menu-list">
-                                                        <li><a href="./materials/Technology/Home-Appliances">Home
-																Appliances</a></li>
-                                                        <li><a href="./materials/Technology/Connectivity-Accessories">Connectivity
-																Accessories</a>
-                                                        </li>
-                                                        <li><a href="./materials/Technology/Renders-3D-Animation">Renders
-																/ 3D Animation</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+
                             </ul>
+                            <p ng-if="!materialCategories || !materialCategories.length" class="p-4">No category found</p>
                         </div>
                     </li>
 
@@ -458,22 +187,14 @@
         </nav>
 
         <!-- MATERIAL Dropdown Mwnu -->
-        <div class="more-drop-dn-div">
-            <ul class="more-drp-menu">
+        <div class="more-drop-dn-div" >
+            <ul class="more-drp-menu " id="my-material">
                 <li>
                     <a class="sidenav-link" href="#" id="dropdown-back-btn">
                         <span class="fa fa-angle-left"></span> &nbsp; Back
                     </a>
                 </li>
-                <li class="sidenav-li"><a class="sidenav-link" href="./products/Finishes">Finishes</a></li>
-                <li class="sidenav-li"><a class="sidenav-link" href="./products/Construction-And-Material">Construction
-						And
-						Material</a></li>
-                <li class="sidenav-li"><a class="sidenav-link" href="./products/Equipment">Equipment</a></li>
-                <li class="sidenav-li"><a class="sidenav-link" href="./products/MEP-and-HVAC">MEP & HVAC</a></li>
-                <li class="sidenav-li"><a class="sidenav-link" href="./products/Application">Application</a></li>
-                <li class="sidenav-li"><a class="sidenav-link" href="./products/Outdoor-Spaces">Outdoor Spaces</a></li>
-                <li class="sidenav-li"><a class="sidenav-link" href="./products/Technology">Technology</a></li>
+                <li class="sidenav-li" ng-repeat="mCategory in materialCategories;"><a class="sidenav-link" href="./materials/{{mCategory.url}}">{{mCategory.title}}</a></li>
             </ul>
         </div>
 

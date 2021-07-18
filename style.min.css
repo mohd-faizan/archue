@@ -523,7 +523,7 @@ form input.ng-valid {
 }
 
 .active-categ {
-    color: #fa8a11;
+    color: #fa8a11!important;
 }
 
 .iframe-loader {
